@@ -1,0 +1,99 @@
+<script>
+var i=1;
+var j=5;
+function resize(direction) {
+  var delta = 100 * direction;
+
+  var element = document.getElementById('img');
+  var positionInfo = element.getBoundingClientRect();
+
+  element.style.width = positionInfo.width+delta+'px';
+  element.style.height = positionInfo.height+delta+'px';
+}
+
+function rotateClock() {
+  var img = document.getElementById("img");
+  img.setAttribute("class", "rotated-image"+i);
+  i++
+  if(i>4)
+  i=1;
+  
+}
+
+function antiClock() {
+
+  var img = document.getElementById("img");
+  img.setAttribute("class", "rotated-image"+j);
+  j++
+  if(j>8)
+  j=5;
+}
+
+function showimage()
+{
+var img = document.getElementById('img'); 
+  img.style.height = '100%';
+    img.style.width = '100%';
+}
+
+
+</script>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<h3 align = "Center">Combustor assembly - Borescope inspection</h3><body>
+	
+	<button onClick="resize(1)">Zoom In</button>
+<button onClick="resize(-1)">Zoom Out</button>
+<button onClick="rotateClock()">Rotate Right</button>
+<button onClick="antiClock()">Rotate Left</button>
+ <input id="clickbutton" type="button" value="FullScreen" onclick="showimage()" /> 
+	<head> 
+  <style type="text/css">
+    .zoomin img { height: 300px; width: 300px;
+    -webkit-transition: all 0s ease;
+    -moz-transition: all 0s ease;
+    -ms-transition: all 0s ease;
+    transition: all 0s ease; }
+	.rotated-image1 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);}
+		  .rotated-image2 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);}
+		  .rotated-image3 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);}
+		  .rotated-image4 {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);}
+
+		  
+		  .rotated-image5 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);}
+		  .rotated-image6 {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);}
+		  .rotated-image7 {
+  -webkit-transform: rotate(-270deg);
+          transform: rotate(-270deg);}
+		  .rotated-image8 {
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+}
+</style>
+</head>
+<body>
+  <div class="zoomin"> 
+	<img src="graphics/ICN-07482-0005007856-001-01.svg" id="img" />
+ </div>
+</body>
+</html> 
+
+	
+	
+</body>
+</html>
+

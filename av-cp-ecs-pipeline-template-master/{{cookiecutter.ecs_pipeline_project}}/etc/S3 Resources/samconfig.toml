@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "{{cookiecutter.product_prefix}}-ecs-pipeline-resources"
+s3_prefix = "{{cookiecutter.product_prefix}}-ecs-template-resources"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_AUTO_EXPAND"
+role_arn = "arn:aws:iam::{{cookiecutter.aws_account_id}}:role/{{cookiecutter.product_prefix}}-cloudformation" # Your IAM Roles should already be set up in the account you're trying to deploy to
+parameter_overrides = "ConfigureProductionBucketAccess=true NotificationsSubscriptionDistroList=alex@ge.com"
+tags = "app={{cookiecutter.product_prefix}} env={{cookiecutter.env_non-prod_prod}}" # Include Required Tags so they are propogated down to all created resources that support Tags

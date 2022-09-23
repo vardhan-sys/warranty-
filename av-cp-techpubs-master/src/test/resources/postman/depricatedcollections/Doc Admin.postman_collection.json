@@ -1,0 +1,1359 @@
+{
+	"info": {
+		"_postman_id": "9fef8a0e-95dc-4432-b516-26a1da98f1cd",
+		"name": "Doc Admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "Get Current User Permissions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "212462850"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/authorization/permissions",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"authorization",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Curent User Roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/authorization/roles",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"authorization",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Companies",
+			"item": [
+				{
+					"name": "Get Companies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "212462850"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies?sortBy=company|asc&page=1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "Delta",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "company|asc"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get a list of companies that the Doc Admin user has access to"
+					},
+					"response": []
+				},
+				{
+					"name": "Download Companies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/download?",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								"download"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Download an Excel file list of companies"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company MDM Engine Models",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "212462850"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/:icaoCode/mdm-engine-models",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								":icaoCode",
+								"mdm-engine-models"
+							],
+							"variable": [
+								{
+									"id": "2f141254-3290-4308-b2f1-9e35cff63ae4",
+									"key": "icaoCode",
+									"value": "DAL",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Engine Models",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/:icaoCode/engine-models",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								":icaoCode",
+								"engine-models"
+							],
+							"variable": [
+								{
+									"id": "4ed3c8ee-99fd-41a8-9055-719b705bc3ed",
+									"key": "icaoCode",
+									"value": "DAL",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Engine Technology Levels",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "503127855"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/:icaoCode/engine-models/:engineModel/technology-level",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								":icaoCode",
+								"engine-models",
+								":engineModel",
+								"technology-level"
+							],
+							"variable": [
+								{
+									"id": "482a294d-7fed-4a32-afc6-57638317010f",
+									"key": "icaoCode",
+									"value": "DAL",
+									"type": "string"
+								},
+								{
+									"id": "dbaf38f4-74a0-418a-b343-8ddaeda3ef04",
+									"key": "engineModel",
+									"value": "GENX-1B",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Company Engine Models",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"engineModels\": [\r\n        \"CF34-1\",\r\n        \"CF34-10\",\r\n        \"CF34-10E\",\r\n        \"CF34-3\",\r\n        \"CF34-3C\",\r\n        \"CF34-8E\",\r\n        \"H80\",\r\n        \"GENX-1B\",\r\n        \"GENX-2B\"\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/:icaoCode/engine-models",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								":icaoCode",
+								"engine-models"
+							],
+							"variable": [
+								{
+									"id": "301e44f6-854b-4c15-86c8-7e8a25c9aba2",
+									"key": "icaoCode",
+									"value": "DAL",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company Engine Model",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/:icaoCode/engine-models/:engineModel",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								":icaoCode",
+								"engine-models",
+								":engineModel"
+							],
+							"variable": [
+								{
+									"id": "bd60d8f8-7b1b-4223-9b95-9c7473835ff4",
+									"key": "icaoCode",
+									"value": "DAL",
+									"type": "string"
+								},
+								{
+									"id": "a958c70b-e298-4f85-98d4-fef0e0b9621d",
+									"key": "engineModel",
+									"value": "GENX-1B",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Engine Model Books",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/:icaoCode/engine-models/:engineModel/books",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								":icaoCode",
+								"engine-models",
+								":engineModel",
+								"books"
+							],
+							"variable": [
+								{
+									"id": "8679810a-e01f-43b7-84ff-0aa9a0a99523",
+									"key": "icaoCode",
+									"value": "DAL",
+									"type": "string"
+								},
+								{
+									"id": "f541a4e8-cc1f-4eb7-a1f1-0417389fcf10",
+									"key": "engineModel",
+									"value": "CF34-10",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Engine Model SMM Docs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/:icaoCode/engine-models/:engineModel/smm-docs",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								":icaoCode",
+								"engine-models",
+								":engineModel",
+								"smm-docs"
+							],
+							"variable": [
+								{
+									"id": "281dc50c-cfeb-4da5-9529-f36cf1a6897d",
+									"key": "icaoCode",
+									"value": "DAL",
+									"type": "string"
+								},
+								{
+									"id": "0c6b82b6-72b5-47f6-8a73-dda7b1afcbbe",
+									"key": "engineModel",
+									"value": "H80",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save SMM Docs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "212462850"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"engineSMMDocuments\": {\n        \"GENX-1B\": [\n            \"f8ecb8e0-b396-11e9-84ad-18dbf2013d1e\",\n            \"f8ed07dc-b396-11e9-84af-18dbf2013d1e\"\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/:icaoCode/engine-models/smm-docs",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								":icaoCode",
+								"engine-models",
+								"smm-docs"
+							],
+							"variable": [
+								{
+									"id": "716980d1-e2dd-43d8-a498-17cabffd6e7f",
+									"key": "icaoCode",
+									"value": "DAL",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable SMM Docs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "212462850"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"engineSMMDocuments\": {\r\n        \"CF6-6\": [\r\n            \"37ca8eb3-e154-11e9-a332-18dbf2013d1e\"\r\n        ]\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/:icaoCode/engine-models/smm-docs?enable=false",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								":icaoCode",
+								"engine-models",
+								"smm-docs"
+							],
+							"query": [
+								{
+									"key": "enable",
+									"value": "false"
+								}
+							],
+							"variable": [
+								{
+									"id": "5a61c770-45b8-49c7-94c5-a78e44771b65",
+									"key": "icaoCode",
+									"value": "DAL",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Company Tech Level",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "212462850"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"engineTechnologyLevels\": {\n        \"GENX-1B\": [\n            \"98f08c45-1123-47d3-b4a1-63e942860915\"\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/companies/:icaoCode/engine-models/technology-level",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"companies",
+								":icaoCode",
+								"engine-models",
+								"technology-level"
+							],
+							"variable": [
+								{
+									"id": "f5add650-4219-4d66-9130-8b53d95ceab4",
+									"key": "icaoCode",
+									"value": "DAL",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Admin Management",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/users?sortBy=firstName|asc",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"users"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "firstName|asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/users/:userSsoId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"users",
+								":userSsoId"
+							],
+							"variable": [
+								{
+									"id": "ec14fcb4-959c-4493-ba70-14433a38de12",
+									"key": "userSsoId",
+									"value": "212462850",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/users/download",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"users",
+								"download"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download User Permissions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/users/:userSsoId/download",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"users",
+								":userSsoId",
+								"download"
+							],
+							"variable": [
+								{
+									"id": "ad968ff7-4b57-452b-88b1-c5b814f742f8",
+									"key": "userSsoId",
+									"value": "212462850",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Portal Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/portal-users?sortBy=sso|desc",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"portal-users"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "sso|desc"
+								}
+							]
+						},
+						"description": "Gets Portal Users with the DocAdmin role. Can filter specifc users using searchTerm query param."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Doc Admin Roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/roles",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get MDM Engine Models",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/mdm-engine-models",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"mdm-engine-models"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/users/:userSsoId/roles",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"users",
+								":userSsoId",
+								"roles"
+							],
+							"variable": [
+								{
+									"id": "ee88d0c8-6edc-4598-a31d-c6c2012421ef",
+									"key": "userSsoId",
+									"value": "212462850",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ssoIds\": [\"123456789\"],\n\t\"roles\": [\"provisioner\"],\n\t\"attributes\": {\n\t\t\"engineModels\": [\"GENX-1B, GENX-2B\"],\n\t\t\"airFrames\": [],\n\t\t\"docTypes\": []\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/users",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Role",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/users/:userSsoId/roles/:role",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"users",
+								":userSsoId",
+								"roles",
+								":role"
+							],
+							"variable": [
+								{
+									"id": "1e2b5775-5738-4f6b-8621-0df58dd8f6c4",
+									"key": "userSsoId",
+									"value": "212123456",
+									"type": "string"
+								},
+								{
+									"id": "e7ff74cf-a9d6-45fc-9bfa-9103f49a419e",
+									"key": "role",
+									"value": "publisher",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Permissions",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"newRole\": \"restricted-repair-provisioner\",\n\t\"attributes\": {\n\t\t\"engineModels\": [\"GE90\", \"GE90-90\", \"GE90-100\"],\n\t\t\"airFrames\": [],\n\t\t\"docTypes\": []\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/admin-management/users/:userSsoId/roles/:role",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"admin-management",
+								"users",
+								":userSsoId",
+								"roles",
+								":role"
+							],
+							"variable": [
+								{
+									"id": "db21c5a3-59d4-469a-abae-cab4e2486edc",
+									"key": "userSsoId",
+									"value": "503127855",
+									"type": "string"
+								},
+								{
+									"id": "5bf21375-a559-4fbe-a474-ef390950967b",
+									"key": "role",
+									"value": "provisioner",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Publisher",
+			"item": [
+				{
+					"name": "Get Summary Table",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "SM_SSOID",
+								"value": "212629626",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "CWC",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/publisher",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"publisher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bookcase Version Side Pannel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "SM_SSOID",
+								"value": "212629626",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "CWC",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/publisher/bookcase/:bookcaseKey/versions",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"publisher",
+								"bookcase",
+								":bookcaseKey",
+								"versions"
+							],
+							"variable": [
+								{
+									"key": "bookcaseKey",
+									"value": "gek108752",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bookcase Status Versions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"bookcaseVersions\":[\n\t\t{\n\t\t\t\"version\":\"9.7\",\n\t\t\t\"status\":\"offline\"\n\t\t},\n\t\t{\n\t\t\t\"version\":\"9.8\",\n\t\t\t\"status\":\"online\"\n\t\t}\n\t\t]\n}"
+						},
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/publisher/bookcase/:bookcaseKey/versions",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"publisher",
+								"bookcase",
+								":bookcaseKey",
+								"versions"
+							],
+							"variable": [
+								{
+									"key": "bookcaseKey",
+									"value": "gek108752",
+									"type": "string"
+								}
+							]
+						},
+						"description": "remake to update more than one status at a time"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bookcase Engine Models",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/publisher/bookcase/:bookcaseKey/engine-models",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"publisher",
+								"bookcase",
+								":bookcaseKey",
+								"engine-models"
+							],
+							"variable": [
+								{
+									"key": "bookcaseKey",
+									"value": "gek108750",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "publisher/download",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Engine Models",
+			"item": [
+				{
+					"name": "Get Bookcase Keys",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/engine-models/:engineModel/bookcase-keys",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"engine-models",
+								":engineModel",
+								"bookcase-keys"
+							],
+							"variable": [
+								{
+									"id": "60f96cb6-9e67-4d8c-9c1c-56e83dca23e5",
+									"key": "engineModel",
+									"value": "CF34-10A",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Audit Trail",
+			"item": [
+				{
+					"name": "Get Audit Logs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "sm_ssoid",
+								"value": "123456789",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fromDate\": \"2019-09-01 00:00:00 UTC\",\n    \"toDate\": \"2019-12-30 00:00:00 UTC\",\n    \"category\": \"companies\",\n    \"categorySearchTerm\": \"DAL\",\n    \"action\": \"Enable\",\n    \"ssoSearchTerm\": \"503096464\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/audit-trail",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"audit-trail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download Audit Logs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fromDate\": \"2019-09-01 00:00:00 UTC\",\n    \"toDate\": \"2019-12-30 00:00:00 UTC\",\n    \"category\": \"companies\",\n    \"categorySearchTerm\": \"DAL\",\n    \"action\": \"Enable\",\n    \"ssoSearchTerm\": \"503096464\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/services/techpubs/admin/audit-trail/download",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"audit-trail",
+								"download"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Util",
+			"item": [
+				{
+					"name": "util/bookcase/online",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/services/techpubs/util/bookcases/online",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"util",
+								"bookcases",
+								"online"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/ping",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "4c75bf7b-57bf-468d-8c76-634ea302709d",
+			"key": "server",
+			"value": "http://localhost:",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

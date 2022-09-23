@@ -1,0 +1,75 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>POWER PLANT BUILDUP MANUAL</title>
+<script>
+      function swapImage(id, isoImage)
+      {
+          strHTML = "<object id=objid_"+ id.toLowerCase() +" height='653' width='668' type='application/x-isoview'></object>";
+          arr = (document.all.tags("div"));
+					for (i=0;i<arr.length;i++){
+					 	divObj=arr[i];
+					 	if(divObj.id==id){
+					 		img_div = arr[i];
+					 	}
+          }
+          img_div.innerHTML = strHTML;
+          iso_obj = document.getElementById("objid_"+ id);
+          iso_obj.OpenFile("graphics/" + isoImage,"");
+          iso_obj.Iso7ConfigTools(1, 1+16777216+2+4+32+64+256+512+1024+2048+4096, 8+128+131072, 1, false, false);
+      }
+    </script>
+<link rel="stylesheet" href="/css/geae-em.css" type="text/css">
+</head>
+<body>
+<div id="printheader" style="display:none">
+<table style="width: 100%;border:2px;border-bottom-style:dashed;border-bottom-color:black;">
+<tr style="font-size:12px;">
+<td style="width:20px;" align="left"><img width="20px" height="20px" src="logo.png" alt="logo"></td><td style="width:5in;font-weight:bold;" align="left">CF34-10E POWER PLANT BUILDUP MANUAL</td><td style="width:1.5in;" align="left"></td><td style="width:1.5in;" align="right">Dated 11/30/2015</td>
+</tr>
+<tr>
+<td colspan="4" style="font-size:14px;font-weight:bold;text-indent:0.25in;"></td>
+</tr>
+<tr>
+<td colspan="4" style="font-size:14px;font-weight:bold;text-indent:0.25in;">CF34-10E POWER PLANT BUILDUP MANUAL</td>
+</tr>
+</table>
+</div>
+<div id="pageheader" style="width: 100%;" class="hideFromPrint">
+<table style="width: 100%;">
+<tr style="font-size:16px;">
+<td align="left"><img width="20px" height="20px" src="logo.png" alt="logo"></td><td style="font-weight:bold;" align="left">CF34-10E POWER PLANT BUILDUP MANUAL</td><td align="right">Dated: 11/30/2015</td>
+</tr>
+<tr>
+<td></td><td colspan="2" style="font-size:16px;font-weight:bold;"></td>
+</tr>
+<tr>
+<td></td><td colspan="2" style="font-size:16px;font-weight:bold;"></td>
+</tr>
+<tr>
+<td style="height:14px;"></td>
+</tr>
+</table>
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>You may access the POWER PLANT BUILDUP MANUAL GEK112771 - Rev 5, 11/30/2015 by
+clicking <a href="CF34-10E_PPBM_GEK_112771.pdf">here</a>.</p>
+</div>
+<div id="pagefooter" class="hideFromPrint" style="width: 100%;">
+<table style="width: 100%;">
+<tr>
+<td align="center" style="padding-top: 72px; font-size:12px;font-weight:bold;">GE PROPRIETARY INFORMATION - Subject to the restrictions on the media.</td>
+</tr>
+</table>
+</div>
+<div id="printfooter" style="display:none">
+<table style="width: 100%;border:2px;border-top-style:solid;border-top-color:black;">
+<tr>
+<td style="width:1.5in;font-size:14px;border:2px;border-right-style:solid;border-right-color:black;">Date Printed:<br> {cd}</td><td style="width:8in;font-size:12px;">GE PROPRIETARY INFORMATION - Not to be used, disclosed to others or reproduced without the express written consent of GE. Technical data is considered ITAR and/or EAR controlled; transfer of this data to a Non-US Person, without USG authorization, is strictly prohibited.</td><td style="width:1.5in;font-size:14px;text-align:right;border:2px;border-left-style:solid;border-left-color:black;">{Page}</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

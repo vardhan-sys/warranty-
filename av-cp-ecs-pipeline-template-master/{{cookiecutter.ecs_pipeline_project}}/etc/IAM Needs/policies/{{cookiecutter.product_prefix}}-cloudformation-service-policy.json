@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CloudFormationChangeSetExecution",
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CreateChangeSet",
+                "cloudformation:DeleteChangeSet",
+                "cloudformation:ExecuteChangeSet"
+            ],
+            "Resource": [
+                "arn:aws:cloudformation:us-east-1:{{cookiecutter.aws_account_id}}:stack/{{cookiecutter.product_prefix}}*/*",
+                "arn:aws:cloudformation:us-east-1:aws:transform/Serverless-2016-10-31",
+                "arn:aws:cloudformation:us-east-1:aws:transform/Include",
+                "arn:aws:cloudformation:us-east-1:{{cookiecutter.aws_account_id}}:transform/StringTransformer"
+            ]
+        }
+    ]
+}

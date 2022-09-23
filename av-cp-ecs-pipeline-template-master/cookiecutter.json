@@ -1,0 +1,9 @@
+{
+  "product_prefix": "av-cp-techpubs",
+  "product_resource_identifier": "AvCpTechPubs",
+  "aws_account_id" : "048421397550",
+  "env_non-prod_prod" : "non-prod",
+  "ecs_pipeline_project": "av-cp-techpubs-ecs-cicd-template",
+  "project_kms_key_id": "ez123456-5757-5dc4-9a67-1234bedf62c2",
+  "project_creator": "212409106"
+}

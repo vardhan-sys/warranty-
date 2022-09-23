@@ -1,0 +1,551 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CI/CD infrastructure for av-cp-techpubs ECS Fargate Services.
+
+Parameters:
+  GitHubURL:
+    Description: HTTPS URL for GitHub Enterprise Repository (i.e. https://github.build.ge.com/Portnostics/sam-pipeline-sample)
+    Type: String
+    AllowedPattern: https:\/\/github.build.ge.com\/[a-zA-Z0-9-]*\/[a-zA-Z0-9-]*(?<!.git)
+    ConstraintDescription: Malformed input-Parameter GitHubURL must be a valid github url (i.e. https://github.build.ge.com/Portnostics/sam-pipeline-sample). Remember to omit '.git' from the end of your repository name.
+  # GithubCertS3ObjectKey:
+  #   Description: Object key for github cert
+  #   Type: String
+  #   Default: github-enterprise-public-cert.pem
+  GithubEnterpriseCodeStarConnectionArn:
+    Description: ARN of the CodeStar Connection setup between CodeStar Developer Console and Github Enterprise to establish a secure connection between AWS CodePipeline and Github Enterprise
+    Type: String
+    Default: arn:aws:codestar-connections:us-east-1:048421397550:connection/e63702c6-51a8-4fc1-aebd-079fd9e6d1fe
+  GithubMainBranchName:
+    Description: Name of the main branch in your Github Repository to trigger deployments on a merge into this branch.  Default is master
+    Type: String
+    Default: master
+  ResourceName:
+    Type: String
+    Description: Generic Resource Name to be used
+    Default: av-cp-techpubs
+  AlbRoute:
+    Description: Application load balancer path pattern for ECS service
+    Type: String
+    AllowedPattern: ^\/(?!.*(\/)\1)[a-zA-Z0-9-\/*]*
+    ConstraintDescription: Malformed input-Parameter AlbRoute. Application load balancers must start with "/". Optionally end in "/". No repeating "/". a-z, A-Z, 0-9 or "-" in between.
+  AlbPriority:
+    Description: Application load balancer path pattern priority
+    Type: Number
+  DevConditional:
+    Description: True if you want a dev environment (dev, qa, prod); False if you do not want a dev environment (qa, prod).
+    Type: String
+    AllowedValues:
+      - true
+      - false
+  QAConditional:
+    Description: True if you want a qa environment; False if you do not want a dev environment.
+    Type: String
+    AllowedValues:
+      - true
+      - false
+    Default: false
+  HealthCheckPath:
+    Description: This is the path in which the pipeline will use to confirm your codebase has spun up and has a healthy target group.
+    Type: String
+    AllowedPattern: ^\/(?!.*(\/)\1)[a-zA-Z0-9-\/]*
+    ConstraintDescription: Malformed input-Parameter Healthcheck. Please start your path with "/".
+
+
+Mappings:
+  EnvironmentMap:
+    dev:
+      vpc: vpc-8ea2d6eb
+      subnets:
+        - subnet-05bb4ce63da2cf665
+        - subnet-0469dc6252c75fdc1
+      securityGroups:
+        - sg-0d626c75def833986
+    qa:
+      vpc: vpc-8ea2d6eb
+      subnets:
+        - subnet-05bb4ce63da2cf665
+        - subnet-0469dc6252c75fdc1
+      securityGroups:
+        - sg-0a476f2127848a8ad
+
+Conditions:
+  CreateDevResources: !Equals [ !Ref DevConditional, true ]
+  CreateQAResources: !Equals [ !Ref QAConditional, true ]
+
+Resources:
+  ### Build Details ###
+  CodeBuildProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Select [4, !Split ["/", !Ref GitHubURL]]
+      Description: Codebuild project for ECS Fargate CI/CD pipeline.
+      ServiceRole: !Join ["", ["arn:aws:iam::", !Ref "AWS::AccountId", ":role/av-cp-techpubs-codebuild-service-role"]]
+      EncryptionKey: arn:aws:kms:us-east-1:048421397550:key/ef2c7853-4797-4fc4-9a67-9934bedf62c2
+      Source:
+        Type: GITHUB_ENTERPRISE
+        Location: !Ref GitHubURL
+        GitCloneDepth: 1
+        ReportBuildStatus: true
+        BuildSpec: cicd/buildspec/buildspec.yaml
+      Artifacts:
+        Type: NO_ARTIFACTS
+      VpcConfig:
+        SecurityGroupIds: !FindInMap [EnvironmentMap, qa, securityGroups]
+        Subnets: !FindInMap [EnvironmentMap, qa, subnets]
+        VpcId: !FindInMap [EnvironmentMap, qa, vpc]
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/standard:5.0
+        PrivilegedMode: true
+        EnvironmentVariables:
+          - Name: REPO_NAME
+            Value: !Select [4, !Split ["/", !Ref GitHubURL]]
+          - Name: BUCKET
+            Value: "av-cp-techpubs-ecs-cicd-nonprod"
+      TimeoutInMinutes: 10
+  WebHooks:
+    DependsOn: CodeBuildProject
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      logLevel: debug
+      ServiceToken: arn:aws:lambda:us-east-1:048421397550:function:sam-pipeline-webhook-setup
+      GitHubURL: !Ref GitHubURL
+  CodeDeployApplication:
+    Type: AWS::CodeDeploy::Application
+    Properties:
+      ApplicationName: !Select [4, !Split ["/", !Ref GitHubURL]]
+      ComputePlatform: ECS
+
+  ### Dev Environment ###
+  DevTargetGroup80:
+    Condition: CreateDevResources
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: !Join
+        - "-"
+        - -
+            'Fn::Transform':
+              - Name: 'StringTransformer'
+                Parameters:
+                  InputString: !Ref GitHubURL
+                  Operation: MaxLength
+                  Length: 26
+          - "dev1"
+      HealthCheckIntervalSeconds: 30
+      HealthCheckPath: !Ref HealthCheckPath
+      HealthCheckPort: traffic-port
+      HealthCheckProtocol: HTTP
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 5
+      UnhealthyThresholdCount: 5
+      Port: 80
+      TargetType: ip
+      Protocol: HTTP
+      VpcId: !FindInMap [EnvironmentMap, dev, vpc]
+  DevTargetGroup8080:
+    Condition: CreateDevResources
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: !Join
+        - "-"
+        - -
+            'Fn::Transform':
+              - Name: 'StringTransformer'
+                Parameters:
+                  InputString: !Ref GitHubURL
+                  Operation: MaxLength
+                  Length: 26
+          - "dev2"
+      HealthCheckIntervalSeconds: 30
+      HealthCheckPath: !Ref HealthCheckPath
+      HealthCheckPort: traffic-port
+      HealthCheckProtocol: HTTP
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 5
+      UnhealthyThresholdCount: 5
+      Port: 8080
+      TargetType: ip
+      Protocol: HTTP
+      VpcId: !FindInMap [EnvironmentMap, dev, vpc]
+  DevListenerRule80:
+    DependsOn: [DevTargetGroup80, DevTargetGroup8080]
+    Condition: CreateDevResources
+    Type: AWS::ElasticLoadBalancingV2::ListenerRule
+    Properties:
+      Actions:
+        - Type: forward
+          TargetGroupArn: !Ref DevTargetGroup80
+      Conditions:
+        - Field: path-pattern
+          Values:
+            - !Ref AlbRoute
+      ListenerArn: arn:aws:elasticloadbalancing:us-east-1:048421397550:listener/app/lb-portal-svcs-dev/83e06ebd1ed38ed6/bf4cbd80fce97978
+      Priority: !Ref AlbPriority
+  DevListenerRule8080:
+    DependsOn: [DevTargetGroup80, DevTargetGroup8080]
+    Condition: CreateDevResources
+    Type: AWS::ElasticLoadBalancingV2::ListenerRule
+    Properties:
+      Actions:
+        - Type: forward
+          TargetGroupArn: !Ref DevTargetGroup8080
+      Conditions:
+        - Field: path-pattern
+          Values:
+            - !Ref AlbRoute
+      ListenerArn: arn:aws:elasticloadbalancing:us-east-1:048421397550:listener/app/lb-portal-svcs-dev/83e06ebd1ed38ed6/d372d1f50b71528c
+      Priority: !Ref AlbPriority
+  DevEcsService:
+    DependsOn: DevListenerRule80
+    Condition: CreateDevResources
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster: Portnostics-dev
+      ServiceName: !Join [ "", [ !Select [4, !Split ["/", !Ref GitHubURL]], "-dev" ]]
+      TaskDefinition: !Sub arn:aws:ecs:us-east-1:${AWS::AccountId}:task-definition/Default-Portnostics-task-definition:2
+      DeploymentConfiguration:
+        DeploymentCircuitBreaker:
+          Enabled: true
+          Rollback: true
+      LaunchType: FARGATE
+      DesiredCount: 1
+      HealthCheckGracePeriodSeconds: 120
+      DeploymentController:
+        Type: CODE_DEPLOY
+      LoadBalancers:
+        - TargetGroupArn: !Ref DevTargetGroup80
+          ContainerPort: 3000
+          ContainerName: Default-Pipeline-Container
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          Subnets: !FindInMap [EnvironmentMap, dev, subnets]
+          SecurityGroups: !FindInMap [EnvironmentMap, dev, securityGroups]
+          AssignPublicIp: DISABLED
+      PlatformVersion: LATEST
+      SchedulingStrategy: REPLICA
+  DevCodeDeployDeploymentGroup:
+    DependsOn: [CodeDeployApplication, DevEcsService]
+    Condition: CreateDevResources
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      logLevel: debug
+      ServiceToken: !Sub arn:aws:lambda:us-east-1:${AWS::AccountId}:function:ecs-pipeline-deploymentgroup-setup-qa
+      applicationName: !Select [4, !Split ["/", !Ref GitHubURL]]
+      deploymentGroupName: dev-deployment
+      primaryPort: 80
+      testPort: 8080
+      serviceRoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/av-cp-techpubs-codedeploy-service-role
+      cluster: Portnostics-dev
+      serviceName: !Join [ "", [ !Select [4, !Split ["/", !Ref GitHubURL]], "-dev" ]]
+      targetGroupName1: !GetAtt [DevTargetGroup80, TargetGroupName]
+      targetGroupName2: !GetAtt [DevTargetGroup8080, TargetGroupName]
+      loadBalancerName: lb-portal-svcs-dev
+  DevEcsAutoScalingTarget:
+    DependsOn: DevEcsService
+    Type: AWS::ApplicationAutoScaling::ScalableTarget
+    Properties:
+      MinCapacity: 1
+      MaxCapacity: 3
+      ResourceId: !Join [ "", [ "service/Portnostics-dev/", !Ref ResourceName, "-dev" ]]
+      ScalableDimension: ecs:service:DesiredCount
+      ServiceNamespace: ecs
+      RoleARN: arn:aws:iam::048421397550:role/av-cp-techpubs-cloudformation
+  DevEcsServiceCPUScalingPolicy:
+    DependsOn: DevEcsService
+    Type: AWS::ApplicationAutoScaling::ScalingPolicy
+    Properties:
+      PolicyName: !Join [ "", [ !Ref ResourceName, "-dev-cpu" ]]
+      ScalingTargetId: !Ref DevEcsAutoScalingTarget
+      PolicyType: TargetTrackingScaling
+      TargetTrackingScalingPolicyConfiguration:
+        TargetValue: 80
+        ScaleInCooldown: 60
+        ScaleOutCooldown: 60
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ECSServiceAverageCPUUtilization
+
+  # ### QA Environment ###
+  QATargetGroup80:
+    Condition: CreateQAResources
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: !Join
+        - "-"
+        - -
+            'Fn::Transform':
+              - Name: 'StringTransformer'
+                Parameters:
+                  InputString: !Ref GitHubURL
+                  Operation: MaxLength
+                  Length: 26
+          - "qa1"
+      HealthCheckIntervalSeconds: 30
+      HealthCheckPath: !Ref HealthCheckPath
+      HealthCheckPort: traffic-port
+      HealthCheckProtocol: HTTP
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 5
+      UnhealthyThresholdCount: 5
+      Port: 80
+      TargetType: ip
+      Protocol: HTTP
+      VpcId: !FindInMap [EnvironmentMap, qa, vpc]
+  QATargetGroup8080:
+    Condition: CreateQAResources
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: !Join
+        - "-"
+        - -
+            'Fn::Transform':
+              - Name: 'StringTransformer'
+                Parameters:
+                  InputString: !Ref GitHubURL
+                  Operation: MaxLength
+                  Length: 26
+          - "qa2"
+      HealthCheckIntervalSeconds: 30
+      HealthCheckPath: !Ref HealthCheckPath
+      HealthCheckPort: traffic-port
+      HealthCheckProtocol: HTTP
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 5
+      UnhealthyThresholdCount: 5
+      Port: 8080
+      TargetType: ip
+      Protocol: HTTP
+      VpcId: !FindInMap [EnvironmentMap, qa, vpc]
+  QAListenerRule80:
+    Condition: CreateQAResources
+    Type: AWS::ElasticLoadBalancingV2::ListenerRule
+    Properties:
+      Actions:
+        - Type: forward
+          TargetGroupArn: !Ref QATargetGroup80
+      Conditions:
+        - Field: path-pattern
+          Values:
+            - !Ref AlbRoute
+      ListenerArn: arn:aws:elasticloadbalancing:us-east-1:048421397550:listener/app/lb-portal-svcs-qa/21a738e1a7627283/0833067f91564ed4
+      Priority: !Ref AlbPriority
+  QAListenerRule8080:
+    Condition: CreateQAResources
+    Type: AWS::ElasticLoadBalancingV2::ListenerRule
+    Properties:
+      Actions:
+        - Type: forward
+          TargetGroupArn: !Ref QATargetGroup8080
+      Conditions:
+        - Field: path-pattern
+          Values:
+            - !Ref AlbRoute
+      ListenerArn: arn:aws:elasticloadbalancing:us-east-1:048421397550:listener/app/lb-portal-svcs-qa/21a738e1a7627283/a921d2c7efecaeba
+      Priority: !Ref AlbPriority
+  QAEcsService:
+    DependsOn: QAListenerRule80
+    Condition: CreateQAResources
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster: Portnostics-qa
+      ServiceName: !Join [ "", [ !Select [4, !Split ["/", !Ref GitHubURL]], "-qa" ]]
+      TaskDefinition: !Sub arn:aws:ecs:us-east-1:${AWS::AccountId}:task-definition/Default-Portnostics-task-definition:2
+      LaunchType: FARGATE
+      DesiredCount: 1
+      HealthCheckGracePeriodSeconds: 120
+      DeploymentController:
+        Type: CODE_DEPLOY
+      LoadBalancers:
+        - TargetGroupArn: !Ref QATargetGroup80
+          ContainerPort: 3000
+          ContainerName: Default-Pipeline-Container
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          Subnets: !FindInMap [EnvironmentMap, qa, subnets]
+          SecurityGroups: !FindInMap [EnvironmentMap, qa, securityGroups]
+          AssignPublicIp: DISABLED
+      PlatformVersion: LATEST
+      SchedulingStrategy: REPLICA
+  QACodeDeployDeploymentGroup:
+    Condition: CreateQAResources
+    DependsOn: [CodeDeployApplication, QAEcsService]
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      logLevel: debug
+      ServiceToken: !Sub arn:aws:lambda:us-east-1:${AWS::AccountId}:function:ecs-pipeline-deploymentgroup-setup-qa
+      applicationName: !Select [4, !Split ["/", !Ref GitHubURL]]
+      deploymentGroupName: qa-deployment
+      primaryPort: 80
+      testPort: 8080
+      serviceRoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/av-cp-techpubs-codedeploy-service-role
+      cluster: Portnostics-qa
+      serviceName: !Join [ "", [ !Select [4, !Split ["/", !Ref GitHubURL]], "-qa" ]]
+      targetGroupName1: !GetAtt [QATargetGroup80, TargetGroupName]
+      targetGroupName2: !GetAtt [QATargetGroup8080, TargetGroupName]
+      loadBalancerName: lb-portal-svcs-qa
+  QAEcsAutoScalingTarget:
+    Condition: CreateQAResources
+    DependsOn: QAEcsService
+    Type: AWS::ApplicationAutoScaling::ScalableTarget
+    Properties:
+      MinCapacity: 1
+      MaxCapacity: 3
+      ResourceId: !Join [ "", [ "service/Portnostics-qa/", !Ref ResourceName, "-qa" ]]
+      ScalableDimension: ecs:service:DesiredCount
+      ServiceNamespace: ecs
+      RoleARN: arn:aws:iam::048421397550:role/av-cp-techpubs-cloudformation
+  QAEcsServiceCPUScalingPolicy:
+    Condition: CreateQAResources
+    DependsOn: QAEcsService
+    Type: AWS::ApplicationAutoScaling::ScalingPolicy
+    Properties:
+      PolicyName: !Join [ "", [ !Ref ResourceName, "-qa-cpu" ]]
+      ScalingTargetId: !Ref QAEcsAutoScalingTarget
+      PolicyType: TargetTrackingScaling
+      TargetTrackingScalingPolicyConfiguration:
+        TargetValue: 80
+        ScaleInCooldown: 60
+        ScaleOutCooldown: 60
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ECSServiceAverageCPUUtilization
+  QAEcsServiceMemScalingPolicy:
+    Condition: CreateQAResources
+    DependsOn: QAEcsService
+    Type: AWS::ApplicationAutoScaling::ScalingPolicy
+    Properties:
+      PolicyName: !Join [ "", [ !Ref ResourceName, "-qa-mem" ]]
+      ScalingTargetId: !Ref QAEcsAutoScalingTarget
+      PolicyType: TargetTrackingScaling
+      TargetTrackingScalingPolicyConfiguration:
+        TargetValue: 70
+        ScaleInCooldown: 60
+        ScaleOutCooldown: 60
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ECSServiceAverageMemoryUtilization
+
+  ### Pipeline ###
+  CodePipeline:
+    Type: AWS::CodePipeline::Pipeline
+    Properties:
+      Name: !Select [4, !Split ["/", !Ref GitHubURL]]
+      RestartExecutionOnUpdate: false
+      RoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/av-cp-techpubs-codepipeline-service-role
+      Stages:
+        -
+          Name: Source
+          Actions:
+            - Name: Source
+              Namespace: SourceVariables
+              ActionTypeId:
+                Category: Source
+                Owner: AWS
+                Version: '1'
+                Provider: CodeStarSourceConnection
+              Configuration:
+                ConnectionArn: !Ref GithubEnterpriseCodeStarConnectionArn
+                FullRepositoryId: !Join ["/", [!Select [3, !Split ["/", !Ref GitHubURL]], !Select [4, !Split ["/", !Ref GitHubURL]]]]
+                BranchName: !Ref GithubMainBranchName
+                OutputArtifactFormat: CODE_ZIP
+                DetectChanges: true
+              OutputArtifacts:
+                - Name: SourceArtifact
+              RunOrder: 1
+        - Name: Artifact-Build
+          Actions:
+              - Name: Build-Source
+                Namespace: BuildVariables
+                ActionTypeId:
+                  Category: Build
+                  Owner: AWS
+                  Provider: CodeBuild
+                  Version: '1'
+                Configuration:
+                  ProjectName: !Ref CodeBuildProject
+                  PrimarySource: SourceArtifact
+                  # TODO: Known Issue with CodePipeline that if fails passing env variables if Commit Message is multi line, like on a Merge. Talk to AWS about getting this resolved
+                  EnvironmentVariables: '[{"name":"GIT_COMMIT_DATE","value":"#{SourceVariables.AuthorDate}","type":"PLAINTEXT"},{"name":"GIT_BRANCH_NAME","value":"#{SourceVariables.BranchName}","type":"PLAINTEXT"},{"name":"GIT_COMMIT_ID","value":"#{SourceVariables.CommitId}","type":"PLAINTEXT"},{"name":"GIT_FULL_REPO_NAME","value":"#{SourceVariables.FullRepositoryName}","type":"PLAINTEXT"},{"name":"CODESTAR_CONNECTION_ARN","value":"#{SourceVariables.ConnectionArn}","type":"PLAINTEXT"}]'
+                InputArtifacts:
+                  - Name: SourceArtifact
+                OutputArtifacts:
+                  - Name: BuildArtifact
+                RunOrder: 1
+        -
+          Name: Dev-Deploy
+          Actions:
+            -
+              Name: Dev-Deploy
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Version: '1'
+                Provider: CodeDeployToECS
+              Configuration:
+                ApplicationName: !Ref CodeDeployApplication
+                DeploymentGroupName: dev-deployment
+                TaskDefinitionTemplateArtifact: BuildArtifact
+                AppSpecTemplateArtifact: BuildArtifact
+                TaskDefinitionTemplatePath: taskDefinitions/dev-ecs-task-def.json
+                AppSpecTemplatePath: cicd/appspec/appspec-dev.yaml
+                Image1ArtifactName: BuildArtifact
+                Image1ContainerName: IMAGE
+              InputArtifacts:
+                - Name: BuildArtifact
+            -
+              Name: Dev-Sign-Off
+              ActionTypeId:
+                Category: Approval
+                Owner: AWS
+                Version: '1'
+                Provider: Manual
+              RunOrder: 2
+        -
+          Name: QA-Deploy
+          Actions:
+            -
+              Name: QA-Deploy
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Version: '1'
+                Provider: CodeDeployToECS
+              Configuration:
+                ApplicationName: !Ref CodeDeployApplication
+                DeploymentGroupName: qa-deployment
+                TaskDefinitionTemplateArtifact: BuildArtifact
+                AppSpecTemplateArtifact: BuildArtifact
+                TaskDefinitionTemplatePath: taskDefinitions/qa-ecs-task-def.json
+                AppSpecTemplatePath: cicd/appspec/appspec-qa.yaml
+                Image1ArtifactName: BuildArtifact
+                Image1ContainerName: IMAGE
+              InputArtifacts:
+                - Name: BuildArtifact
+            -
+              Name: QA-Sign-Off
+              ActionTypeId:
+                Category: Approval
+                Owner: AWS
+                Version: '1'
+                Provider: Manual
+              RunOrder: 2
+        -
+          Name: Prod-Deployment-Prework
+          Actions:
+            - Name: Move-Artifact-Prod-Directory
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: S3
+                Version: '1'
+              Configuration:
+                BucketName: av-cp-techpubs-ecs-cicd-nonprod
+                ObjectKey: !Join ["", ["", !Select [4, !Split ["/", !Ref GitHubURL]], "/prod/source.zip"]]
+                Extract: false
+              InputArtifacts:
+                - Name: BuildArtifact
+              RunOrder: 1
+      ArtifactStore:
+        Location: av-cp-techpubs-ecs-cicd-nonprod
+        Type: S3
+        EncryptionKey:
+          Id: arn:aws:kms:us-east-1:048421397550:key/ef2c7853-4797-4fc4-9a67-9934bedf62c2
+          Type: KMS

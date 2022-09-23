@@ -1,0 +1,30 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EcsPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "ecs:CreateService",
+                "ecs:DeleteService",
+                "ecs:UpdateService",
+                "ecs:UpdateServicePrimaryTaskSet"
+            ],
+            "Resource":"arn:aws:ecs:us-east-1:{{cookiecutter.aws_account_id}}:service/Portnostics-*/{{cookiecutter.product_prefix}}*"
+        },
+        {
+            "Sid": "ECSFargatePermissionsTaskSet",
+            "Effect": "Allow",
+            "Action": [
+                "ecs:CreateTaskSet",
+                "ecs:DeleteTaskSet"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ArnEquals": {
+                    "ecs:service": "arn:aws:ecs:us-east-1:{{cookiecutter.aws_account_id}}:service/Portnostics-*/{{cookiecutter.product_prefix}}*"
+                }
+            }
+        }
+    ]
+}

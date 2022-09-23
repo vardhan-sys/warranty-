@@ -1,0 +1,14 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "GlobalECSManagement",
+            "Effect": "Allow",
+            "Action": [
+                "ecs:DeregisterTaskDefinition",
+                "ecs:RegisterTaskDefinition"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

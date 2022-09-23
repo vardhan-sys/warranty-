@@ -1,0 +1,100 @@
+{
+  "family": "av-cp-techpubs-prod",
+  "taskRoleArn": "arn:aws:iam::850200683887:role/av-cp-techpubs-ecs-task-role",
+  "executionRoleArn": "arn:aws:iam::850200683887:role/av-cp-techpubs-ecs-task-execution-role",
+  "networkMode": "awsvpc",
+  "cpu": "4096",
+  "memory": "8192",
+  "essential": true,
+  "requiresCompatibilities": ["FARGATE"],
+  "containerDefinitions": [
+    {
+      "name": "av-cp-techpubs-container",
+      "image": "<IMAGE>",
+      "cpu": 4096,
+      "memory": 8192,
+      "repositoryCredentials": {
+        "credentialsParameter": "arn:aws:secretsmanager:us-east-1:850200683887:secret:av-docker-artifactory-QoY5dL"
+      },
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "secrets": [
+        {
+          "name": "NEW_RELIC_LICENSE_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:850200683887:parameter/infra/newrelic/license"
+        },
+        {
+          "name": "SPRING_DATA_MONGODB_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:850200683887:secret:av-cp-techpubs/prod/db-properties-moy4WD:SPRING.DATA.MONGODB.PASSWORD::"
+        },
+        {
+          "name": "SPRING_ORA_TPS_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:850200683887:secret:av-cp-techpubs/prod/db-properties-moy4WD:SPRING.ORA_TPS.PASSWORD::"
+        },
+        {
+          "name": "TECHLIB_DATASOURCE_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:850200683887:secret:av-cp-techpubs/prod/db-properties-moy4WD:TECHLIB.DATASOURCE.PASSWORD::"
+        },
+        {
+          "name": "CWCADMIN_DATASOURCE_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:850200683887:secret:av-cp-techpubs/prod/db-properties-moy4WD:CWCADMIN.DATASOURCE.PASSWORD::"
+        },
+        {
+          "name": "ENCRYPTIONALGO",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:850200683887:secret:av-cp-techpubs/prod/service-encryption-Y23nLE:ENCRYPTIONALGO::"
+        },
+        {
+          "name": "ENCRYPTIONPWD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:850200683887:secret:av-cp-techpubs/prod/service-encryption-Y23nLE:ENCRYPTIONPWD::"
+        },
+        {
+          "name": "jasypt.encryptor.algorithm",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:850200683887:secret:av-cp-techpubs/prod/service-encryption-Y23nLE:ENCRYPTIONALGO::"
+        },
+        {
+          "name": "jasypt.encryptor.password",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:850200683887:secret:av-cp-techpubs/prod/service-encryption-Y23nLE:ENCRYPTIONPWD::"
+        }
+      ],
+      "environment": [
+        {
+          "name": "SPRING_PROFILES_ACTIVE",
+          "value": "prod"
+        },
+        {
+          "name": "NEW_RELIC_APP_NAME",
+          "value": "av-cp-techpubs-prod"
+        },
+        {
+          "name": "SPRING_CLOUD_CONFIG_URI",
+          "value": "http://internal-av-cp-techpubs-conf-alb-prod-667653194.us-east-1.elb.amazonaws.com"
+        },
+        {
+          "name": "SPRING_CONFIG_IMPORT",
+          "value": "optional:configserver:http://internal-av-cp-techpubs-conf-alb-prod-667653194.us-east-1.elb.amazonaws.com"
+        },
+        {
+          "name": "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE",
+          "value": "*"
+        },
+        {
+          "name": "JAVA_OPTS",
+          "value": "-Xmx4096m -Xms2048m"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/av-cp-techpubs-prod",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "av-cp-techpubs-prod",
+          "awslogs-create-group": "true"
+        }
+      }
+    }
+  ]
+}

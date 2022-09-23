@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mygea-download>
+  <download type="source" doctype="manual">
+    <manual title="Engine Shop Manual" docnbr="gek112063"/>
+    <manual title="EIPC" docnbr="gek112064"/>
+	<manual title="SDS" docnbr="gek112061"/>
+	<manual title="LMM" docnbr="gek112062"/>
+	<manual title="ITEM" docnbr="gek112065"/>
+  </download>
+  <download type="source" doctype="sb">
+    <manual title="All" docnbr="sbs"/>
+  </download>
+  <download type="source" doctype="ic">
+    <manual title="All" docnbr="all"/>
+    <manual title="Engine Shop Manual" docnbr="gek112063"/>
+    <manual title="EIPC" docnbr="gek112064"/>
+	<manual title="SDS" docnbr="gek112061"/>
+	<manual title="LMM" docnbr="gek112062"/>
+	<manual title="ITEM" docnbr="gek112065"/>
+  </download>
+  <download type="dvd" doctype="sb">
+    <manual title="All" docnbr="sbs"/>
+  </download>
+
+  <download type="dvd" doctype="ic">
+    <manual title="All" docnbr="all"/>
+    <manual title="Engine Shop Manual" docnbr="gek112063"/>
+    <manual title="EIPC" docnbr="gek112064"/>
+	<manual title="SDS" docnbr="gek112061"/>
+	<manual title="LMM" docnbr="gek112062"/>
+	<manual title="ITEM" docnbr="gek112065"/>
+  </download>
+</mygea-download>

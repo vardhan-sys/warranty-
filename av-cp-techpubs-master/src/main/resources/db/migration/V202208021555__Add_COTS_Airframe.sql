@@ -1,0 +1,1 @@
+INSERT INTO airframe_lookup (airframe) VALUES ('COTS');

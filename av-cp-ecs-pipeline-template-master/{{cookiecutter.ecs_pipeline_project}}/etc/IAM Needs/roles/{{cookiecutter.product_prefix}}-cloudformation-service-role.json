@@ -1,0 +1,24 @@
+{
+    "policies": [
+        "{{cookiecutter.product_prefix}}-autoscaling-service-policy",
+        "{{cookiecutter.product_prefix}}-cicd-service-policy",
+        "{{cookiecutter.product_prefix}}-cloudformation-service-policy",
+        "{{cookiecutter.product_prefix}}-config-service-policy",
+        "{{cookiecutter.product_prefix}}-ecs-service-policy",
+        "{{cookiecutter.product_prefix}}-loadbalancer-cf-policy",
+        "{{cookiecutter.product_prefix}}-log-service-policy",
+        "{{cookiecutter.product_prefix}}-storage-owner-policy",
+        "{{cookiecutter.product_prefix}}-sns-owner-policy",
+        "{{cookiecutter.product_prefix}}-ssm-service-policy",
+        "{{cookiecutter.product_prefix}}-passrole-policy",
+        "av-infra-readonlyaccess-policy",
+        "awsiam-sauce",
+        "awsiam-sauce-the-sequel"
+    ],
+    "trustPolicy": "cloudformation-trust-policy",
+    "tags": {
+        "author": "{{cookiecutter.project_creator}}",
+        "env": "{{cookiecutter.env_non-prod_prod}}"
+    },
+    "description": "Service/functional role that console roles within {{cookiecutter.product_prefix}} dev team will pass to AWS Cloudformation in order to create the codebuild projects and other resources."
+}

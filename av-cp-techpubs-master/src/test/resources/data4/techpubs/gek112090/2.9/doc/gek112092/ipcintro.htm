@@ -1,0 +1,654 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EIPC INTRODUCTION</title>
+<script>
+	function swapImage(id, isoImage)
+	{
+	strHTML = "<object id=objid_"+ id.toLowerCase() +" height='653' width='668' type='application/x-isoview'></object>";
+	arr = (document.all.tags("div"));
+	for (i=0;i<arr.length;i++){
+		divObj=arr[i];
+		if(divObj.id==id){
+			img_div = arr[i];
+		}
+	}
+	img_div.innerHTML = strHTML;
+	iso_obj = document.getElementById("objid_"+ id);
+	iso_obj.OpenFile("graphics/" + isoImage,"");
+	iso_obj.Iso7ConfigTools(1, 1+16777216+2+4+32+64+256+512+1024+2048+4096, 8+128+131072, 1, false, false);
+	}
+  </script>
+<link type="text/css" href="/css/geae-eipc.css" rel="stylesheet">
+</head>
+<body>
+<div id="printheader" style="display:none">
+<table style="width: 100%;border:2px;border-bottom-style:dashed;border-bottom-color:black;">
+<tr style="font-size:12px;">
+<td style="width:20px;" align="left"><img width="20px" height="20px" src="logo.png" alt="logo"></td><td style="width:5in;font-weight:bold;" align="left">CF34-10A (GEK112092) ENGINE ILLUSTRATED PARTS CATALOG</td><td style="width:1.5in;" align="left">Revision No. 11</td><td style="width:1.5in;" align="right">Dated 05/31/2015</td>
+</tr>
+<tr>
+<td colspan="4" style="font-size:14px;font-weight:bold;text-indent:0.25in;"></td>
+</tr>
+<tr>
+<td colspan="4" style="font-size:14px;font-weight:bold;text-indent:0.25in;">EIPC INTRODUCTION</td>
+</tr>
+</table>
+</div>
+<div id="pageheader" style="width: 100%;" class="hideFromPrint">
+<table style="width: 100%;">
+<tr style="font-size:16px;">
+<td align="left"><img width="20px" height="20px" src="logo.png" alt="logo"></td><td style="font-weight:bold;" align="left">CF34-10A ENGINE ILLUSTRATED PARTS CATALOG</td><td align="right">Dated: 05/31/2015</td>
+</tr>
+<tr>
+<td></td><td colspan="2" style="font-size:16px;font-weight:bold;"></td>
+</tr>
+<tr>
+<td></td><td colspan="2" style="font-size:16px;font-weight:bold;">EIPC INTRODUCTION</td>
+</tr>
+<tr>
+<td style="height:14px;"></td>
+</tr>
+</table>
+</div>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="left" width="4%">1.</td><td valign="top" align="left" width="94%">General Information.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">A.</td><td valign="top" align="left" width="90%">Contents</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="90%">This publication is an Illustrated Parts Catalog that lists and illustrates assemblies, subassemblies, and detailed
+parts of the CF34-10A engine.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="90%">THE INFORMATION CONTAINED IN THIS DOCUMENT IS GE PROPRIETARY
+INFORMATION AND IS DISCLOSED IN CONFIDENCE. IT IS THE PROPERTY OF
+GE AND SHALL NOT BE USED, DISCLOSED TO OTHERS OR REPRODUCED WITHOUT
+THE EXPRESS WRITTEN CONSENT OF GE, INCLUDING, BUT WITHOUT LIMITATION,
+IT IS NOT TO BE USED IN THE CREATION, MANUFACTURE, DEVELOPMENT, OR
+DERIVATION OF ANY REPAIRS, MODIFICATIONS, SPARE PARTS, DESIGN, OR
+CONFIGURATION CHANGES OR TO OBTAIN FAA OR ANY OTHER GOVERNMENT OR
+REGULATORY APPROVAL TO DO SO. IF CONSENT IS GIVEN FOR REPRODUCTION
+IN WHOLE OR IN PART, THIS NOTICE AND THE NOTICE SET FORTH ON EACH
+PAGE OF THIS DOCUMENT SHALL APPEAR IN ANY SUCH REPRODUCTION IN WHOLE
+OR IN PART.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td class="cautionlabel" valign="top" align="left" width="6%">CAUTION:</td><td class="cautionbody" valign="top" align="left" width="84%"></td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="6%"></td><td class="cautionbody" valign="top" align="left" width="84%">ALL TECHNICAL DOCUMENTATION AND INFORMATION CONTAINED HEREIN,
+WITH RESPECT TO ASSEMBLY AND DISASSEMBLY, CLEANING, INSPECTION METHODS
+AND LIMITS, REPAIR METHODS AND LIMITS, OPERATIONAL LIMITS, LIFE LIMITS
+AND THE LIKE, HAVE BEEN DEVELOPED AND APPROVED FOR USE WITH ENGINES
+AND PARTS THAT HAVE BEEN MANUFACTURED AND/OR APPROVED BY GE AND THAT
+HAVE BEEN MAINTAINED IN ACCORDANCE WITH GE TECHNICAL DOCUMENTATION
+AND RECOMMENDATIONS. GE HAS NO CONTRACTUAL OR LEGAL OBLIGATION FOR,
+NOR KNOWLEDGE OF, NON-GE-APPROVED PARTS AND REPAIRS. ACCORDINGLY,
+THIS DOCUMENT IS NOT INTENDED TO APPLY TO NON-GE-APPROVED PARTS AND
+REPAIRS.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="6%"></td><td class="cautionbody" valign="top" align="left" width="84%">IF ANY DOUBT EXISTS ON THE FLIGHTWORTHINESS OF A PART, THE GENERAL
+ELECTRIC COMPANY MUST BE CONTACTED FOR A RECOMMENDED COURSE OF ACTION.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">B.</td><td valign="top" align="left" width="90%">Purpose</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="90%">The Illustrated Parts Catalog is intended for use in requisitioning,
+issuing, and identifying parts, and illustrating assembly relationships.
+It is not to be taken as authority for assembly or disassembly procedures.
+Overhaul or repair should be done only by authorized personnel, using
+applicable technical publications.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="90%">The catalog is not intended to cover every possible event
+in connection with ordering parts, or with installation, operation,
+or maintenance. If further information is desired, or if particular
+problems arise that are not sufficiently covered for the purchaser's
+purpose, refer the matter to the General Electric company.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="90%">Arrangement.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="90%">The Illustrated Parts Catalog is divided into the following
+three sections:</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:0;margin-bottom:0;" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="1%">&bull;</td><td valign="top" align="left" width="89%">Introduction</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:0;margin-bottom:0;" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="1%">&bull;</td><td valign="top" align="left" width="89%">Numerical Index</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:0;margin-bottom:0;" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="1%">&bull;</td><td valign="top" align="left" width="89%">Detailed Parts List</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="left" width="4%">2.</td><td valign="top" align="left" width="94%">Introduction</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="94%">The Introduction provides an explanation of the overall purpose
+and scope of the Illustrated Parts Catalog. Information is provided
+on the use of the catalog, the standard numbering system, and the
+GE Aviation (GEA) part numbering system.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="left" width="4%">3.</td><td valign="top" align="left" width="94%">Numerical Index</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">A.</td><td valign="top" align="left" width="90%">Contents.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="90%">The index is a complete list of all parts included in the detailed
+parts list. For ease in locating part numbers, the Numerical Index
+is divided into two lists:</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(1)</td><td valign="top" align="left" width="86%">List of alpha part numbers that contains all part numbers that
+start with a letter (A through Z). This list begins on ALPHA page
+1.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(2)</td><td valign="top" align="left" width="86%">List of numeric part numbers that contains all part numbers
+that start with a number (0 through 9). This list begins on NUMERIC
+page 1.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(3)</td><td valign="top" align="left" width="86%">Both lists include engine manufacturer part numbers and vendor
+part numbers, where applicable, for cross-referencing.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">B.</td><td valign="top" align="left" width="90%">Arrangement of Columns.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(1)</td><td valign="top" align="left" width="86%">PART NUMBER Column.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(a)</td><td valign="top" align="left" width="82%">Part numbers are listed in alphanumeric order.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(b)</td><td valign="top" align="left" width="82%">A part listed as NO NUMBER in the part number column of the
+detailed parts list is listed alphabetically in the Numerical Index
+by the principal noun, or noun phrase, of its nomenclature.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(2)</td><td valign="top" align="left" width="86%">AIRLINE PART NO. Column. This column is reserved for use by
+the customer.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(3)</td><td valign="top" align="left" width="86%">CH-SECT-UNIT-FIG ITEM Column. This column identifies the location
+of part numbers in the Detailed Parts List by Chapter-Section-Unit-Figure
+and Item Number.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(4)</td><td valign="top" align="left" width="86%">TTL REQ Column. This column:</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(a)</td><td valign="top" align="left" width="82%">Indicates total quantity of parts for the figure and item number
+listed.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(b)</td><td valign="top" align="left" width="82%">Identifies disposition of the part by use of abbreviations ALT,
+AR, and RF. Abbreviations are defined in paragraph 6 of the INTRODUCTION.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">C.</td><td valign="top" align="left" width="90%">Use of Symbols and Suffixes.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(1)</td><td valign="top" align="left" width="86%">A dash (-) is used in the CH-SECT-UNIT-FIG ITEM column of the
+NUMERICAL INDEX to indicate that a part is not illustrated in the
+figure.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(2)</td><td valign="top" align="left" width="86%">Alpha suffixes are assigned to item numbers consecutively (A
+through Z) to indicate alternate parts or to indicate parts that supersede
+or replace former parts.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="left" width="4%">4.</td><td valign="top" align="left" width="94%">Detailed Parts List.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">A.</td><td valign="top" align="left" width="90%">Contents.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(1)</td><td valign="top" align="left" width="86%">Illustrations. The detailed parts list contains illustrations
+of parts and assemblies.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(2)</td><td valign="top" align="left" width="86%">Parts List. The parts list provides a breakdown of parts required
+for maintaining the engine.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">B.</td><td valign="top" align="left" width="90%">Standard Numbering System.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(1)</td><td valign="top" align="left" width="86%">The numbering system used in the detailed parts list is based on ATA Specification. A standard number is composed of three
+elements: Chapter, Section, and Unit.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">C.</td><td valign="top" align="left" width="90%">Arrangement of columns.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(1)</td><td valign="top" align="left" width="86%">FIG. ITEM Column.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="86%">Assemblies or parts not illustrated
+will be identified by a dash (-) preceding the item number (Example:
+-210). Letters A through Z, when used as a suffix after the item number,
+denote an alternate part, or a part that supersedes or replaces former
+parts. (Example: -210A).</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(2)</td><td valign="top" align="left" width="86%">PART NUMBER Column.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="86%">Numbers listed in this column are either GEAE, Government Standard,
+Industry Standard, or Vendor Part Numbers. Some parts may have no
+part number assigned; these parts, listed as NO NUMBER in the PART
+NUMBER column, are not procurable. Parts listed as NHA in the PART NUMBER column have a link to the next higher assembly where the next higher assembly part number is identified. The GEAE system of numbering parts
+reflects certain drawing information; for example:</td>
+</tr>
+</table>
+<a viewertext="Figure 1" name="g00-00-00-03"></a>
+<div class="sheetdiv">
+<a viewertext="Figure 1 (Sheet 1)" name="fintro1"></a>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="center" width="98%">
+<div id="ct78intro1">
+<img src="graphics/ct78intro1.tif.png" onclick="swapImage('ct78intro1','ct78intro1.tif')"></div>
+</td>
+</tr>
+<tr valign="TOP">
+<td width="2%"></td><td class="sheettitle" valign="top" align="center" width="98%">Figure 1 </td>
+</tr>
+</table>
+</div>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(a)</td><td valign="top" align="left" width="82%">Generally, a basic part number consists of four digits, a letter,
+and two more digits. This basic part number identifies the engineering
+drawing.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(b)</td><td valign="top" align="left" width="82%">The letter G, following the basic part number, stands for GROUP.
+It means that the part is an assembly. The letter P, following the
+basic part number, stands for PART and indicates that the part has
+no further breakdown.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(c)</td><td valign="top" align="left" width="82%">The last two numbers identify one part from other parts that
+have the same basic drawing number.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td class="notelabel" valign="top" align="left" width="4%">NOTE:</td><td class="notebody" valign="top" align="left" width="86%">When ordering a part, use the part number listed in the Part
+Number column. On the order, give a complete description of the part
+as listed in the Nomenclature column.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(3)</td><td valign="top" align="left" width="86%">NOMENCLATURE Column:</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="86%">This column includes appropriate nomenclature and descriptive
+information necessary to adequately describe the part. Wording is
+arranged so that the identifying noun, noun phrase, or key word is
+listed first. Entries are indented to indicate assembly relationship.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="86%">Parts that are listed in the Nomenclature column and that require
+special attention are listed below:</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(a)</td><td valign="top" align="left" width="82%">Matched Parts. Two or more parts that would normally be
+procured as separate items that have been matched to provide a specific
+functional requirement and for which replacement as a matched set
+or pair is essential, the term MATCHED PART ORDER NHA is stated in
+the Nomenclature column. This means that although part numbers and
+descriptions of the component parts are listed, it will be necessary
+to replace the next higher assembly.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(b)</td><td valign="top" align="left" width="82%">Spare Part Drawing. Parts or assemblies that differ from production
+parts and that are used to support engines in the field, are listed
+as (SPD) in the Nomenclature column.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(c)</td><td valign="top" align="left" width="82%">Non provisioned Parts. Parts that are not provisioned as spare
+parts are indicated by NP in the Nomenclature column. The parts are
+listed in the Illustrated Parts Catalog only to clarify assembly
+relationship.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(d)</td><td valign="top" align="left" width="82%">SIN (Significant Item Number) from the engineering parts list
+A SIN represents a unique parts location on the engine. SINs are organized by engine module
+and section. The SIN can be helpful when contacting General Electric for support.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(4)</td><td valign="top" align="left" width="86%">Model Apply Coding</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(a)</td><td valign="top" align="left" width="82%">The codes are listed to indicate that specific parts or assemblies
+must be used on specific engine models. When no Model Apply line appears,
+the part or assembly is used on all engine models.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="82%">The model apply code is shown in the Nomenclature column of
+the detailed parts list.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td style="text-decoration:underline" valign="top" align="left" width="4%">1</td><td valign="top" align="left" width="78%">When all information for a CSN applies to all models, no model
+apply code is shown.</td>
+</tr>
+</table>
+<a viewertext="Figure 2" name="g00-00-00-04"></a>
+<div class="sheetdiv">
+<a viewertext="Figure 2 (Sheet 1)" name="fmodelcode1"></a>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="center" width="98%">
+<div id="ct78modcode1">
+<img src="graphics/ct78modcode1.tif.png" onclick="swapImage('ct78modcode1','ct78modcode1.tif')"></div>
+</td>
+</tr>
+<tr valign="TOP">
+<td width="2%"></td><td class="sheettitle" valign="top" align="center" width="98%">Figure 2 </td>
+</tr>
+</table>
+</div>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td style="text-decoration:underline" valign="top" align="left" width="4%">2</td><td valign="top" align="left" width="78%">When all information for a CSN applies to a specific model(s),
+the model apply code is at the first indenture on the last line of
+the nomenclature column.</td>
+</tr>
+</table>
+<a viewertext="Figure 3" name="g00-00-00-05"></a>
+<div class="sheetdiv">
+<a viewertext="Figure 3 (Sheet 1)" name="fmodelcode2"></a>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="center" width="98%">
+<div id="ct78modcode2">
+<img src="graphics/ct78modcode2.tif.png" onclick="swapImage('ct78modcode2','ct78modcode2.tif')"></div>
+</td>
+</tr>
+<tr valign="TOP">
+<td width="2%"></td><td class="sheettitle" valign="top" align="center" width="98%">Figure 3 </td>
+</tr>
+</table>
+</div>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td style="text-decoration:underline" valign="top" align="left" width="4%">3</td><td valign="top" align="left" width="78%">When the model apply code is at the forth indenture, only the
+line above it is applicable to that model(s). All other information
+applies to all models.</td>
+</tr>
+</table>
+<a viewertext="Figure 4" name="g00-00-00-06"></a>
+<div class="sheetdiv">
+<a viewertext="Figure 4 (Sheet 1)" name="fmodelcode3"></a>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="center" width="98%">
+<div id="ct78modcode3">
+<img src="graphics/ct78modcode3.tif.png" onclick="swapImage('ct78modcode3','ct78modcode3.tif')"></div>
+</td>
+</tr>
+<tr valign="TOP">
+<td width="2%"></td><td class="sheettitle" valign="top" align="center" width="98%">Figure 4 </td>
+</tr>
+</table>
+</div>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(5)</td><td valign="top" align="left" width="86%">USAGE CODE Column.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(a)</td><td valign="top" align="left" width="82%">The Detailed Parts List contains a column designated USAGE CODE. Alpha
+codes will be used in the column to identify specific parts which must be used
+with other specific parts within the same assembly (or installation) and the
+same engine model. Before applying the "USAGE CODE", ensure the parts are coded
+for use on the same engine model. See Model Apply Code, this introduction. If the
+part is not coded for the same engine model, the usage code does not apply.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="82%">Within an installation (Figure), a part number identified by a "USAGE
+CODE" (a single lower case alpha designation) denotes that the affected part
+can only be used with other parts identified with the same single alpha designation.
+It also denotes that the affected part can be used with all other non-coded
+parts (no alpha designation).</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="82%">When a combination of alphas is used (such as "abd"), the affected
+parts may be used with all other non-coded parts and all other parts coded
+"a" or "b" or "d" or any combination thereof (such as "ab" or "ad" or "bd"
+or "abd"). A part coded "abd" cannot be used with any coded part number which
+does not contain "a" or "b" or "d" in the alpha combination for the same item.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="82%">USAGE CODES are unique to a specific figure. An alpha code may be repeated
+from figure to figure, but is only to be used for the identification of affected
+parts within its related figure, (i.e. USAGE CODE "a" for 72-54-00 figure 1
+does not relate to USAGE CODE "a" for 72-54-00 figure 5).</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="82%">If interchangeability of assemblies, sub-assemblies and detail parts
+is affected between Chapter/Section/Unit/Figure, "USE WITH" indications will
+be used in the nomenclature column for the affected items.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="82%">Fully interchangeable parts do not require USAGE CODE designation,
+or notes, within the assembly level they support.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(6)</td><td valign="top" align="left" width="86%">UNITS PER ASSY Column.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="86%">The number in this column indicates the total quantity of the
+listed parts required in the immediate assembly. The abbreviations
+ALT, AR, and RF are used in place of the quantity to further identify
+the part. Definitions of the abbreviations can be found in <a href="gek112092:gloss01">the GLOSSARY</a>.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="left" width="4%">5.</td><td valign="top" align="left" width="94%">How to Use the Catalog.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">A.</td><td valign="top" align="left" width="90%">To locate a part when the part number is known, use the GE tech data search utility to search for the part number, or find the part number in the numerical index.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="90%">To locate a part when the part number is not known, expand the table of contents and refer to the figure that contains the main group where the part number should be located. Refer to any subgroups as necessary to find the part.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">B.</td><td valign="top" align="left" width="90%">IPC part number data is displayed side-by-side (artwork and
+part information). This is to allow ease of use when locating a given
+Catalog Sequence Number (CSN).</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">C.</td><td valign="top" align="left" width="90%">The part number data can be filtered by model, SB Effectivity,
+and Usage Code. This feature hides non-relevent part numbers based
+on the filter selection.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="left" width="4%">6.</td><td valign="top" align="left" width="94%">Standard Parts.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="94%">Expendable hardware, having a relatively high usage and application,
+is normally available from industrial supply outlets. Expendable hardware
+includes such items as nuts, bolts, screws, fasteners, rivets, seals,
+etc.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="94%">Standard items are identified by the following Part Number types
+and CAGE codes: ANXX etc., ASXXXXX, ASXXXX-XX etc., MXX etc., MSXX etc., NASXX etc.</td>
+</tr>
+</table>
+<div id="pagefooter" class="hideFromPrint" style="width: 100%;">
+<table style="width: 100%;">
+<tr>
+<td align="center" style="padding-top: 72px; font-size:12px;font-weight:bold;">GE PROPRIETARY INFORMATION - Subject to the restrictions on the media.</td>
+</tr>
+</table>
+</div>
+<div id="printfooter" style="display:none">
+<table style="width: 100%;border:2px;border-top-style:solid;border-top-color:black;">
+<tr>
+<td style="width:1.5in;font-size:14px;border:2px;border-right-style:solid;border-right-color:black;">Date Printed:<br> {cd}</td><td style="width:8in;font-size:12px;">GE PROPRIETARY INFORMATION - Not to be used, disclosed to others or reproduced without the express written consent of GE. Technical data is considered ITAR and/or EAR controlled; transfer of this data to a Non-US Person, without USG authorization, is strictly prohibited.</td><td style="width:1.5in;font-size:14px;text-align:right;border:2px;border-left-style:solid;border-left-color:black;">{Page}</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

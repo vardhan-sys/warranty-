@@ -1,0 +1,36 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RestrictedKMSKey",
+            "Effect": "Allow",
+            "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:Encrypt",
+                "kms:GenerateDataKey*",
+                "kms:ReEncrypt*"
+            ],
+            "Resource": "arn:aws:kms:us-east-1:{{cookiecutter.aws_account_id}}:key/{{cookiecutter.nonprod_kms_key_id}}"
+        },
+        {
+            "Sid": "RestrictedKmsGrant",
+            "Effect": "Allow",
+            "Action": [
+                "kms:CreateGrant",
+                "kms:ListGrants",
+                "kms:RevokeGrant"
+            ],
+            "Resource": "arn:aws:kms:us-east-1:{{cookiecutter.aws_account_id}}:key/{{cookiecutter.nonprod_kms_key_id}}"
+        },
+        {
+            "Sid": "RestrictedSecretsManagerReader",
+            "Effect": "Allow",
+            "Action": [
+                "secretsmanager:DescribeSecret",
+                "secretsmanager:GetSecretValue"
+            ],
+            "Resource": "arn:aws:secretsmanager:us-east-1:{{cookiecutter.aws_account_id}}:secret:{{cookiecutter.product_prefix}}*"
+        }
+    ]
+}

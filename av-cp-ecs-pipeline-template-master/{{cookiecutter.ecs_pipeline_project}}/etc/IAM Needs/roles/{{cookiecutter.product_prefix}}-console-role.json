@@ -1,0 +1,25 @@
+{
+    "policies": [
+        "{{cookiecutter.product_prefix}}-global-console-policy",
+        "{{cookiecutter.product_prefix}}-console-policy",
+        "{{cookiecutter.product_prefix}}-cicd-console-policy",
+        "{{cookiecutter.product_prefix}}-cloudformation-console-policy",
+        "{{cookiecutter.product_prefix}}-config-console-policy",
+        "{{cookiecutter.product_prefix}}-ecs-console-policy",
+        "{{cookiecutter.product_prefix}}-log-console-policy",
+        "{{cookiecutter.product_prefix}}-storage-owner-policy",
+        "{{cookiecutter.product_prefix}}-sns-owner-policy",
+        "{{cookiecutter.product_prefix}}-ssm-console-policy",
+        "{{cookiecutter.product_prefix}}-passrole-policy",
+        "av-infra-readonlyaccess-policy",
+        "awsiam-sauce",
+        "awsiam-sauce-the-sequel",
+        "AWSSupportAccess"
+    ],
+    "trustPolicy": "saml-trust-policy",
+    "tags": {
+        "env": "{{cookiecutter.env_non-prod_prod}}",
+        "author": "author_SSO"
+    },
+    "description": "Console roles for {{cookiecutter.product_prefix}}"
+}

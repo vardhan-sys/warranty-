@@ -1,0 +1,96 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Creates an S3 Bucket to store pipeline artifacts and grants production VPC IAM roles access to said bucket.
+
+Parameters:
+  ArtifactBucketName:
+    Description: Name of S3 bucket that holds pipeline artifacts.
+    Type: String
+    Default: {{cookiecutter.product_prefix}}-cicd-services
+  ProductionCodePipelineRoleArn:
+    Description: Production CodePipeline Role Arn that will be executing the Production Deploy
+    Type: String
+    Default: arn:aws:iam::850200683887:role/{{cookiecutter.product_prefix}}-codepipeline-service-role
+  ProductionCloudFormationRoleArn:
+    Description: Production CloudFormation Role Arn that will be deploying Production Pipelines
+    Type: String
+    Default: arn:aws:iam::850200683887:role/{{cookiecutter.product_prefix}}-cloudformation
+  ProductionLambdaPipelineDeployerRoleArn:
+    Description: Production CloudFormation Role Arn that will be deploying Production Pipelines
+    Type: String
+    Default: arn:aws:iam::850200683887:role/{{cookiecutter.product_prefix}}-lambda-pipeline-deployer-role
+  TeamKmsCmk:
+    Description: KMS Key ARN used to encrypt and decrypt the S3 Bucket
+    Type: String 
+    Default: arn:aws:kms:us-east-1:{{cookiecutter.aws_account_id}}:key/{{cookiecutter.nonprod_kms_key_id}}
+  ConfigureProductionBucketAccess:
+    Description: Boolean to Configure S3 Access on the Artifact Bucket for the Production CodePipeline Role
+    Type: String
+    Default: false
+    AllowedValues: [true, false]
+    ConstraintDescription: Malformed input-Parameter ConfigureProductionBucketAccess must be either true or false.
+
+Conditions:
+  ShouldConfigureProductionBucketAccess:
+    !Equals [true, !Ref ConfigureProductionBucketAccess]
+
+Resources:
+  ArtifactBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref ArtifactBucketName
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              KMSMasterKeyID: !Ref TeamKmsCmk
+              SSEAlgorithm: aws:kms
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+
+  S3BucketPolicy:
+    Condition: ShouldConfigureProductionBucketAccess
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref ArtifactBucket
+      PolicyDocument:
+        Statement:
+          - Sid: XacctBucketPermissions
+            Action:
+              - s3:GetBucketLocation
+              - s3:ListBucket
+            Effect: Allow
+            Resource:
+              - !Sub arn:aws:s3:::${ArtifactBucketName}
+            Principal:
+              AWS:
+                - !Ref ProductionLambdaPipelineDeployerRoleArn
+                - !Ref ProductionCloudFormationRoleArn
+                - !Ref ProductionCodePipelineRoleArn 
+          - Sid: XAcctS3ReadWriteObject
+            Action:
+              - s3:GetObject
+              - s3:GetObjectVersion
+              - s3:PutObject
+              - s3:PutObjectTagging
+            Effect: Allow
+            Resource:
+              - !Sub arn:aws:s3:::${ArtifactBucketName}/*
+            Principal:
+              AWS:
+                - !Ref ProductionLambdaPipelineDeployerRoleArn
+                - !Ref ProductionCloudFormationRoleArn
+                - !Ref ProductionCodePipelineRoleArn
+
+Outputs:
+  CICDPipelineArtifactBucketName:
+    Description: S3 Bucket name used to hold Serverless (Lambda and ECS) pipeline artifacts.
+    Value: !Ref ArtifactBucket
+    Export:
+      Name: {{cookiecutter.product_resource_identifier}}CICDPipelineArtifactBucketName
+

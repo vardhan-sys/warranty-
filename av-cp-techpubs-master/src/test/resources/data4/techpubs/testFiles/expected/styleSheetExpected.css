@@ -1,0 +1,32 @@
+@media all {
+    table { page-break-inside: auto; border-collapse: collapse; }
+    p { margin: 0 !important }
+
+    /* Ensures the elements always start on a new page */
+    .TableTitle {
+        page-break-before: always;
+    }
+    /* Removes all the extra indenting */
+    .ProeceduralStep colgroup { display: none !important; }
+
+    /* Ensures Table of Contents displays in a new page */
+    .TOCHeader:first-child {
+        display: block;
+        white-space:nowrap;
+        width: 0;
+        page-break-before: always;
+        font-weight: bold;
+    }
+
+    /* Ensures all procedure images are displayed on a new page */
+    .procedure-image {
+        margin-right:75px;
+        page-break-before: always !important;
+        page-break-after: always !important;
+    }
+
+    a {
+        color: blue !important;
+        text-decoration: none;
+    }
+}

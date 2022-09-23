@@ -1,0 +1,76 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Creates a CodeBuild project for uploading newly versioned Pipeline Templates to the Team's Pipeline Artifact Bucket
+
+Parameters:
+  GitHubURL:
+    Description: HTTPS URL for GitHub Enterprise Repository (i.e. https://github.build.ge.com/Portnostics/sam-pipeline-sample)
+    Type: String
+    AllowedPattern: https:\/\/github.build.ge.com\/[a-zA-Z0-9-]*\/[a-zA-Z0-9-]*(?<!.git)
+    ConstraintDescription: Malformed input-Parameter GitHubURL must be a valid github url (i.e. https://github.build.ge.com/Portnostics/sam-pipeline-sample). Remember to omit '.git' from the end of your repository name.
+    Default: https://github.build.ge.com/Portnostics/{{cookiecutter.product_prefix}}-ecs-pipeline-template
+  WebhookLambdaARN:
+    Description: ARN of the lambda function that automates the process of creating the codebuild and github enterprise webhooks.
+    Type: String
+    Default: "arn:aws:lambda:us-east-1:{{cookiecutter.aws_account_id}}:function:sam-pipeline-webhook-setup"
+  TeamNonProdKmsCmk:
+    Description: KMS Key ARN used to encrypt and decrypt
+    Type: String 
+    Default: arn:aws:kms:us-east-1:{{cookiecutter.aws_account_id}}:key/{{cookiecutter.project_kms_key_id}}
+
+Mappings:
+  EnvironmentMap:
+    dev:
+      vpc: vpc-8ea2d6eb
+      subnets:
+        - subnet-05bb4ce63da2cf665
+        - subnet-0469dc6252c75fdc1
+      securityGroups:
+        - sg-0d626c75def833986
+    qa:
+      vpc: vpc-8ea2d6eb
+      subnets:
+        - subnet-05bb4ce63da2cf665
+        - subnet-0469dc6252c75fdc1
+      securityGroups:
+        - sg-0a476f2127848a8ad
+
+Resources:
+  ### Build Details ###
+  CodeBuildProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Select [4, !Split ["/", !Ref GitHubURL]]
+      Description: Codebuild project meant for versioning and tracking Pipeline Template changes for the YourTeamNameHere team.
+      ServiceRole: !Sub arn:aws:iam::${AWS::AccountId}:role/{{cookiecutter.product_prefix}}-codebuild-service-role
+      EncryptionKey: !Ref TeamNonProdKmsCmk
+      Source:
+        Type: GITHUB_ENTERPRISE
+        Location: !Ref GitHubURL
+        GitCloneDepth: 1
+        ReportBuildStatus: true
+        BuildSpec: buildspec.yaml
+      Artifacts:
+        Type: NO_ARTIFACTS
+      VpcConfig:
+        SecurityGroupIds: !FindInMap [EnvironmentMap, qa, securityGroups]
+        Subnets: !FindInMap [EnvironmentMap, qa, subnets]
+        VpcId: !FindInMap [EnvironmentMap, qa, vpc]
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/standard:5.0
+        EnvironmentVariables:
+          - Name: REPO_NAME
+            Value: !Select [4, !Split ["/", !Ref GitHubURL]]
+          - Name: BUCKET
+            Value: 
+              Fn::ImportValue: "{{cookiecutter.product_resource_identifier}}CICDPipelineArtifactBucketName"
+      TimeoutInMinutes: 10
+
+  WebHooks:
+    DependsOn: CodeBuildProject
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      logLevel: debug
+      ServiceToken: !Ref WebhookLambdaARN
+      GitHubURL: !Ref GitHubURL

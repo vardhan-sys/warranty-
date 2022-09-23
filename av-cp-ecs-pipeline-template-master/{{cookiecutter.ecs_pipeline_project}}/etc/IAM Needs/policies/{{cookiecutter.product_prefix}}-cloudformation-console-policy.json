@@ -1,0 +1,72 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "GlobalCloudFormationBlanketCreate",
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CreateStackSet",
+                "cloudformation:CreateUploadBucket"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "RestrictedCloudFormationStackManagement",
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CancelUpdateStack",
+                "cloudformation:ContinueUpdateRollback",
+                "cloudformation:CreateChangeSet",
+                "cloudformation:CreateStack",
+                "cloudformation:CreateStackInstances",
+                "cloudformation:DeleteChangeSet",
+                "cloudformation:DeleteStack",
+                "cloudformation:DeleteStackInstances",
+                "cloudformation:DeleteStackSet",
+                "cloudformation:ExecuteChangeSet",
+                "cloudformation:SetStackPolicy",
+                "cloudformation:SignalResource",
+                "cloudformation:StopStackSetOperation",
+                "cloudformation:TagResource",
+                "cloudformation:UntagResource",
+                "cloudformation:UpdateStack",
+                "cloudformation:UpdateStackInstances",
+                "cloudformation:UpdateStackSet",
+                "cloudformation:UpdateTerminationProtection"
+            ],
+            "Resource": [
+                "arn:aws:cloudformation:us-east-1:{{cookiecutter.aws_account_id}}:stack/{{cookiecutter.product_prefix}}*/*",
+                "arn:aws:cloudformation:us-east-1:{{cookiecutter.aws_account_id}}:transform/StringTransformer",
+                "arn:aws:cloudformation:us-east-1:aws:transform/Serverless-2016-10-31",
+                "arn:aws:cloudformation:us-east-1:aws:transform/Include",
+                "arn:aws:cloudformation:us-east-1:aws:transform/CodeDeployBlueGreen"
+            ]
+        },
+        {
+            "Sid": "RestrictedCloudFormationDenyIAMCreation",
+            "Effect": "Deny",
+            "Action": "cloudformation:CreateStack",
+            "Resource": "arn:aws:cloudformation:us-east-1:{{cookiecutter.aws_account_id}}:stack/{{cookiecutter.product_prefix}}*/*",
+            "Condition": {
+                "ForAnyValue:StringLikeIfExists": {
+                    "cloudformation:ResourceTypes": "AWS::IAM::*"
+                }
+            }
+        },
+        {
+            "Sid": "RestrictedCloudFormationChangeSetExecution",
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CreateChangeSet",
+                "cloudformation:DeleteChangeSet",
+                "cloudformation:ExecuteChangeSet"
+            ],
+            "Resource": [
+                "arn:aws:cloudformation:us-east-1:{{cookiecutter.aws_account_id}}:stack/{{cookiecutter.product_prefix}}*/*",
+                "arn:aws:cloudformation:us-east-1:aws:transform/Serverless-2016-10-31",
+                "arn:aws:cloudformation:us-east-1:aws:transform/Include",
+                "arn:aws:cloudformation:us-east-1:{{cookiecutter.aws_account_id}}:transform/StringTransformer"
+            ]
+        }
+    ]
+}

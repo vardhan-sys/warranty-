@@ -1,0 +1,181 @@
+{
+    "Count": 5,
+    "Items": [
+        {
+            "engineModel": {
+                "S": "GENX-1B"
+            },
+            "action": {
+                "S": "Enable"
+            },
+            "company": {
+                "S": "ZSA1"
+            },
+            "documentType": {
+                "S": "SMM"
+            },
+            "bookcaseKey": {
+                "S": "gek112865_lr"
+            },
+            "category": {
+                "S": "companies"
+            },
+            "UUID": {
+                "S": "a0d3b2e5-6dde-433f-934a-8177fc787d4d"
+            },
+            "modifiedDate": {
+                "S": "2019-11-19 16:17:13 UTC"
+            },
+            "appId": {
+                "S": "doc-admin"
+            },
+            "document": {
+                "S": "Technology Level M"
+            },
+            "modifiedBy": {
+                "S": "503096464"
+            }
+        },
+        {
+            "engineModel": {
+                "S": "GENX-1B"
+            },
+            "action": {
+                "S": "Disable"
+            },
+            "company": {
+                "S": "ZSA1"
+            },
+            "documentType": {
+                "S": "SMM"
+            },
+            "bookcaseKey": {
+                "S": "gek112865_lr"
+            },
+            "category": {
+                "S": "companies"
+            },
+            "UUID": {
+                "S": "2d7d187d-23d4-431f-91f3-3ce4b6e6c45a"
+            },
+            "modifiedDate": {
+                "S": "2019-11-19 15:03:01 UTC"
+            },
+            "appId": {
+                "S": "doc-admin"
+            },
+            "document": {
+                "S": "Technology Level M"
+            },
+            "modifiedBy": {
+                "S": "503096464"
+            }
+        },
+        {
+            "engineModel": {
+                "S": "GENX-1B"
+            },
+            "action": {
+                "S": "Enable"
+            },
+            "company": {
+                "S": "ZSA1"
+            },
+            "documentType": {
+                "S": "SMM"
+            },
+            "bookcaseKey": {
+                "S": "gek112865_lr"
+            },
+            "category": {
+                "S": "companies"
+            },
+            "UUID": {
+                "S": "3b7f4c67-4dbe-4066-a338-4ecb3c4e1a38"
+            },
+            "modifiedDate": {
+                "S": "2019-11-19 14:59:35 UTC"
+            },
+            "appId": {
+                "S": "doc-admin"
+            },
+            "document": {
+                "S": "Technology Level M"
+            },
+            "modifiedBy": {
+                "S": "503096464"
+            }
+        },
+        {
+            "engineModel": {
+                "S": "GENX-1B"
+            },
+            "action": {
+                "S": "Disable"
+            },
+            "company": {
+                "S": "ZSA1"
+            },
+            "documentType": {
+                "S": "SMM"
+            },
+            "bookcaseKey": {
+                "S": "gek112865"
+            },
+            "category": {
+                "S": "companies"
+            },
+            "UUID": {
+                "S": "31536b38-560c-4ab2-8a9b-71c4a8a134db"
+            },
+            "modifiedDate": {
+                "S": "2019-11-19 14:59:35 UTC"
+            },
+            "appId": {
+                "S": "doc-admin"
+            },
+            "document": {
+                "S": "Technology Level M"
+            },
+            "modifiedBy": {
+                "S": "503096464"
+            }
+        },
+        {
+            "engineModel": {
+                "S": "GENX-1B"
+            },
+            "action": {
+                "S": "Enable"
+            },
+            "company": {
+                "S": "ZSA1"
+            },
+            "documentType": {
+                "S": "SMM"
+            },
+            "bookcaseKey": {
+                "S": "gek112865"
+            },
+            "category": {
+                "S": "companies"
+            },
+            "UUID": {
+                "S": "7882db4c-de6e-4f1f-bce3-6697a3035a0a"
+            },
+            "modifiedDate": {
+                "S": "2019-11-19 03:40:01 UTC"
+            },
+            "appId": {
+                "S": "doc-admin"
+            },
+            "document": {
+                "S": "Technology Level M"
+            },
+            "modifiedBy": {
+                "S": "503096464"
+            }
+        }
+    ],
+    "ScannedCount": 163
+}

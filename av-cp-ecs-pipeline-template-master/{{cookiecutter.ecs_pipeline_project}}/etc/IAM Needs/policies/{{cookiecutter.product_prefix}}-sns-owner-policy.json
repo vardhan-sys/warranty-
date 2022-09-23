@@ -1,0 +1,26 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RestrictedSnsOwner",
+            "Effect": "Allow",
+            "Action": [
+                "sns:ConfirmSubscription",
+                "sns:CreateTopic",
+                "sns:DeleteTopic",
+                "sns:Publish",
+                "sns:SetTopicAttributes",
+                "sns:Subscribe",
+                "sns:TagResource",
+                "sns:UntagResource"
+            ],
+            "Resource": "arn:aws:sns:us-east-1:{{cookiecutter.aws_account_id}}:{{cookiecutter.product_prefix}}*"
+        },
+        {
+            "Sid": "GlobalSNSUnsubscribe",
+            "Effect": "Allow",
+            "Action": "sns:Unsubscribe",
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+# Example Usage of the Pipeline Template in a repo
+# This file is for when you have a service codebase ready to have a pipeline and deployment environment set up for it.
+AWSTemplateFormatVersion: 2010-09-09
+Description: Serverless Pipeline for ECS service(s).
+
+Resources:
+  ServicePipeline:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://{{cookiecutter.product_prefix}}-cicd-services.s3.amazonaws.com/{{cookiecutter.product_prefix}}-ecs-pipeline-template/nonprod-pipeline-template.yaml
+      Parameters:
+        AlbPriority: 122
+        AlbRoute: /services/demoecsservice/*
+        TriggerBuildOnPR: true
+        TriggerBuildOnMerge: false
+        BuildImage: ubuntu4.0 #Default is ubuntu5.0.
+        BuildComputeSize: Small #Default is Small
+        CodeDeployServiceRoleName: {{cookiecutter.product_prefix}}-codedeploy-service-role
+        CodePipelineServiceRoleName: {{cookiecutter.product_prefix}}-codepipeline-service-role
+        CodeBuildServiceRoleName: {{cookiecutter.product_prefix}}-codebuild-service-role
+        CloudFormationServiceRoleName: {{cookiecutter.product_prefix}}-cloudformation
+        CICDS3ServiceBucket: {{cookiecutter.product_prefix}}-cicd-services
+        MinAutoScalingSetting: 1
+        MaxAutoScalingSetting: 3
+        DevConditional: true
+        GitHubURL: https://github.build.ge.com/Portnostics/{{cookiecutter.product_prefix}}-dummy-service #Particular Service you're looking to create CICD Pipeline for.
+        HealthCheckPath: /testing
+        ServiceName: {{cookiecutter.product_prefix}}-dummy-service #Should match your repo name
+        QAConditional: true
+      Tags:
+        - Key: supporting-app
+          Value: {{cookiecutter.product_prefix}}-dummy-service
+        - Key: env
+          Value: {{cookiecutter.env_non-prod_prod}}
+        - Key: UAI
+          Value: UAI123456

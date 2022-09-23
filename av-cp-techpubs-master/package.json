@@ -1,0 +1,19 @@
+{
+  "name": "av-cp-techpubs",
+  "version": "1.0.0",
+  "description": "Run these in order to complete ECS pipeline pre-reqs.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.build.ge.com/Portnostics/av-cp-techpubs.git"
+  },
+  "author": "Alex Cromer",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.553.0",
+    "bluebird": "^3.7.0",
+    "compare-versions": "^3.6.0",
+    "file-system": "^2.2.2",
+    "filecompare": "^1.0.4",
+    "proxy-agent": "^4.0.1"
+  }
+}

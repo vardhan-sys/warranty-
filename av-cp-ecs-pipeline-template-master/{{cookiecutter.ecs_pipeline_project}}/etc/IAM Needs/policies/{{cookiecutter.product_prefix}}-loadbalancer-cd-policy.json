@@ -1,0 +1,22 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RestrictedElasticLoadBalancerPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "elasticloadbalancing:ModifyListener",
+                "elasticloadbalancing:ModifyRule"
+            ],
+            "Resource": [
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:loadbalancer/app/{{cookiecutter.product_prefix}}*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:loadbalancer/net/{{cookiecutter.product_prefix}}*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:listener-rule/app/{{cookiecutter.product_prefix}}*/*/*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:listener-rule/net/{{cookiecutter.product_prefix}}*/*/*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:listener/app/{{cookiecutter.product_prefix}}*/*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:listener/net/{{cookiecutter.product_prefix}}*/*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:targetgroup/{{cookiecutter.product_prefix}}*/*"
+            ]
+        }
+    ]
+}

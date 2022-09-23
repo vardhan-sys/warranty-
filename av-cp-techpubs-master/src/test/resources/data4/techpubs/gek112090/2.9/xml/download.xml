@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cwc>
+<download type="Full" doctype="Full">
+  <manual title="Engine Manual" docnbr="gek112091"/>
+  <manual title="EIPC" docnbr="gek112092"/>
+  <manual title="ITEM" docnbr="gek112085"/>
+  <manual title="SDS" docnbr="gek112096"/>
+  <manual title="PPBUM" docnbr="gek112095"/>
+</download>
+<download type="Update" doctype="Service Bulletin">
+		<manual title="Service Bulletin" docnbr="sbs">
+			<field label="SB No." width="200" span="1" type="lookup" indexfield="sbnbr" highlight="TRUE"/>
+			<field label="Alert Indicator" width="200" span="1" type="lookup" indexfield="sbtype" highlight="TRUE"/>
+			<field label="ATA No." width="200" span="3" type="lookup" indexfield="ata" highlight="TRUE"/>
+			<field label="Category" width="200" span="1" type="lookup" indexfield="category" highlight="TRUE"/>
+			<field label="Issue Date" width="200" span="3" type="date" indexfield="revdate" highlight="TRUE"/>
+			<field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE"/>
+		</manual>
+	</download>
+<download type="Update" doctype="Temporary Revision">
+		<manual title="All" docnbr="All">
+			<field label="TR No." width="200" span="1" type="lookup" indexfield="trno" highlight="TRUE"/>
+			<field label="ATA No." width="200" span="1" type="lookup" indexfield="ata" highlight="TRUE"/>
+			<field label="Rev. Date" width="200" span="3" type="date" indexfield="revdate" highlight="TRUE"/>
+			<field label="Release Date" width="200" span="3" type="date" indexfield="cwcdate" highlight="TRUE"/>
+			<field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE"/>
+		</manual>
+		<manual title="Engine Manual" docnbr="gek112091">
+			<field label="TR No." width="200" span="1" type="lookup" indexfield="trno" highlight="TRUE"/>
+			<field label="ATA No." width="200" span="1" type="lookup" indexfield="ata" highlight="TRUE"/>
+			<field label="Pageblock Type" width="200" span="1" type="lookup" indexfield="pgblktype" highlight="TRUE"/>
+			<field label="Pageblock No." width="200" span="1" type="lookup" indexfield="pgblknbr" highlight="TRUE"/>
+			<field label="Rev. Date" width="200" span="3" type="date" indexfield="revdate" highlight="TRUE"/>
+			<field label="Release Date" width="200" span="3" type="date" indexfield="cwcdate" highlight="TRUE"/>
+			<field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE"/>
+		</manual>
+		<manual title="EIPC" docnbr="gek112092">
+			<field label="TR No." width="200" span="1" type="lookup" indexfield="trno" highlight="TRUE"/>
+			<field label="ATA No." width="200" span="1" type="lookup" indexfield="ata" highlight="TRUE"/>
+			<field label="Figure No." width="200" span="1" type="lookup" indexfield="fignbr" highlight="TRUE"/>
+			<field label="Rev. Date" width="200" span="3" type="date" indexfield="revdate" highlight="TRUE"/>
+			<field label="Release Date" width="200" span="3" type="date" indexfield="cwcdate" highlight="TRUE"/>
+			<field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE"/>
+		</manual>
+	</download>
+<download type="Update" doctype="Incremental Change">
+		<manual title="All" docnbr="All">
+			<field label="ATA No." width="200" span="1" type="lookup" indexfield="ata" highlight="TRUE"/>
+			<field label="Release Date" width="200" span="3" type="date" indexfield="cwcdate" highlight="TRUE"/>
+			<field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE"/>
+		</manual>
+		<manual title="Engine Manual" docnbr="gek112091">
+			<field label="ATA No." width="200" span="1" type="lookup" indexfield="ata" highlight="TRUE"/>
+			<field label="Pageblock Type" width="200" span="1" type="lookup" indexfield="pgblktype" highlight="TRUE"/>
+			<field label="Pageblock No." width="200" span="1" type="lookup" indexfield="pgblknbr" highlight="TRUE"/>
+			<field label="Release Date" width="200" span="3" type="date" indexfield="cwcdate" highlight="TRUE"/>
+			<field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE"/>
+		</manual>
+		<manual title="EIPC" docnbr="gek112092">
+			<field label="ATA No." width="200" span="1" type="lookup" indexfield="ata" highlight="TRUE"/>
+			<field label="Figure No." width="200" span="1" type="lookup" indexfield="fignbr" highlight="TRUE"/>
+			<field label="Release Date" width="200" span="3" type="date" indexfield="cwcdate" highlight="TRUE"/>
+			<field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE"/>
+		</manual>
+	</download>
+</cwc>

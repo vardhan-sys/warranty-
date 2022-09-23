@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "42ebc6eb-b904-4a12-9721-d563605038cd",
+		"name": "GENX Download- Performance Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PDF-1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "{{portalId}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/gek114119/file/genx-2b-all-em-ic-72-00-02-10-001-25.htm/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek114118_lr",
+						"versions",
+						"3.5",
+						"mans",
+						"gek114119",
+						"file",
+						"genx-2b-all-em-ic-72-00-02-10-001-25.htm",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PDF-2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "{{portalId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/gek114119/file/genx-2b-all-em-ic-72-00-02-10-002-25.htm/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek114118_lr",
+						"versions",
+						"3.5",
+						"mans",
+						"gek114119",
+						"file",
+						"genx-2b-all-em-ic-72-00-02-10-002-25.htm",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PDF-3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "{{portalId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/gek114119/file/genx-2b-all-em-ic-72-00-00-13-006-25.htm/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek114118_lr",
+						"versions",
+						"3.5",
+						"mans",
+						"gek114119",
+						"file",
+						"genx-2b-all-em-ic-72-00-00-13-006-25.htm",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PDF-4",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "{{portalId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/gek114119/file/genx-2b-all-em-ic-72-00-02-10-01-004-25.htm/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek114118_lr",
+						"versions",
+						"3.5",
+						"mans",
+						"gek114119",
+						"file",
+						"genx-2b-all-em-ic-72-00-02-10-01-004-25.htm",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PDF-5",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "{{portalId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/gek114119/file/genx-2b-all-em-ic-72-00-01-04-001-25.htm/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek114118_lr",
+						"versions",
+						"3.5",
+						"mans",
+						"gek114119",
+						"file",
+						"genx-2b-all-em-ic-72-00-01-04-001-25.htm",
+						"pdf"
+					],
+					"query": [
+						{
+							"key": "sm_ssoid",
+							"value": "{{sso}}",
+							"disabled": true
+						},
+						{
+							"key": "portal_id",
+							"value": "{{portalId}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

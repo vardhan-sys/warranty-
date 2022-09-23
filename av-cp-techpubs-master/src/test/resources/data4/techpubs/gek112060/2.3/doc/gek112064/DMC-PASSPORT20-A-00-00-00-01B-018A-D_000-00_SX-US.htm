@@ -1,0 +1,1001 @@
+<!DOCTYPE html PUBLIC "html">
+<html xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--.src='..\Images\getBinaryResourceTDExpected.jpg';-->
+  <!--.src='..\Images\OpenSection.jpg';-->
+  <title>EIPD</title> 
+  <style type="text/css">
+          A:hover { background-color:black; color:white}
+          A:link { COLOR: blue;  TEXT-DECORATION: none; background-color:white; }
+          A:visited { COLOR: blue;  TEXT-DECORATION: none; background-color:white; }
+          .Header {font-size: 14pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt;}
+          .Header2 {font-size: 12pt; font-family: Arial; color: blue; padding-top:3pt;}
+          .Footer {font-size: 12pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt;}
+          .Footer2 {font-size: 12pt; font-family: Arial; color: black; padding-top:8pt;}
+          .DMTitle {font-size: 14pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt;}
+          .DMTitle2 {font-size: 14pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt; padding-bottom:10pt;}
+          .Body {font-size: 11pt; font-family: Arial; color: black;}
+          .BodyTitle {font-size: 11pt; font-family: Arial; color: black; font-weight: bold;}
+          .TOCHeader {font-size: 12pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt;}
+          .DRestrictions {font-size: 11pt; font-family: Calibri; color: black;}
+          .techref {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          .WarnCaution {font-size: 12pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt; padding-bottom:8pt;}
+          .WarnCautionPara {font-size: 10pt; font-family: Arial; color: black; padding-bottom:4pt;}
+          .DescriptiveParaHeading {font-size: 11pt; font-family: Arial; color: black; margin-top:12pt; margin-bottom:4pt;}
+          .ProeceduralStep {font-size: 11pt; font-family: Arial; color: black;}
+          .NotePara {font-size: 11pt; font-family: Arial; color: black; padding-bottom: 8pt; padding-top: 8pt;}
+          .category {font-size: 10pt; font-family: Arial; font-weight: bold; color: blue;}
+          .Logo {font-size: 50pt; font-family: GELogoFont;}
+           .LogoGE9X {font-size: 14pt; font-family: GE9X_2018;}
+          .refs {font-size: 11pt; font-family: sans-serif; font-weight: normal; color:blue; }
+                   .spareCodesPara {font-size: 11pt; font-family: Arial; color: black;}
+                 .changeMarkAdd {font-size: 11pt; font-family: Arial; color: black; font-weight: normal; background-color:#CCCCFF;}
+
+          .Effectivity {font-size: 8pt; font-family: Arial; font-weight: bold;color: black; padding-top:8pt;}
+          .SectionHeadingTable {font-size: 11pt; font-family: Arial;  color: black; margin-top:12pt; margin-bottom:4pt;}
+          .SectionHeading {font-size: 12pt; font-family: Arial; FONT-STYLE: italic; font-weight: bold; color: black}
+          .SubSectionTitle {font-size: 11pt; font-family: Arial; font-weight: bold; color: black}
+          .SubSectionHeader {font-size: 11pt; font-family: Arial; font-weight: bold; color: black}
+          .SubSectionText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; margin-top:12pt; margin-bottom:4pt;                               }
+          .SubSectionTextTable {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; margin-top:12pt; margin-bottom:4pt;}
+          
+         .ConsumbablesSubHeading {font-size: 11pt; font-family: Arial; color: black; TEXT-DECORATION: underline}
+         .AltProcHeading {font-size: 11pt; font-family: Arial; color: black; TEXT-DECORATION: underline}
+         
+          .TableTitle {font-size: 11pt; font-family: Arial; color: black; font-weight: bold; padding-top:8pt; padding-bottom:8pt;}
+         .thead {font-size: 11pt; font-family: Arial; color: black; font-weight: bold;}
+         
+          .DescriptiveParaHeading1 {font-weight:bold; font-size: 11pt; font-family: Arial; color: black; margin-top:12pt; margin-bottom:4pt;                                                           }
+          .DescriptiveParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 12px; margin-bottom:8pt;}
+          .DescriptiveSubParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 24px; margin-bottom:8pt;}
+          .DescriptiveSubSubParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 36px; margin-bottom:8pt;}
+          .ProceduralParaHeading {font-size: 11pt; font-family: Arial; font-weight: normal; color: black}
+          .ProceduralParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 12px; margin-bottom:8pt;}
+          .ProceduralSubParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 24px; margin-bottom:8pt;}
+          .ProceduralSubSubParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 36px; margin-bottom:8pt;}
+          .WarningHeading {font-size: 11pt; font-family: Arial; color: red; TEXT-DECORATION: underline}
+          .WarningText {font-size: 11pt; font-family: Arial; color: red}
+          .CautionHeading {font-size: 11pt; font-family: Arial; color: blue; TEXT-DECORATION: underline}
+          .CautionText {font-size: 11pt; font-family: Arial; color: blue}
+          .NoteHeading {font-size: 11pt; font-family: Arial; color: purple; TEXT-DECORATION: underline}
+          .NoteText {font-size: 11pt; font-family: Arial; font-weight: normal; color: purple; POSITION: relative; LEFT: 7mm}
+          .heading {font-size: 11pt; font-family: sans-serif; font-weight: bold; color: blue}
+          .normalText {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          .sectionHeadingkk {font-size: 11pt; font-family: sans-serif; font-weight: bold; color: blue}
+          .r4iH1 {font-size: 11pt; font-family: sans-serif; font-weight: bold; color: blue}
+          .r4iH2 {font-size: 11pt; font-family: sans-serif; font-weight: bold; color: blue}
+          .r4iReferences {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          .r4inormaltext {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          .r4inormaltextIndent {font-size: 11pt; LEFT: 12px; font-family: sans-serif; font-weight: normal; color: black; POSITION: relative}
+          .r4sectionlabel {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black; background-color:lightgreen;}
+          .warntext {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          .f8sBl {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          A.f8sBl:hover { background-color:black; color:white}
+          .r4iTableHead {font-size: 11pt; font-family: Arial; margin-top:4pt; margin-bottom:4pt;}
+          .r4iTableFoot {font-size: 8pt; font-family: Arial; margin-top:4pt; margin-bottom:4pt;}
+         .noBottomBorder {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black;border-bottom: 0 pt solid white} 
+          .BottomBorder {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black; border-bottom: .5 pt solid black}
+                    tr .noBottomBorder td {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black;border-bottom:hidden;}
+          .HilightBg { background-color:#3399FF; }
+        </style>
+  <script id="clientEventHandlersJS" language="javascript">
+          //Function to pad text or number with leading chars (str, padwidth, padchar)
+          function padL(a,b,c){//string/number,length=2,char=0
+          return (new Array(b||2).join(c||0)+a).slice(-b)
+          }
+          //Function to dispaly all the isolationSteps and procedureENds (isolationMainProcedure) content at once
+          function display_all() {
+          var mydivs = document.getElementsByTagName("div");
+          var i;
+          for (i = 0; i < mydivs.length; i++) {
+          mydivs[i].style.visibility="";
+          mydivs[i].style.display="";
+          }
+          }
+          //REload the page - so back to displaying only the first step
+          function display_steps() {
+          reload();
+          }
+          //called from isolationStepAnswers YES/NO
+          //if the checkbox is selected then the next question nominated in the nextActionRefId attribute
+          //is given the focus/cursor/highlight /made visible
+          function display_div(item, destType) {
+          //if item length is less than 4 , prepend 0's until length is 4,then prepend stp-
+          item = padL(item,4);
+          if (destType =='id'){
+             item = "id-" + item;
+          } else if (destType =='st'){
+             item = "st-" + item;
+          }          
+          else {
+          item = "stp-" + item;}
+          var mydiv = document.getElementById(item);
+          mydiv.style.visibility="";
+          mydiv.style.display="";
+          }
+          
+          function HighlightText(OldObjectID, NewObjectID)
+          {
+          if(NewObjectID != undefined){jQuery("#IPDData").setSelection(NewObjectID, true);}
+          }
+
+          function ScrollToSelectedNode()
+          {
+          obj = document.getElementById('selected_node');
+          if(obj != null)
+          {
+          obj.className += " HilightBg";
+          obj.scrollIntoView(true);
+          }
+          }
+
+          function s1_onclick() {
+          if (window.Section_1.style.display == 'none' ) {
+          window.Section_1.style.display = 'block';
+          window.document.s1_image.alt = 'Collapse Section';
+          window.document.s1_image.src = window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_1.style.display = 'none';
+          window.document.s1_image.alt = 'Expand Section';
+          window.document.s1_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+          function s2_onclick() {
+          if (window.Section_2.style.display == 'none' ) {
+          window.Section_2.style.display = 'block';
+          window.document.s2_image.alt = 'Collapse Section';
+          window.document.s2_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_2.style.display = 'none';
+          window.document.s2_image.alt = 'Expand Section';
+          window.document.s2_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+          function s3_onclick() {
+          if (window.Section_3.style.display == 'none' ) {
+          window.Section_3.style.display = 'block';
+          window.document.s3_image.alt = 'Collapse Section';
+          window.document.s3_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_3.style.display = 'none';
+          window.document.s3_image.alt = 'Expand Section';
+          window.document.s3_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+          function s4_onclick() {
+          if (window.Section_4.style.display == 'none' ) {
+          window.Section_4.style.display = 'block';
+          window.document.s4_image.alt = 'Collapse Section';
+          window.document.s4_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_4.style.display = 'none';
+          window.document.s4_image.alt = 'Expand Section';
+          window.document.s4_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+          function s5_onclick() {
+          if (window.Section_5.style.display == 'none' ) {
+          window.Section_5.style.display = 'block';
+          window.document.s5_image.alt = 'Collapse Section';
+          window.document.s5_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_5.style.display = 'none';
+          window.document.s5_image.alt = 'Expand Section';
+          window.document.s5_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+                  function s6_onclick() {
+          if (window.Section_6.style.display == 'none' ) {
+          window.Section_6.style.display = 'block';
+          window.document.s6_image.alt = 'Collapse Section';
+          window.document.s6_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_6.style.display = 'none';
+          window.document.s6_image.alt = 'Expand Section';
+          window.document.s6_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+                         function s7_onclick() {
+          if (window.Section_7.style.display == 'none' ) {
+          window.Section_7.style.display = 'block';
+          window.document.s7_image.alt = 'Collapse Section';
+          window.document.s7_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_7.style.display = 'none';
+          window.document.s7_image.alt = 'Expand Section';
+          window.document.s7_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+             function s8_onclick() {
+          if (window.Section_8.style.display == 'none' ) {
+          window.Section_8.style.display = 'block';
+          window.document.s8_image.alt = 'Collapse Section';
+          window.document.s8_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_8.style.display = 'none';
+          window.document.s8_image.alt = 'Expand Section';
+          window.document.s8_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+        </script>
+ </head> 
+ <body class="SubSectionText" onload="ScrollToSelectedNode()"> 
+  <table width="100%"> 
+   <thead> 
+    <tr> 
+     <td> 
+      <table width="100%"> 
+       <tbody> 
+        <tr> 
+         <td> 
+          <div class="Logo">
+            e
+          </div> 
+          <div class="Header" style="border-bottom:1px solid black;">
+            Passport 20 
+          </div> </td> 
+        </tr> 
+       </tbody> 
+      </table> </td> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td> 
+      <form method="post" name="frmdetail">
+       <input type="hidden" name="StepNumber" value="1">
+       <input type="hidden" name="ImageDisplayStyle" value="3">
+       <input type="hidden" name="NumberOfSteps" value="1">
+       <input type="hidden" name="NewTarget" value="1">
+       <input type="hidden" name="RecordID" value="">
+       <div class="DMTitle" align="center">
+        EIPD
+       </div> 
+       <div class="DMTitle2" align="center">
+        Introduction
+       </div> 
+       <table class="Body" width="100%"> 
+        <colgroup> 
+         <col width="25%"> 
+        </colgroup> 
+        <tbody> 
+         <tr> 
+          <td style="padding-bottom:5pt;">DMC:</td> 
+          <td style="padding-bottom:5pt;">PASSPORT20-A-00-00-00-01B-018A-D</td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Language:</td> 
+          <td style="padding-bottom:5pt;">sx/US</td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Issue No:</td> 
+          <td style="padding-bottom:5pt;">001</td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Issue Date:</td> 
+          <td style="padding-bottom:5pt;">10&nbsp;Dec&nbsp;2018</td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Title:</td> 
+          <td style="padding-bottom:5pt;">EIPD&nbsp;-&nbsp;Introduction</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table border="0" cellspacing="2" cellpadding="4" width="100%"> 
+        <tbody>
+         <tr id="" class="SubSectionText" language="javascript" onclick="return s1_onclick()"> 
+          <td id="s1_caption" width="200" align="left"><img id="s1_image" name="s1_image" alt="Collapse Section" src="D:\Users\212707109\Desktop\Hold\Passport 20\IPD\Front Matter\HTML\DMC-PASSPORT20-A-00-00-00-01B-018A-D_001-00_SX-US/images/CloseSection.jpg
+            "> DM Status </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <table id="Section_1" class="Body" width="100%"> 
+        <colgroup> 
+         <col width="25%"> 
+        </colgroup> 
+        <tbody> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Security classification:</td> 
+          <td style="padding-bottom:5pt;"> Class01</td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Responsible Company:</td> 
+          <td style="padding-bottom:5pt;"> GE Passport LLC&nbsp;(80NQ3) </td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Originator:</td> 
+          <td style="padding-bottom:5pt;"> GE Passport LLC&nbsp;(80NQ3) </td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Applicability:</td> 
+          <td style="padding-bottom:5pt;">&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <div class="DRestrictions" style="padding-top:70pt;"> 
+        <div style="padding-bottom: 5pt" align="center">
+         GE Designated: -CONFIDENTIAL-
+        </div> 
+        <div style="padding-bottom:5pt;" align="justify">
+         The information contained in this document is GE proprietary information and is disclosed in confidence. It is the property of GE and shall not be used, disclosed to others or reproduced without the express written consent of GE, including, but without limitation, it is not to be used in the creation, manufacture, development, or derivation of any repairs, modifications, spare parts, designs, or configuration changes or to obtain FAA or any other government or regulatory approval to do so. If consent is given for reproduction in whole or in part, this notice and the notice set forth on each page of this document shall appear in any such reproduction in whole or part.
+        </div> 
+        <div style="padding-bottom:5pt;" align="justify">
+         This technical data is considered subject to the Export Administration Regulations (EAR) pursuant to 15 CFR Parts 730-774. Transfer of this data by any means to a Non-U.S. Person, whether in the United States or abroad, without the proper U.S. Government authorization (e.g., License, exemption, NLR, etc.), is strictly prohibited.
+        </div> 
+        <div style="padding-bottom: 5pt" align="center">
+         Copyright (2018) General Electric Company, U.S.A.
+        </div> 
+       </div> 
+       <table width="100%"> 
+        <colgroup> 
+         <col width="3%"> 
+         <col width="3%"> 
+         <col width="3%"> 
+        </colgroup> 
+        <tbody> 
+         <tr> 
+          <td></td> 
+          <td></td> 
+          <td class="body"></td> 
+          <td class="body" colspan="2"></td> 
+         </tr> 
+         <tr> 
+          <td class="TOCHeader" colspan="4">Table of contents:</td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">1.</td> 
+          <td class="body" colspan="2"><a class="r4iReferences" href="#refs">References </a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">2. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">Purpose</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">3. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">Detailed parts list - Arrangement</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">4. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">Model apply code</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">5. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">Detail parts list coding</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">6. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#"> Effectivity</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">7. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">Usage on code assembly</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">8. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">How to use the EIPD</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">9. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">DPL sample pages</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">10. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">Manufacturers part number system</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">11. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">Explanations of 3XX-XXX-XXX-X numbers</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">12. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">Standard part</a></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <div class="TOCHeader" padding-top="8pt" id="refs">
+        1.&nbsp;References
+       </div> 
+       <table width="100%" style="border-bottom:1px solid black;"> 
+        <colgroup> 
+         <col width="5%"> 
+         <col width="50%"> 
+         <col width="50%"> 
+        </colgroup> 
+        <tbody> 
+         <tr class="body"> 
+          <td colspan="3" style="border-bottom:1px solid black;" align="center">Table: References</td> 
+         </tr> 
+         <tr class="body"> 
+          <td></td> 
+          <td>None</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+        <colgroup> 
+         <col width="3%"> 
+         <col> 
+        </colgroup> 
+        <tbody>
+         <tr> 
+          <td valign="top" class="BodyTitle">2. </td> 
+          <td><span id="" class="BodyTitle">Purpose</span><p>The <span>illustrated parts data&nbsp;(IPD) </span> was prepared as specified by S1000D 4.1. It is intended as a companion document of the Engine Shop Manual, not a substitute for, the associated Engine Shop Manual which shall be considered the authority on disassembly/assembly procedures. </p> <p>The <span>IPD</span> lists and illustrates replaceable assemblies and detail parts removed in the Engine Shop Manual, assists in provisioning and requisitioning. </p> <p>This <span>Engine illustrated parts data&nbsp;(EIPD) </span> is arranged in one section according to the type design structure being: </p>
+           <ul id="" class="SubSectionText"> 
+            <li class="SubSectionText"> <p>ENGINE (CHAPTERS 72 THRU 75 and 77 THRU 79)</p> </li> 
+           </ul> <p></p> <p>The section consists of: </p>
+           <ul id="" class="SubSectionText"> 
+            <li class="SubSectionText"> <p>DETAILED PARTS LIST</p> </li> 
+           </ul> <p></p> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+        <colgroup> 
+         <col width="3%"> 
+         <col> 
+        </colgroup> 
+        <tbody>
+         <tr> 
+          <td valign="top" class="BodyTitle">3. </td> 
+          <td><span id="" class="BodyTitle">Detailed parts list - Arrangement</span><p>The <span>detailed parts list&nbsp;(DPL) </span> shows the engine or assemblies divided in sections, identified by <span>catalog sequence number&nbsp;(CSN) </span>, which have a relation to Engine Shop Manual. </p> <p>The indenture system used in the <span>DPL</span> of this catalog shows the relationship of one part to other parts in disassembly order where applicable. </p> <p>For a specified item, the indenture system shows the primary or general group in the left position. The sequence continues down and to the right until the last detail part is shown, as follows: </p> <p>1234567</p> <p>Installation</p> <p>.Detail Parts for Installation</p> <p>.Assembly</p> <p>Attaching Parts (*) for Assembly</p> <p>***</p> <p>..Detail Parts for Assembly</p> <p>..Subassembly</p> <p>Attaching Parts (*) for Subassembly</p> <p>***</p> <p>...Detail Parts for Subassembly</p> <p>...Sub-subassembly</p> <p>Attaching Parts (*) for Sub-subassembly</p> <p>***</p> <p>....Detail Parts for Sub-subassembly</p> <p>(*) : The attaching parts are not used in chapter 72, for better comprehension of the disassembly order of the parts.</p> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+        <colgroup> 
+         <col width="3%"> 
+         <col> 
+        </colgroup> 
+        <tbody>
+         <tr> 
+          <td valign="top" class="BodyTitle">4. </td> 
+          <td><span id="" class="BodyTitle">Model apply code</span><p>This <span>IPD</span> lists and illustrates assemblies and parts for the Passport 20 models. </p> 
+           <table id="tab-0001" cellspacing="0" cellpadding="0" width="95%" style="border:.5pt solid black"> 
+           </table>
+           <table id="" cellspacing="0" cellpadding="0" width="95%" style="border:.5pt solid black"> 
+            <thead class="thead" style="border:.5pt solid black"> 
+             <tr id="" style="padding:4pt;border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; " class="r4iTableHead"> 
+              <td style="border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN">CODE </td> 
+              <td style="border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="center" colspan="NaN"> INSTALLATION </td> 
+              <td style="border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="center" colspan="NaN">ENGINE MODEL </td> 
+             </tr> 
+            </thead> 
+            <tbody>
+             <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+              <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>A </p> </td> 
+              <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>A320 NEO </p> </td> 
+              <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p> PP20-1A35A </p> <p> PP20-1A33 </p> <p> PP20-1A33B2 </p> <p> PP20-1A32 </p> <p> PP20-1A30 </p> <p> PP20-1A26 </p> <p> PP20-1A26E1 </p> <p> PP20-1A24 </p> <p> PP20-1A24E1 </p> <p> PP20-1A23 </p> </td> 
+             </tr> 
+            </tbody>
+           </table> </td>
+         </tr>
+        </tbody>
+       </table> 
+      </form></td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+   <colgroup> 
+    <col width="3%"> 
+    <col> 
+   </colgroup> 
+   <tbody>
+    <tr> 
+     <td valign="top" class="BodyTitle">5. </td> 
+     <td><span id="" class="BodyTitle">Detail parts list coding</span><p>The model apply code is shown in the usable on code assy column of the detailed parts list. </p>
+      <ul id="" class="SubSectionText"> 
+       <li class="SubSectionText"> <p> When all information for a <span>CSN</span> applies to all models, no model apply code is shown. </p> </li> 
+       <li class="SubSectionText"> <p>When all information for a <span>CSN</span> applies to a specific model(s), the model apply code (or model value) is at the first indenture on the last line of the nomenclature column. </p> </li> 
+       <li class="SubSectionText"> <p> When the model apply code (or model value) is at the fourth indenture, only the line above it is applicable to that model(s). All other information applies to all models.</p> </li> 
+       <li class="SubSectionText"> <p>A combination of 2 and 3 is possible.</p> </li> 
+      </ul> <p></p> </td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+   <colgroup> 
+    <col width="3%"> 
+    <col> 
+   </colgroup> 
+   <tbody>
+    <tr> 
+     <td valign="top" class="BodyTitle">6. </td> 
+     <td><span id="" class="BodyTitle"> Effectivity</span><p>This <span>EIPD</span> does not include effectivity data by engine serial number. </p> </td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+   <colgroup> 
+    <col width="3%"> 
+    <col> 
+   </colgroup> 
+   <tbody>
+    <tr> 
+     <td valign="top" class="BodyTitle">7. </td> 
+     <td><span id="" class="BodyTitle">Usage on code assembly</span><p>Function Numbering.</p> <p>Before applying the "usage code", make sure that the parts are coded for use on the same engine model (reference Model Apply in nomenclature column). If the part is not coded for the same engine model, the usage code does not apply.</p> <p>Within a Figure, a part number identified by a "usage code" (a single alpha designation) denotes that the affected part MUST BE USED only with all next higher assembly identified with the same single alpha designation. It also denotes that the affected part can be used with all other non-coded parts (no alpha designation).</p> <p>When a combination of alphas are used (such as "abd"), the affected parts may be used with all other non-coded parts and all next higher assembly coded "a" or "b" or "d" or any combination thereof (such as " ab" or "ad" or "bd" or "abd"). A part coded "abd" cannot be used with any coded part number which does not contain "a" or "b" or "d" in the alpha combination.</p> <p>USAGE ON CODE ASSEMBLY will identify affected parts within a Chapter/Section/Unit/Figure only. An alpha code may be repeated from figure to figure, but is only to be used for identification of affected parts within its related figure (i.e. USAGE CODE "a" for 72-54-00 figure 1 does not relate to USAGE CODE "a" for 72-54-00 figure 5).</p> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="NotePara"><span style="font-weight: bold;">Note:</span>&nbsp; If interchangeability of assemblies, sub-assemblies and detail parts is affected between Chapter/Section/Unit/Installation (or between figures thereof), "use with" notes will be used in the nomenclature column for the affected part number(s).</td> 
+        </tr> 
+       </tbody> 
+      </table> <p>Fully interchangeable parts do not require USAGE CODE designation, or notes, within the assembly level they support.</p> </td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+   <colgroup> 
+    <col width="3%"> 
+    <col> 
+   </colgroup> 
+   <tbody>
+    <tr> 
+     <td valign="top" class="BodyTitle">8. </td> 
+     <td><span id="" class="BodyTitle">How to use the EIPD</span>
+      <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+       <colgroup> 
+        <col width="3%"> 
+        <col> 
+       </colgroup> 
+       <tbody>
+        <tr> 
+         <td valign="top" class="BodyTitle"> (1) </td> 
+         <td> <p><b>To identify an item when only the part number is known.</b></p> 
+          <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+           <colgroup> 
+            <col width="3%"> 
+            <col> 
+           </colgroup> 
+           <tbody>
+            <tr> 
+             <td valign="top" class="BodyTitle"> (a) </td> 
+             <td> <p> Find the part number in the Numerical Index and note the Chapter/Section/Subject, Figure and Item Number.</p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+           <colgroup> 
+            <col width="3%"> 
+            <col> 
+           </colgroup> 
+           <tbody>
+            <tr> 
+             <td valign="top" class="BodyTitle"> (b) </td> 
+             <td> <p> Turn to this Figure/Item Number in the <span>DPL</span>. </p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+           <colgroup> 
+            <col width="3%"> 
+            <col> 
+           </colgroup> 
+           <tbody>
+            <tr> 
+             <td valign="top" class="BodyTitle"> (c) </td> 
+             <td> <p>For description of desired part, refer to Nomenclature.</p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+           <colgroup> 
+            <col width="3%"> 
+            <col> 
+           </colgroup> 
+           <tbody>
+            <tr> 
+             <td valign="top" class="BodyTitle"> (d) </td> 
+             <td> <p>For appearance of desired part, locate Item Number on the illustration.</p> </td> 
+            </tr> 
+           </tbody>
+          </table> </td> 
+        </tr> 
+       </tbody>
+      </table> 
+      <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+       <colgroup> 
+        <col width="3%"> 
+        <col> 
+       </colgroup> 
+       <tbody>
+        <tr> 
+         <td valign="top" class="BodyTitle"> (2) </td> 
+         <td> <p><b>To identify an item when the part number is not known.</b></p> 
+          <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+           <colgroup> 
+            <col width="3%"> 
+            <col> 
+           </colgroup> 
+           <tbody>
+            <tr> 
+             <td valign="top" class="BodyTitle"> (a) </td> 
+             <td> <p>Turn to the Chapter Table of Contents for the Chapter/Section/Subject in which the major assembly appears and find the Figure Number.</p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+           <colgroup> 
+            <col width="3%"> 
+            <col> 
+           </colgroup> 
+           <tbody>
+            <tr> 
+             <td valign="top" class="BodyTitle"> (b) </td> 
+             <td> <p>Turn to the Figure where this major assembly is illustrated.</p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+           <colgroup> 
+            <col width="3%"> 
+            <col> 
+           </colgroup> 
+           <tbody>
+            <tr> 
+             <td valign="top" class="BodyTitle"> (c) </td> 
+             <td> <p>Note the Item Number on the illustration.</p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+           <colgroup> 
+            <col width="3%"> 
+            <col> 
+           </colgroup> 
+           <tbody>
+            <tr> 
+             <td valign="top" class="BodyTitle"> (d) </td> 
+             <td> <p> Locate the Item Number in the Detailed Parts List which will show the part number and Nomenclature.</p> </td> 
+            </tr> 
+           </tbody>
+          </table> </td> 
+        </tr> 
+       </tbody>
+      </table> 
+      <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+       <colgroup> 
+        <col width="3%"> 
+        <col> 
+       </colgroup> 
+       <tbody>
+        <tr> 
+         <td valign="top" class="BodyTitle"> (3) </td> 
+         <td><span id="" class="BodyTitle">Special indications in the Detailed Part List. </span><p>See DPL sample pages - not currently present</p> 
+          <table id="tab-0002" cellspacing="0" cellpadding="0" width="95%" style="border:.5pt solid black"> 
+          </table>
+          <table id="" cellspacing="0" cellpadding="0" width="95%" style="border:.5pt solid black"> 
+           <thead class="thead" style="border:.5pt solid black"> 
+            <tr id="" style="padding:4pt;border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; " class="r4iTableHead"> 
+             <td style="border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN">REF ITEM</td> 
+             <td style="border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="center" colspan="NaN">INDICATION </td> 
+             <td style="border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="center" colspan="NaN">INTERPRETATION </td> 
+            </tr> 
+           </thead> 
+           <tbody>
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>1 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p> -1 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>The number in the figure and item number column corresponds to the item number of the part in the corresponding illustration. The item numbers preceded by a dash are not illustrated. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>2 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>6 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>The number on the first row in the first page of the figure before the item in the figure and item number column corresponds to the figure number. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>3 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>24 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>A number in the unit per assy column indicates the quantity of the part used for the one next higher assembly. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>4 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>00A </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates an item sequence number with an alpha variant. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>5 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>72-31-00 RPR 999-999 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>The reference 72-XX-XX RPR XXX-XXX identifies the Shop Manual Section and <span>repair&nbsp;(RPR) </span> Number(s) (XXX-XXX) that have the approved repairs for the part. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>6 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>ALT --------- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates that parts are equivalent to the prime part number. </p> <p>Prime and alternate part numbers are identical and therefore physically and functionally interchangeable. Either part may be supplied.</p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>7 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>AR </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates the parts vary in the number required to properly build the assembly. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>8 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p> DEL BY SB ------- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates the part has been deleted by the referenced service bulletin. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>9 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>MATCHED PART </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Part number is provisioned separately, but requires matching to a mating part. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>10 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>MATCHED PART ORDER NHA </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Part number is not provisioned and the <span>next higher assembly&nbsp;(NHA) </span> must be ordered. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>11 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>MOD APPL </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>See model apply section of this introduction. </p> <p>Indicates applicability to specific engine models. the item is applicable to all engine models when this indication is absent. </p> <p>Applies to the entire item when appearing at the last line of nomenclature and starts at the first indenture. </p> <p>Applies to the preceding line of text only when appearing at the fourth indenture. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>12 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p> MODIFIED FROM - MADE BY V99999 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Part manufactured from the other referenced part number. the original part number is followed by the Cage Code or NCage Code. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>not shown </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>NO-NUMBER </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Fictitious part number that is not procurable. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>13 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>NOTE </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Additional information about a part. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>14 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>NP </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates the part is not provisioned as a spare part. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>15 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>VENDOR SPEC ---------- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>The referenced part number is controlled by VENDOR specification control drawings. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Not shown </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p> ORDER OVERLGTH MPN </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>The referenced part number is to be ordered in place of the shortened part number. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Not shown </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>OVERSIZE </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>The main dimensional feature is larger in size, requires selection for proper fit. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>16 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>POST SB ------- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Parts introduced and approved for revenue service by service bulletins are indicated by "post sb" in the nomenclature column. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>17 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>REF SB ------- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates the service bulletin should be considered when inspecting or making disposition of the part. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>18 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p> REPL BY ------- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>The referenced part number has replaced the old part number. replaced parts are fully interchangeable. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>19 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>RF </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>An "rf" in the unit per assy column indicates the installation, assembly or part is listed for reference and can be located in other figures. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>20 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>RWK TO ------- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Parts which may be reworked are indicated by "RWK TO ..." in the nomenclature column. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Not shown </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>SAME AS ------- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates the original overlength part number. appears in the index only. </p> <p>See indication ORDER OVERLGTH MPN, in this table.</p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>21 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>SEE --------- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>The cross-reference "SEE ..." indicates where the part is shown in another figure. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>22 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>SEE -------- FOR DET </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates the figure in which the assembly is broken down to its component parts. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>23 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p> SEE -------- FOR NHA </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates the figures in which the relationship of the part to its next higher assembly can be found. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>24 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p> SEE CMM --------- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates the component maintenance manual that provides the instructions for that component. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>25 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>SEL FROM </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Used when there is a choice of parts to be used based on different weight, size, etc. of the parts for the assembly. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>26 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>FUNCTIONAL ITEM </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p> Also known as <span>significant item number&nbsp;(SIN) </span> from the engineering parts list. A <span>SIN</span> represents a unique parts location on the engine. <span>SIN</span>s are organized by engine module and section. The <span>SIN</span> can be helpful when contacting General Electric for support. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Not shown </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>SPD </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>A replacement spare part which differs from the production part or parts to satisfy repair requirements. indication appears in the nomenclature. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>28 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>SUPSD BY------ </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>The referenced part number has superseded the old part number. superseded parts are not interchangeable. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Not shown </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>TOTAL QTY ----- </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Special note indicating total quantity of parts. precedes items required to complete a set. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>not shown </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>UNDERSIZE </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>The main dimensional feature is smaller in size requiring selection for proper fit. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>29 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p> USE WITH ------ </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>Indicates the part must be used with the referenced part because of interchangeability restrictions. </p> <p>the <span>CSN</span> follows this indication. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>30 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>99999 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>A vendor supplied part is identified by the vendor's part number in the part number column and the Cage Code or NCage Code at the end of the nomenclature column. </p> </td> 
+            </tr> 
+            <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>31 </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>EXPENDABLE </p> </td> 
+             <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN"> <p>If removed, an expendable part must always be replaced by a new part. </p> </td> 
+            </tr> 
+           </tbody>
+          </table> </td>
+        </tr>
+       </tbody>
+      </table> </td> 
+    </tr> 
+   </tbody>
+  </table>    
+  <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+   <colgroup> 
+    <col width="3%"> 
+    <col> 
+   </colgroup> 
+   <tbody>
+    <tr> 
+     <td valign="top" class="BodyTitle">9. </td> 
+     <td><span id="" class="BodyTitle">DPL sample pages</span></td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+   <colgroup> 
+    <col width="3%"> 
+    <col> 
+   </colgroup> 
+   <tbody>
+    <tr> 
+     <td valign="top" class="BodyTitle">10. </td> 
+     <td><span id="" class="BodyTitle">Manufacturers part number system</span></td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+   <colgroup> 
+    <col width="3%"> 
+    <col> 
+   </colgroup> 
+   <tbody>
+    <tr> 
+     <td valign="top" class="BodyTitle">11. </td> 
+     <td><span id="" class="BodyTitle">Explanations of 3XX-XXX-XXX-X numbers</span><p>Family Number is an invariable number for all versions derived from initial definition.</p> <p>Part Version Sequential Number is assigned to part in relation to modification applied. Initial part is 00.</p> <p>Part Definition Classification is identified by the following numbers:</p> 
+      <table id="tab-0003" cellspacing="0" cellpadding="0" width="95%" style="border:.5pt solid black"> 
+      </table>
+      <table id="" cellspacing="0" cellpadding="0" width="95%" style="border:.5pt solid black"> 
+       <tbody>
+        <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>0 </p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p> Part delivered in finished state. </p> </td> 
+        </tr> 
+        <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>1 thru 5 </p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>Parts finished or semi-finished with material allowance from first to fifth repair. </p> </td> 
+        </tr> 
+        <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>6 </p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p> Permanently-assembled unit delivered in semi-finished state. Completed on NHA. To determine the necessary operations to assemble these parts, refer to the applicable shop manual procedures. </p> </td> 
+        </tr> 
+        <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>8 </p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>Rough forging </p> </td> 
+        </tr> 
+        <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>9 </p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>Blank parts (as forged, or cast) </p> </td> 
+        </tr> 
+       </tbody>
+      </table> </td>
+    </tr>
+   </tbody>
+  </table>    
+  <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+   <colgroup> 
+    <col width="3%"> 
+    <col> 
+   </colgroup> 
+   <tbody>
+    <tr> 
+     <td valign="top" class="BodyTitle">12. </td> 
+     <td><span id="" class="BodyTitle">Standard part</span><p>Expendable hardware items having a relatively high usage and application and are normally available from industrial supply outlets. Includes such items as nuts, bolts, screws, fasteners, rivets, seals, resistors, capacitors, diodes, etc.</p> <p>Standard items are identified by the following Part Number types:</p> 
+      <table id="tab-0004" cellspacing="0" cellpadding="0" width="95%" style="border:.5pt solid black"> 
+      </table>
+      <table id="" cellspacing="0" cellpadding="0" width="95%" style="border:.5pt solid black"> 
+       <tbody>
+        <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>HSTXX, etc.</p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>-</p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>73197</p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>NASXX, etc.</p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>*</p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>80205</p> </td> 
+        </tr> 
+        <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>MSXXXX-XX, etc</p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>-</p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>81343</p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>ASXXXX, etc.</p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>*</p> </td> 
+         <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p> U1653</p> </td> 
+        </tr> 
+       </tbody>
+      </table> </td>
+    </tr>
+   </tbody>
+  </table> 
+  <p>* If one of the above listed Part Number types is shown in the present EIPD with a different associated Cage Code or NCage Code, this part is not a standard item.</p>    
+  <p><b>All parts to be procured through GE.</b></p>        
+  <table width="100%"> 
+   <tbody> 
+    <tr> 
+     <td> 
+      <div class="Footer" align="left">
+       GE Designated: - CONFIDENTIAL-
+      </div> 
+      <div class="Footer2" align="left">
+       Subject to the restrictions on the media
+      </div> </td> 
+     <td> 
+      <div class="Footer" align="right">
+       PASSPORT20-A-00-00-00-01B-018A-D
+      </div> 
+      <div class="Footer2" align="right">
+        Issue 001 - 2018-12-10
+      </div> </td> 
+    </tr> 
+   </tbody> 
+  </table>      
+ </body>
+</html>

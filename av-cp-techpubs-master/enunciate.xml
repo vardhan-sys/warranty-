@@ -1,0 +1,5 @@
+<enunciate>
+    <modules>
+        <jackson disabled="true"/>
+    </modules>
+</enunciate>

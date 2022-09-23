@@ -1,0 +1,37 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "GlobalElasticLoadBalancerPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "elasticloadbalancing:AddTags",
+                "elasticloadbalancing:CreateListener",
+                "elasticloadbalancing:CreateLoadBalancer",
+                "elasticloadbalancing:CreateRule",
+                "elasticloadbalancing:CreateTargetGroup",
+                "elasticloadbalancing:DeleteListener",
+                "elasticloadbalancing:DeleteLoadBalancer",
+                "elasticloadbalancing:DeleteRule",
+                "elasticloadbalancing:DeleteTargetGroup",
+                "elasticloadbalancing:ModifyListener",
+                "elasticloadbalancing:ModifyLoadBalancerAttributes",
+                "elasticloadbalancing:ModifyRule",
+                "elasticloadbalancing:ModifyTargetGroup",
+                "elasticloadbalancing:ModifyTargetGroupAttributes",
+                "elasticloadbalancing:RemoveTags",
+                "elasticloadbalancing:SetRulePriorities",
+                "elasticloadbalancing:SetSecurityGroups"
+            ],
+            "Resource": [
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:loadbalancer/app/{{cookiecutter.product_prefix}}*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:loadbalancer/net/{{cookiecutter.product_prefix}}*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:listener-rule/app/{{cookiecutter.product_prefix}}*/*/*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:listener-rule/net/{{cookiecutter.product_prefix}}*/*/*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:listener/app/{{cookiecutter.product_prefix}}*/*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:listener/net/{{cookiecutter.product_prefix}}*/*/*",
+                "arn:aws:elasticloadbalancing:us-east-1:{{cookiecutter.aws_account_id}}:targetgroup/{{cookiecutter.product_prefix}}*/*"
+            ]
+        }
+    ]
+}

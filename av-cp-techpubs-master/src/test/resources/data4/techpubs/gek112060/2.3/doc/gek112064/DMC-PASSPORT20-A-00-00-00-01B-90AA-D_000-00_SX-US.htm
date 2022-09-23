@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "html">
+<html xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--.src='..\Images\getBinaryResourceTDExpected.jpg';-->
+  <!--.src='..\Images\OpenSection.jpg';-->
+  <title>EIPD</title> 
+  <style type="text/css">
+          A:hover { background-color:black; color:white}
+          A:link { COLOR: blue;  TEXT-DECORATION: none; background-color:white; }
+          A:visited { COLOR: blue;  TEXT-DECORATION: none; background-color:white; }
+          .Header {font-size: 14pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt;}
+          .Header2 {font-size: 12pt; font-family: Arial; color: blue; padding-top:3pt;}
+          .Footer {font-size: 12pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt;}
+          .Footer2 {font-size: 12pt; font-family: Arial; color: black; padding-top:8pt;}
+          .DMTitle {font-size: 14pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt;}
+          .DMTitle2 {font-size: 14pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt; padding-bottom:10pt;}
+          .Body {font-size: 11pt; font-family: Arial; color: black;}
+          .BodyTitle {font-size: 11pt; font-family: Arial; color: black; font-weight: bold;}
+          .TOCHeader {font-size: 12pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt;}
+          .DRestrictions {font-size: 11pt; font-family: Calibri; color: black;}
+          .techref {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          .WarnCaution {font-size: 12pt; font-family: Arial; font-weight: bold; color: black; padding-top:8pt; padding-bottom:8pt;}
+          .WarnCautionPara {font-size: 10pt; font-family: Arial; color: black; padding-bottom:4pt;}
+          .DescriptiveParaHeading {font-size: 11pt; font-family: Arial; color: black; margin-top:12pt; margin-bottom:4pt;}
+          .ProeceduralStep {font-size: 11pt; font-family: Arial; color: black;}
+          .NotePara {font-size: 11pt; font-family: Arial; color: black; padding-bottom: 8pt; padding-top: 8pt;}
+          .category {font-size: 10pt; font-family: Arial; font-weight: bold; color: blue;}
+          .Logo {font-size: 50pt; font-family: GELogoFont;}
+           .LogoGE9X {font-size: 14pt; font-family: GE9X_2018;}
+          .refs {font-size: 11pt; font-family: sans-serif; font-weight: normal; color:blue; }
+                   .spareCodesPara {font-size: 11pt; font-family: Arial; color: black;}
+                 .changeMarkAdd {font-size: 11pt; font-family: Arial; color: black; font-weight: normal; background-color:#CCCCFF;}
+
+          .Effectivity {font-size: 8pt; font-family: Arial; font-weight: bold;color: black; padding-top:8pt;}
+          .SectionHeadingTable {font-size: 11pt; font-family: Arial;  color: black; margin-top:12pt; margin-bottom:4pt;}
+          .SectionHeading {font-size: 12pt; font-family: Arial; FONT-STYLE: italic; font-weight: bold; color: black}
+          .SubSectionTitle {font-size: 11pt; font-family: Arial; font-weight: bold; color: black}
+          .SubSectionHeader {font-size: 11pt; font-family: Arial; font-weight: bold; color: black}
+          .SubSectionText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; margin-top:12pt; margin-bottom:4pt;                               }
+          .SubSectionTextTable {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; margin-top:12pt; margin-bottom:4pt;}
+          
+         .ConsumbablesSubHeading {font-size: 11pt; font-family: Arial; color: black; TEXT-DECORATION: underline}
+         .AltProcHeading {font-size: 11pt; font-family: Arial; color: black; TEXT-DECORATION: underline}
+         
+          .TableTitle {font-size: 11pt; font-family: Arial; color: black; font-weight: bold; padding-top:8pt; padding-bottom:8pt;}
+         .thead {font-size: 11pt; font-family: Arial; color: black; font-weight: bold;}
+         
+          .DescriptiveParaHeading1 {font-weight:bold; font-size: 11pt; font-family: Arial; color: black; margin-top:12pt; margin-bottom:4pt;                                                           }
+          .DescriptiveParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 12px; margin-bottom:8pt;}
+          .DescriptiveSubParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 24px; margin-bottom:8pt;}
+          .DescriptiveSubSubParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 36px; margin-bottom:8pt;}
+          .ProceduralParaHeading {font-size: 11pt; font-family: Arial; font-weight: normal; color: black}
+          .ProceduralParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 12px; margin-bottom:8pt;}
+          .ProceduralSubParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 24px; margin-bottom:8pt;}
+          .ProceduralSubSubParaText {font-size: 11pt; font-family: Arial; font-weight: normal; color: black; POSITION: relative; LEFT: 36px; margin-bottom:8pt;}
+          .WarningHeading {font-size: 11pt; font-family: Arial; color: red; TEXT-DECORATION: underline}
+          .WarningText {font-size: 11pt; font-family: Arial; color: red}
+          .CautionHeading {font-size: 11pt; font-family: Arial; color: blue; TEXT-DECORATION: underline}
+          .CautionText {font-size: 11pt; font-family: Arial; color: blue}
+          .NoteHeading {font-size: 11pt; font-family: Arial; color: purple; TEXT-DECORATION: underline}
+          .NoteText {font-size: 11pt; font-family: Arial; font-weight: normal; color: purple; POSITION: relative; LEFT: 7mm}
+          .heading {font-size: 11pt; font-family: sans-serif; font-weight: bold; color: blue}
+          .normalText {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          .sectionHeadingkk {font-size: 11pt; font-family: sans-serif; font-weight: bold; color: blue}
+          .r4iH1 {font-size: 11pt; font-family: sans-serif; font-weight: bold; color: blue}
+          .r4iH2 {font-size: 11pt; font-family: sans-serif; font-weight: bold; color: blue}
+          .r4iReferences {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          .r4inormaltext {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          .r4inormaltextIndent {font-size: 11pt; LEFT: 12px; font-family: sans-serif; font-weight: normal; color: black; POSITION: relative}
+          .r4sectionlabel {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black; background-color:lightgreen;}
+          .warntext {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          .f8sBl {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black}
+          A.f8sBl:hover { background-color:black; color:white}
+          .r4iTableHead {font-size: 11pt; font-family: Arial; margin-top:4pt; margin-bottom:4pt;}
+          .r4iTableFoot {font-size: 8pt; font-family: Arial; margin-top:4pt; margin-bottom:4pt;}
+         .noBottomBorder {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black;border-bottom: 0 pt solid white} 
+          .BottomBorder {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black; border-bottom: .5 pt solid black}
+                    tr .noBottomBorder td {font-size: 11pt; font-family: sans-serif; font-weight: normal; color: black;border-bottom:hidden;}
+          .HilightBg { background-color:#3399FF; }
+        </style>
+  <script id="clientEventHandlersJS" language="javascript">
+          //Function to pad text or number with leading chars (str, padwidth, padchar)
+          function padL(a,b,c){//string/number,length=2,char=0
+          return (new Array(b||2).join(c||0)+a).slice(-b)
+          }
+          //Function to dispaly all the isolationSteps and procedureENds (isolationMainProcedure) content at once
+          function display_all() {
+          var mydivs = document.getElementsByTagName("div");
+          var i;
+          for (i = 0; i < mydivs.length; i++) {
+          mydivs[i].style.visibility="";
+          mydivs[i].style.display="";
+          }
+          }
+          //REload the page - so back to displaying only the first step
+          function display_steps() {
+          reload();
+          }
+          //called from isolationStepAnswers YES/NO
+          //if the checkbox is selected then the next question nominated in the nextActionRefId attribute
+          //is given the focus/cursor/highlight /made visible
+          function display_div(item, destType) {
+          //if item length is less than 4 , prepend 0's until length is 4,then prepend stp-
+          item = padL(item,4);
+          if (destType =='id'){
+             item = "id-" + item;
+          } else if (destType =='st'){
+             item = "st-" + item;
+          }          
+          else {
+          item = "stp-" + item;}
+          var mydiv = document.getElementById(item);
+          mydiv.style.visibility="";
+          mydiv.style.display="";
+          }
+          
+          function HighlightText(OldObjectID, NewObjectID)
+          {
+          if(NewObjectID != undefined){jQuery("#IPDData").setSelection(NewObjectID, true);}
+          }
+
+          function ScrollToSelectedNode()
+          {
+          obj = document.getElementById('selected_node');
+          if(obj != null)
+          {
+          obj.className += " HilightBg";
+          obj.scrollIntoView(true);
+          }
+          }
+
+          function s1_onclick() {
+          if (window.Section_1.style.display == 'none' ) {
+          window.Section_1.style.display = 'block';
+          window.document.s1_image.alt = 'Collapse Section';
+          window.document.s1_image.src = window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_1.style.display = 'none';
+          window.document.s1_image.alt = 'Expand Section';
+          window.document.s1_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+          function s2_onclick() {
+          if (window.Section_2.style.display == 'none' ) {
+          window.Section_2.style.display = 'block';
+          window.document.s2_image.alt = 'Collapse Section';
+          window.document.s2_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_2.style.display = 'none';
+          window.document.s2_image.alt = 'Expand Section';
+          window.document.s2_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+          function s3_onclick() {
+          if (window.Section_3.style.display == 'none' ) {
+          window.Section_3.style.display = 'block';
+          window.document.s3_image.alt = 'Collapse Section';
+          window.document.s3_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_3.style.display = 'none';
+          window.document.s3_image.alt = 'Expand Section';
+          window.document.s3_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+          function s4_onclick() {
+          if (window.Section_4.style.display == 'none' ) {
+          window.Section_4.style.display = 'block';
+          window.document.s4_image.alt = 'Collapse Section';
+          window.document.s4_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_4.style.display = 'none';
+          window.document.s4_image.alt = 'Expand Section';
+          window.document.s4_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+          function s5_onclick() {
+          if (window.Section_5.style.display == 'none' ) {
+          window.Section_5.style.display = 'block';
+          window.document.s5_image.alt = 'Collapse Section';
+          window.document.s5_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_5.style.display = 'none';
+          window.document.s5_image.alt = 'Expand Section';
+          window.document.s5_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+                  function s6_onclick() {
+          if (window.Section_6.style.display == 'none' ) {
+          window.Section_6.style.display = 'block';
+          window.document.s6_image.alt = 'Collapse Section';
+          window.document.s6_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_6.style.display = 'none';
+          window.document.s6_image.alt = 'Expand Section';
+          window.document.s6_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+                         function s7_onclick() {
+          if (window.Section_7.style.display == 'none' ) {
+          window.Section_7.style.display = 'block';
+          window.document.s7_image.alt = 'Collapse Section';
+          window.document.s7_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_7.style.display = 'none';
+          window.document.s7_image.alt = 'Expand Section';
+          window.document.s7_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+             function s8_onclick() {
+          if (window.Section_8.style.display == 'none' ) {
+          window.Section_8.style.display = 'block';
+          window.document.s8_image.alt = 'Collapse Section';
+          window.document.s8_image.src =  window.document.s1_image.src.replace('OpenSection', 'CloseSection');
+          } else {
+          window.Section_8.style.display = 'none';
+          window.document.s8_image.alt = 'Expand Section';
+          window.document.s8_image.src = window.document.s1_image.src.replace('CloseSection', 'OpenSection');
+          }
+          }
+        </script>
+ </head> 
+ <body class="SubSectionText" onload="ScrollToSelectedNode()"> 
+  <table width="100%"> 
+   <thead> 
+    <tr> 
+     <td> 
+      <table width="100%"> 
+       <tbody> 
+        <tr> 
+         <td> 
+          <div class="Logo">
+            e
+          </div> 
+          <div class="Header" style="border-bottom:1px solid black;">
+            Passport 20 
+          </div> </td> 
+        </tr> 
+       </tbody> 
+      </table> </td> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td> 
+      <form method="post" name="frmdetail">
+       <input type="hidden" name="StepNumber" value="1">
+       <input type="hidden" name="ImageDisplayStyle" value="3">
+       <input type="hidden" name="NumberOfSteps" value="1">
+       <input type="hidden" name="NewTarget" value="1">
+       <input type="hidden" name="RecordID" value="">
+       <div class="DMTitle" align="center">
+        EIPD
+       </div> 
+       <div class="DMTitle2" align="center">
+        Vendors list
+       </div> 
+       <table class="Body" width="100%"> 
+        <colgroup> 
+         <col width="25%"> 
+        </colgroup> 
+        <tbody> 
+         <tr> 
+          <td style="padding-bottom:5pt;">DMC:</td> 
+          <td style="padding-bottom:5pt;">PASSPORT20-A-00-00-00-01B-90AA-D</td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Language:</td> 
+          <td style="padding-bottom:5pt;">sx/US</td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Issue No:</td> 
+          <td style="padding-bottom:5pt;">001</td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Issue Date:</td> 
+          <td style="padding-bottom:5pt;">10&nbsp;Dec&nbsp;2018</td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Title:</td> 
+          <td style="padding-bottom:5pt;">EIPD&nbsp;-&nbsp;Vendors list</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table border="0" cellspacing="2" cellpadding="4" width="100%"> 
+        <tbody>
+         <tr id="" class="SubSectionText" language="javascript" onclick="return s1_onclick()"> 
+          <td id="s1_caption" width="200" align="left"><img id="s1_image" name="s1_image" alt="Collapse Section" src="D:\Users\212707109\Desktop\Hold\Passport 20\IPD\Front Matter\HTML\DMC-PASSPORT20-A-00-00-00-01B-90AA-D_001-00_SX-US/images/CloseSection.jpg
+            "> DM Status </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <table id="Section_1" class="Body" width="100%"> 
+        <colgroup> 
+         <col width="25%"> 
+        </colgroup> 
+        <tbody> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Security classification:</td> 
+          <td style="padding-bottom:5pt;"> Class01</td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Responsible Company:</td> 
+          <td style="padding-bottom:5pt;"> GE Passport LLC&nbsp;(80NQ3) </td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Originator:</td> 
+          <td style="padding-bottom:5pt;"> GE Passport LLC&nbsp;(80NQ3) </td> 
+         </tr> 
+         <tr> 
+          <td style="padding-bottom:5pt;">Applicability:</td> 
+          <td style="padding-bottom:5pt;">&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <div class="DRestrictions" style="padding-top:70pt;"> 
+        <div style="padding-bottom: 5pt" align="center">
+         GE Designated: -CONFIDENTIAL-
+        </div> 
+        <div style="padding-bottom:5pt;" align="justify">
+         The information contained in this document is GE proprietary information and is disclosed in confidence. It is the property of GE and shall not be used, disclosed to others or reproduced without the express written consent of GE, including, but without limitation, it is not to be used in the creation, manufacture, development, or derivation of any repairs, modifications, spare parts, designs, or configuration changes or to obtain FAA or any other government or regulatory approval to do so. If consent is given for reproduction in whole or in part, this notice and the notice set forth on each page of this document shall appear in any such reproduction in whole or part.
+        </div> 
+        <div style="padding-bottom:5pt;" align="justify">
+         This technical data is considered subject to the Export Administration Regulations (EAR) pursuant to 15 CFR Parts 730-774. Transfer of this data by any means to a Non-U.S. Person, whether in the United States or abroad, without the proper U.S. Government authorization (e.g., License, exemption, NLR, etc.), is strictly prohibited.
+        </div> 
+        <div style="padding-bottom: 5pt" align="center">
+         Copyright (2018) General Electric Company, U.S.A.
+        </div> 
+       </div> 
+       <table width="100%"> 
+        <colgroup> 
+         <col width="3%"> 
+         <col width="3%"> 
+         <col width="3%"> 
+        </colgroup> 
+        <tbody> 
+         <tr> 
+          <td></td> 
+          <td></td> 
+          <td class="body"></td> 
+          <td class="body" colspan="2"></td> 
+         </tr> 
+         <tr> 
+          <td class="TOCHeader" colspan="4">Table of contents:</td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">1.</td> 
+          <td class="body" colspan="2"><a class="r4iReferences" href="#refs">References </a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td class="body">2. </td> 
+          <td class="body" colspan="2"><a id="" class="r4iReferences" href="#">List of vendors referenced in the Engine Illustrated Parts Catalog</a></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <div class="TOCHeader" padding-top="8pt" id="refs">
+        1.&nbsp;References
+       </div> 
+       <table width="100%" style="border-bottom:1px solid black;"> 
+        <colgroup> 
+         <col width="5%"> 
+         <col width="50%"> 
+         <col width="50%"> 
+        </colgroup> 
+        <tbody> 
+         <tr class="body"> 
+          <td colspan="3" style="border-bottom:1px solid black;" align="center">Table: References</td> 
+         </tr> 
+         <tr class="body"> 
+          <td></td> 
+          <td>None</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table id="" class="DescriptiveParaText" width="100%" style="padding-top: 6pt;"> 
+        <colgroup> 
+         <col width="3%"> 
+         <col> 
+        </colgroup> 
+        <tbody>
+         <tr> 
+          <td valign="top" class="BodyTitle">2. </td> 
+          <td><span id="" class="BodyTitle">List of vendors referenced in the Engine Illustrated Parts Catalog</span></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <div id="tab-0001" class="TableTitle" align="center">
+         Table&nbsp;1:&nbsp; Vendor information
+       </div>
+       <br>
+       <table id="tab-0001" cellspacing="0" cellpadding="0" width="95%" style="border:.5pt solid black"> 
+       </table>
+       <table id="" cellspacing="0" cellpadding="0" width="95%" style="border:.5pt solid black"> 
+        <thead class="thead" style="border:.5pt solid black"> 
+         <tr id="" style="padding:4pt;border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; " class="r4iTableHead"> 
+          <td style="border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN">VENDOR</td> 
+          <td style="border-bottom: solid .5pt black;border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="left" colspan="NaN">ADDRESS</td> 
+         </tr> 
+        </thead> 
+        <tbody>
+         <tr style="border-left: .5pt solid black; border-right:.5pt solid black;"> 
+          <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>80NQ3</p> </td> 
+          <td id="" valign="top" style="border-bottom: .5pt solid black; border-left: .5pt solid black; border-right:.5pt solid black; PADDING: 4pt;" rowspan="NaN" align="" colspan="NaN"> <p>GE Passport LLC</p> <p>One Neumann Way</p> <p>Evendale, OH 45215</p> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+      </form></td>
+    </tr>
+   </tbody>
+  </table> 
+  <p><b>All parts to be procured through GE.</b></p>        
+  <table width="100%"> 
+   <tbody> 
+    <tr> 
+     <td> 
+      <div class="Footer" align="left">
+       GE Designated: - CONFIDENTIAL-
+      </div> 
+      <div class="Footer2" align="left">
+       Subject to the restrictions on the media
+      </div> </td> 
+     <td> 
+      <div class="Footer" align="right">
+       PASSPORT20-A-00-00-00-01B-90AA-D
+      </div> 
+      <div class="Footer2" align="right">
+        Issue 001 - 2018-12-10
+      </div> </td> 
+    </tr> 
+   </tbody> 
+  </table>      
+ </body>
+</html>

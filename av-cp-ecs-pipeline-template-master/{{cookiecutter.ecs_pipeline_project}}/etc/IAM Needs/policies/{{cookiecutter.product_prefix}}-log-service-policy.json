@@ -1,0 +1,54 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RestrictedLogGroupPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "logs:AssociateKmsKey",
+                "logs:CreateLogStream",
+                "logs:DeleteLogGroup",
+                "logs:DeleteMetricFilter",
+                "logs:DeleteRetentionPolicy",
+                "logs:DeleteSubscriptionFilter",
+                "logs:PutMetricFilter",
+                "logs:PutRetentionPolicy",
+                "logs:PutSubscriptionFilter",
+                "logs:TagLogGroup",
+                "logs:UntagLogGroup"
+            ],
+            "Resource": [
+                "arn:aws:logs:us-east-1:{{cookiecutter.aws_account_id}}:log-group:{{cookiecutter.product_prefix}}*",
+                "arn:aws:logs:us-east-1:{{cookiecutter.aws_account_id}}:log-group:/aws/*/{{cookiecutter.product_prefix}}*"
+            ]
+        },
+        {
+            "Sid": "RestrictedLogStreamPermissions",
+            "Effect": "Allow",
+            "Action": "logs:DeleteLogStream",
+            "Resource": [
+                "arn:aws:logs:us-east-1:{{cookiecutter.aws_account_id}}:log-group:{{cookiecutter.product_prefix}}*:log-stream:*",
+                "arn:aws:logs:us-east-1:{{cookiecutter.aws_account_id}}:log-group:/aws/*/{{cookiecutter.product_prefix}}*:log-stream:*"
+            ]
+        },
+        {
+            "Sid": "GlobalLogPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogDelivery",
+                "logs:CreateLogGroup",
+                "logs:DeleteDestination",
+                "logs:DeleteLogDelivery",
+                "logs:DeleteResourcePolicy",
+                "logs:PutResourcePolicy"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "GlobalCloudwatch",
+            "Effect": "Allow",
+            "Action": "cloudwatch:PutMetricData",
+            "Resource": "*"
+        }
+    ]
+}

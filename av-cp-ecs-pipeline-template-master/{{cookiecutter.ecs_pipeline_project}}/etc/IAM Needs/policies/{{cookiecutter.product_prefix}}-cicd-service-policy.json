@@ -1,0 +1,74 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RestrictedCodeBuildUser",
+            "Effect": "Allow",
+            "Action": [
+                "codebuild:InvalidateProjectCache",
+                "codebuild:StartBuild",
+                "codebuild:StopBuild",
+                "codebuild:UpdateProject",
+                "codebuild:CreateProject",
+                "codebuild:DeleteProject",
+                "codebuild:UpdateProject"
+            ],
+            "Resource": "arn:aws:codebuild:us-east-1:{{cookiecutter.aws_account_id}}:project/{{cookiecutter.product_prefix}}*"
+        },
+        {
+            "Sid": "RestrictedCodeDeployUser",
+            "Action": [
+                "codedeploy:CreateDeployment",
+                "codedeploy:GetApplication",
+                "codedeploy:GetApplicationRevision",
+                "codedeploy:GetDeployment",
+                "codedeploy:GetDeploymentConfig",
+                "codedeploy:RegisterApplicationRevision"
+            ],
+            "Resource": [
+                "arn:aws:codedeploy:us-east-1:{{cookiecutter.aws_account_id}}:application:{{cookiecutter.product_prefix}}*",
+                "arn:aws:codedeploy:us-east-1:{{cookiecutter.aws_account_id}}:deploymentconfig:{{cookiecutter.product_prefix}}*",
+                "arn:aws:codedeploy:us-east-1:{{cookiecutter.aws_account_id}}:deploymentgroup:{{cookiecutter.product_prefix}}*/*"
+
+            ],
+            "Effect": "Allow"
+        },
+        {
+            "Sid": "RestrictedCodeDeployDeployUser",
+            "Action": [
+                "codedeploy:CreateApplication",
+                "codedeploy:CreateDeploymentGroup",
+                "codedeploy:DeleteApplication",
+                "codedeploy:DeleteDeploymentGroup",
+                "codedeploy:UpdateApplication",
+                "codedeploy:UpdateDeploymentGroup"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:codedeploy:us-east-1:{{cookiecutter.aws_account_id}}:application:{{cookiecutter.product_prefix}}*",
+                "arn:aws:codedeploy:us-east-1:{{cookiecutter.aws_account_id}}:deploymentgroup:{{cookiecutter.product_prefix}}*/*"
+            ]
+        },
+        {
+            "Sid": "RestrictedCodePipelineUser",
+            "Action": [
+                "codepipeline:CreatePipeline",
+                "codepipeline:DeletePipeline",
+                "codepipeline:TagResource",
+                "codepipeline:UntagResource",
+                "codepipeline:UpdatePipeline"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:codepipeline:us-east-1:{{cookiecutter.aws_account_id}}:{{cookiecutter.product_prefix}}*"
+        },
+        {
+            "Sid": "RestrictedCodeStarConnectionUser",
+            "Effect": "Allow",
+            "Action": [
+                "codestar-connections:PassConnection",
+                "codestar-connections:UseConnection"
+            ],
+            "Resource": "arn:aws:codestar-connections:us-east-1:{{cookiecutter.aws_account_id}}:connection/e63702c6-51a8-4fc1-aebd-079fd9e6d1fe"
+        }
+    ]
+}

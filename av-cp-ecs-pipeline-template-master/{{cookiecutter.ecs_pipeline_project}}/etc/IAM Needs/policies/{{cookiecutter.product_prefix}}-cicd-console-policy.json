@@ -1,0 +1,73 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RestrictedCodeBuildProject",
+            "Effect": "Allow",
+            "Action": [
+                "codebuild:InvalidateProjectCache",
+                "codebuild:RetryBuild",
+                "codebuild:StartBuild",
+                "codebuild:StopBuild",
+                "codebuild:UpdateProject"
+            ],
+            "Resource": [
+                "arn:aws:codebuild:us-east-1:{{cookiecutter.aws_account_id}}:project/{{cookiecutter.product_prefix}}*"
+            ]
+        },
+        {
+            "Sid": "RestrictedCodeBuildGroup",
+            "Effect": "Allow",
+            "Action": [
+                "codebuild:CreateReportGroup",
+                "codebuild:DeleteReport",
+                "codebuild:DeleteReportGroup",
+                "codebuild:UpdateReportGroup"
+            ],
+            "Resource": "arn:aws:codebuild:us-east-1:{{cookiecutter.aws_account_id}}:report-group/{{cookiecutter.product_prefix}}*"
+        },
+        {
+            "Sid": "RestrictedCodeDeployPermissions",
+            "Action": [
+                "codedeploy:CreateDeployment",
+                "codedeploy:GetApplication",
+                "codedeploy:GetApplicationRevision",
+                "codedeploy:GetDeployment",
+                "codedeploy:GetDeploymentConfig",
+                "codedeploy:RegisterApplicationRevision"
+            ],
+            "Resource": [
+                "arn:aws:codedeploy:us-east-1:{{cookiecutter.aws_account_id}}:application:{{cookiecutter.product_prefix}}*",
+                "arn:aws:codedeploy:us-east-1:{{cookiecutter.aws_account_id}}:deploymentconfig:{{cookiecutter.product_prefix}}*",
+                "arn:aws:codedeploy:us-east-1:{{cookiecutter.aws_account_id}}:deploymentgroup:{{cookiecutter.product_prefix}}*/*"
+            ],
+            "Effect": "Allow"
+        },
+        {
+            "Sid": "GlobalCodeDeployPermissions",
+            "Action": [
+                "codedeploy:ContinueDeployment",
+                "codedeploy:StopDeployment"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        },
+        {
+            "Sid": "RestrictedCodepipelinePermissions",
+            "Effect": "Allow",
+            "Action": [
+                "codepipeline:PutApprovalResult",
+                "codepipeline:DisableStageTransition",
+                "codepipeline:EnableStageTransition",
+                "codepipeline:RetryStageExecution",
+                "codepipeline:StartPipelineExecution",
+                "codepipeline:TagResource",
+                "codepipeline:UntagResource",
+                "codepipeline:UpdatePipeline"
+            ],
+            "Resource": [
+                "arn:aws:codepipeline:us-east-1:{{cookiecutter.aws_account_id}}:{{cookiecutter.product_prefix}}*"
+            ]
+        }
+    ]
+}

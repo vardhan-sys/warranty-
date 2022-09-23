@@ -1,0 +1,16 @@
+{
+    "policies": [
+        "{{cookiecutter.product_prefix}}-config-service-policy",
+        "{{cookiecutter.product_prefix}}-storage-owner-policy",
+        "{{cookiecutter.product_prefix}}-passrole-policy",
+        "av-infra-readonlyaccess-policy",
+        "awsiam-sauce",
+        "awsiam-sauce-the-sequel"
+    ],
+    "trustPolicy": "codepipeline-trust-policy",
+    "tags": {
+        "author": "{{cookiecutter.project_creator}}",
+        "env": "prod"
+    },
+    "description": "Codepipeline functional role that will be utilized by codepipeline when it attepmpts to push code throught he pipeline."
+}

@@ -1,0 +1,19 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RestrictedSsmOwner",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:DeleteParameter",
+                "ssm:DeleteParameters",
+                "ssm:GetParameter",
+                "ssm:GetParameterHistory",
+                "ssm:GetParameters",
+                "ssm:GetParametersByPath",
+                "ssm:PutParameter"
+            ],
+            "Resource": "arn:aws:ssm:us-east-1:{{cookiecutter.aws_account_id}}:parameter/{{cookiecutter.product_prefix}}*"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "policies": [
+        "{{cookiecutter.product_prefix}}-config-service-policy",
+        "{{cookiecutter.product_prefix}}-storage-owner-policy",
+        "{{cookiecutter.product_prefix}}-ssm-service-policy",
+        "av-default-codebuild-policy",
+        "av-infra-readonlyaccess-policy",
+        "awsiam-sauce",
+        "awsiam-sauce-the-sequel"
+    ],
+    "trustPolicy": "codebuild-trust-policy",
+    "tags": {
+        "author": "{{cookiecutter.project_creator}}",
+        "env": "{{cookiecutter.env_non-prod_prod}}"
+    },
+    "description": "Codebuild functional role that will be utilized by codebuild when it attempts to do artifact builds."
+}

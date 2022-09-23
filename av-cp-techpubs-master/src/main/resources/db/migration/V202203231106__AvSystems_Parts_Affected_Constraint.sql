@@ -1,0 +1,1 @@
+ALTER TABLE part_numbers_affected ADD CONSTRAINT part_numbers_affected_unique UNIQUE (system_document_id, part_number);

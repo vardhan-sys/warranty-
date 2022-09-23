@@ -1,0 +1,704 @@
+{
+	"info": {
+		"_postman_id": "f90b65ed-16cb-4db1-af53-f12a1791a3d3",
+		"name": "AvSystem Uploader",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Document Type Lookup",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/avsystem/system-document-types",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"system-document-types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Documents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Test data type of the response\", () => {\r",
+							"  pm.expect(jsonData).to.be.an(\"object\");\r",
+							"  pm.expect(jsonData.content).to.be.a(\"array\");\r",
+							"  if(jsonData.content.size > 0){\r",
+							"        pm.expect(jsonData.content[0]).to.be.a(\"object\");\r",
+							"        pm.expect(jsonData.content[0].systemDocumentId).to.be.a(\"string\");\r",
+							"        pm.expect(jsonData.content[0].documentType).to.be.a(\"string\");\r",
+							"        pm.expect(jsonData.content[0].documentTypeId).to.be.a(\"string\");\r",
+							"        pm.expect(jsonData.content[0].documentNumber).to.be.a(\"string\");\r",
+							"        pm.expect(jsonData.content[0].documentSite).to.be.a(\"string\");\r",
+							"        pm.expect(jsonData.content[0].documentSiteId).to.be.a(\"string\");\r",
+							"        pm.expect(jsonData.content[0].documentTitle).to.be.a(\"string\");\r",
+							"        pm.expect(jsonData.content[0].documentRevision).to.be.a(\"string\");\r",
+							"        pm.expect(jsonData.content[0].documentDistributionDate).to.be.a(\"string\");\r",
+							"  }\r",
+							"  pm.expect(jsonData.pageable).to.be.a(\"object\");\r",
+							"  pm.expect(jsonData.pageable.sort).to.be.a(\"object\");\r",
+							"  pm.expect(jsonData.pageable.sort.sorted).to.be.a(\"boolean\");\r",
+							"  pm.expect(jsonData.pageable.sort.unsorted).to.be.a(\"boolean\");\r",
+							"  pm.expect(jsonData.pageable.sort.empty).to.be.a(\"boolean\");\r",
+							"  pm.expect(jsonData.last).to.be.a(\"boolean\");\r",
+							"  pm.expect(jsonData.totalElements).to.be.a(\"number\");\r",
+							"  pm.expect(jsonData.totalPages).to.be.a(\"number\");\r",
+							"  pm.expect(jsonData.sort).to.be.a(\"object\");\r",
+							"  pm.expect(jsonData.first).to.be.a(\"boolean\");\r",
+							"  pm.expect(jsonData.numberOfElements).to.be.a(\"number\");\r",
+							"  pm.expect(jsonData.size).to.be.a(\"number\");\r",
+							"  pm.expect(jsonData.empty).to.be.a(\"boolean\");\r",
+							" });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/services/techpubs/admin/avsystem/system-documents?searchTerm=123456&documentType=&page=0&size=3&sortBy=documentType",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"system-documents"
+					],
+					"query": [
+						{
+							"key": "searchTerm",
+							"value": "123456",
+							"description": "Right now - only part numbers are accepted as a searchTerm. Optional."
+						},
+						{
+							"key": "documentType",
+							"value": "",
+							"description": "Document Type ID. Optional."
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"description": "Required."
+						},
+						{
+							"key": "size",
+							"value": "3",
+							"description": "Required."
+						},
+						{
+							"key": "sortBy",
+							"value": "documentType",
+							"description": "Required - can be any of the returned fields except systemDocumentId."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Document Download",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/avsystem/system-documents/download/pdf/3fd4844f-bcc6-4747-acd5-040136855d68",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"system-documents",
+						"download",
+						"pdf",
+						"3fd4844f-bcc6-4747-acd5-040136855d68"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Document",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/avsystem/system-documents/95dfdcba-084d-4969-8ec6-fdb7295d20ff",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"system-documents",
+						"95dfdcba-084d-4969-8ec6-fdb7295d20ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Document by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test data type of the response\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							"  pm.expect(jsonData.systemDocumentId).to.be.a(\"string\");",
+							"  pm.expect(jsonData.documentTitle).to.be.a(\"string\");",
+							"  pm.expect(jsonData.documentSite).to.be.a(\"string\");",
+							"  pm.expect(jsonData.documentSiteID).to.be.a(\"string\");",
+							"  pm.expect(jsonData.documentType).to.be.a(\"string\");",
+							"  pm.expect(jsonData.documentTypeID).to.be.a(\"string\");",
+							"  pm.expect(jsonData.documentNumber).to.be.a(\"string\");",
+							"  pm.expect(jsonData.documentRevision).to.be.a(\"string\");",
+							"  pm.expect(jsonData.fileName).to.be.a(\"string\");",
+							"  pm.expect(jsonData.partsAffected).to.be.a(\"array\");",
+							"  pm.expect(jsonData.aircraftPlatforms).to.be.a(\"array\");",
+							"  pm.expect(jsonData.specificCustomers).to.be.a(\"array\");",
+							"  pm.expect(jsonData.companyPaidSubscription).to.be.a(\"array\");",
+							"  pm.expect(jsonData.emailNotification).to.be.a(\"boolean\");",
+							"  pm.expect(jsonData.companySpecific).to.be.a(\"boolean\");",
+							"  pm.expect(jsonData.powerDocument).to.be.a(\"boolean\");",
+							"  pm.expect(jsonData.documentRevisionDate).to.be.a(\"string\");",
+							"  pm.expect(jsonData.documentDistributionDate).to.be.a(\"string\");",
+							" });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/avsystem/system-documents/2747d3fe-ac88-4d8a-94dc-95b7baaccced",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"system-documents",
+						"2747d3fe-ac88-4d8a-94dc-95b7baaccced"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Document Exists",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/avsystem/system-documents/exists?documentTypeId=4386bfb4-6fe8-42e6-b51f-66b2f1a595ae&documentNumber=789Abraham&documentSiteId=2812af70-0d02-4199-83d6-045b6a6665a4",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"system-documents",
+						"exists"
+					],
+					"query": [
+						{
+							"key": "documentTypeId",
+							"value": "4386bfb4-6fe8-42e6-b51f-66b2f1a595ae"
+						},
+						{
+							"key": "documentNumber",
+							"value": "789Abraham"
+						},
+						{
+							"key": "documentSiteId",
+							"value": "2812af70-0d02-4199-83d6-045b6a6665a4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Document Site Lookup",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/avsystem/system-document-sites",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"system-document-sites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Airframes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/avsystem/airframes",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"airframes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Documents List Excel Export",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/avsystem/system-documents/excel-export-documents",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"system-documents",
+						"excel-export-documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish Document",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "documentTitle",
+							"value": "Test Scooter 6",
+							"type": "text"
+						},
+						{
+							"key": "documentSite",
+							"value": "81565dff-36ec-4b7d-9eee-84459d75454a",
+							"type": "text"
+						},
+						{
+							"key": "documentType",
+							"value": "4386bfb4-6fe8-42e6-b51f-66b2f1a595ae",
+							"type": "text"
+						},
+						{
+							"key": "documentNumber",
+							"value": "scooterdoc8",
+							"type": "text"
+						},
+						{
+							"key": "documentRevision",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "partsAffected[0]",
+							"value": "part1111",
+							"type": "text"
+						},
+						{
+							"key": "partsAffected[1]",
+							"value": "abc88",
+							"type": "text"
+						},
+						{
+							"key": "partsAffected[2]",
+							"value": "yyy77",
+							"type": "text"
+						},
+						{
+							"key": "aircraftPlatforms[0]",
+							"value": "29b13b4a-84be-4aff-b27b-6b0fa7476693",
+							"type": "text"
+						},
+						{
+							"key": "aircraftPlatforms[1]",
+							"value": "ba1e07e3-f659-4b40-9d85-d048b2efddd1",
+							"type": "text"
+						},
+						{
+							"key": "specificCustomers[0]",
+							"value": "2becb1cc-6236-4437-98f0-daf7d39db25f",
+							"type": "text"
+						},
+						{
+							"key": "specificCustomers[1]",
+							"value": "d7c2e417-fe99-464a-9916-dfe8273a5665",
+							"type": "text"
+						},
+						{
+							"key": "emailNotification",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "companySpecific",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "documentRevisionDate",
+							"value": "2022-03-01",
+							"type": "text"
+						},
+						{
+							"key": "documentDistributionDate",
+							"value": "2022-03-01",
+							"type": "text"
+						},
+						{
+							"key": "documentUploadFile",
+							"type": "file",
+							"src": "/Users/jenfrench/Documents/GE_Iconography_Shape_Library.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/avsystem/system-document",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"system-document"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Document",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "{{sm_ssoid}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "documentTitle",
+							"value": "Test Scooter 4",
+							"type": "text"
+						},
+						{
+							"key": "documentSite",
+							"value": "d090b3a3-28f5-493e-b9f8-f04db3d2606d",
+							"type": "text"
+						},
+						{
+							"key": "documentType",
+							"value": "89a9077e-8c12-46f1-8e08-02db1508c38b",
+							"type": "text"
+						},
+						{
+							"key": "documentNumber",
+							"value": "scooterdoc4",
+							"type": "text"
+						},
+						{
+							"key": "documentRevision",
+							"value": "8",
+							"type": "text"
+						},
+						{
+							"key": "partsAffected[0]",
+							"value": "part1111",
+							"type": "text"
+						},
+						{
+							"key": "partsAffected[1]",
+							"value": "part4444",
+							"type": "text"
+						},
+						{
+							"key": "partsAffected[2]",
+							"value": "part3333",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "aircraftPlatforms[0]",
+							"value": "7a621f63-8daf-4170-85de-703e21d548dd",
+							"type": "text"
+						},
+						{
+							"key": "aircraftPlatforms[1]",
+							"value": "29b13b4a-84be-4aff-b27b-6b0fa7476693",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "specificCustomers[0]",
+							"value": "17e971b9-3bf5-4ec7-bf42-c0447260513f",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "specificCustomers[1]",
+							"value": "bd89c7c5-7f2b-4838-a071-49a92aa462f9",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "emailNotification",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "companySpecific",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "documentRevisionDate",
+							"value": "2022-03-01 00:00:00.0",
+							"type": "text"
+						},
+						{
+							"key": "documentDistributionDate",
+							"value": "2022-03-01 00:00:00.0",
+							"type": "text"
+						},
+						{
+							"key": "documentUploadFile",
+							"type": "file",
+							"src": "/Users/jenfrench/Documents/test.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/services/techpubs/admin/avsystem/system-document/3fd4844f-bcc6-4747-acd5-040136855d68",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"admin",
+						"avsystem",
+						"system-document",
+						"3fd4844f-bcc6-4747-acd5-040136855d68"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

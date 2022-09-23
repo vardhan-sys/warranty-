@@ -1,0 +1,58 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RestrictedKMSOwner",
+            "Effect": "Allow",
+            "Action": [
+                "kms:CancelKeyDeletion",
+                "kms:CreateGrant",
+                "kms:Decrypt",
+                "kms:DeleteImportedKeyMaterial",
+                "kms:DisableKey",
+                "kms:DisableKeyRotation",
+                "kms:EnableKey",
+                "kms:EnableKeyRotation",
+                "kms:Encrypt",
+                "kms:GenerateDataKey",
+                "kms:GenerateDataKeyWithoutPlaintext",
+                "kms:ImportKeyMaterial",
+                "kms:ListGrants",
+                "kms:ReEncryptFrom",
+                "kms:ReEncryptTo",
+                "kms:RevokeGrant",
+                "kms:ScheduleKeyDeletion",
+                "kms:TagResource",
+                "kms:UpdateKeyDescription"
+            ],
+            "Resource": [
+                "arn:aws:kms:us-east-1:{{cookiecutter.aws_account_id}}:key/{{cookiecutter.project_kms_key_id}}"
+            ]
+        },
+        {
+            "Sid": "RestrictedSecretsManagerOwner",
+            "Effect": "Allow",
+            "Action": [
+                "secretsmanager:CancelRotateSecret",
+                "secretsmanager:DeleteSecret",
+                "secretsmanager:DescribeSecret",
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:PutSecretValue",
+                "secretsmanager:RestoreSecret",
+                "secretsmanager:RotateSecret",
+                "secretsmanager:TagResource",
+                "secretsmanager:UntagResource",
+                "secretsmanager:UpdateSecret"
+            ],
+            "Resource": "arn:aws:secretsmanager:us-east-1:{{cookiecutter.aws_account_id}}:secret:{{cookiecutter.product_prefix}}*"
+        },
+        {
+            "Sid": "GlobalSecretsManagerPermissions",
+            "Action": [
+                "secretsmanager:CreateSecret"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        }
+    ]
+}

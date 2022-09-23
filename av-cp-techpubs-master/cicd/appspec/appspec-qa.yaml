@@ -1,0 +1,11 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: <TASK_DEFINITION>
+        LoadBalancerInfo:
+          ContainerName: "av-cp-techpubs-container"
+          ContainerPort: 8080
+Hooks:
+  - AfterAllowTestTraffic: "av-cp-techpubs-api-tests-qa"

@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "8720365f-7c52-4139-9c3d-c77f856d1537",
+		"name": "DownloadPDF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Max Limit Test",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "{{portalId}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-00-08-001.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-01-09-008.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-00-08-001.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-01-09-008.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-00-08-001.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-01-09-008.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-00-08-001.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-01-09-008.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-00-08-001.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-01-09-008.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-00-08-001.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-01-09-008.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-00-08-001.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-01-09-008.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-00-08-001.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-01-09-008.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-00-08-001.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-01-09-008.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-00-08-001.htm\"\n\t},\n\t{\n\t\t\"bookcase\": \"gek114118_lr\",\n\t\t\"version\": \"3.5\",\n\t\t\"book\": \"gek114120\",\n\t\t\"filename\": \"pb72-00-01-09-008.htm\"\n\t},\n {\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114120\",\n\t\"filename\": \"pb72-00-00-08-001.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114120\",\n\t\"filename\": \"pb72-00-01-09-008.htm\"\n},\n {\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114120\",\n\t\"filename\": \"pb72-00-00-08-001.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114120\",\n\t\"filename\": \"pb72-00-01-09-008.htm\"\n}\n]"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/download/pgms/files/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"files",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadMultipleFiles- SB",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "{{portalId}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114120\",\n\t\"filename\": \"pb72-00-00-08-001.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114120\",\n\t\"filename\": \"pb72-00-01-09-008.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"sbs\",\n\t\"filename\": \"genx-2b-sb-72-0241-r02.htm\"\n}  ]"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/download/pgms/files/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"files",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadMultipleFiles",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "{{portalId}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114120\",\n\t\"filename\": \"pb72-00-00-08-001.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114120\",\n\t\"filename\": \"pb72-00-01-09-008.htm\"\n} ]"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/download/pgms/files/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"files",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadMultipleFiles- Big Files",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "{{portalId}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114119\",\n\t\"filename\": \"genx-2b-all-em-ic-72-00-02-10-01-004-25.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114119\",\n\t\"filename\": \"genx-2b-all-em-ic-72-00-00-13-006-25.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114119\",\n\t\"filename\": \"genx-2b-all-em-ic-72-00-02-10-002-25.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114119\",\n\t\"filename\": \"genx-2b-all-em-ic-72-00-02-10-001-25.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114119\",\n\t\"filename\": \"genx-2b-all-em-ic-72-00-01-04-001-25.htm\"\n}  ]"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/download/pgms/files/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"files",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadMultipleFiles- 10 Files",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"type": "text",
+						"value": "{{sso}}"
+					},
+					{
+						"key": "portal_id",
+						"type": "text",
+						"value": "{{portalId}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"bookcase\": \"gek112059\",\n\t\"version\": \"1.3\",\n\t\"book\": \"sbs\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0002-00A-930A-D.htm\"\n},\n{\n\t\"bookcase\": \"gek112060\",\n\t\"version\": \"1.3\",\n\t\"book\": \"gek112062\",\n\t\"filename\": \"IC-DMC-PASSPORT20-A-71-20-00-13A-520A-D-R002.htm\"\n},\n{\n\t\"bookcase\": \"gek112059\",\n\t\"version\": \"1.3\",\n\t\"book\": \"gek112062\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-20-00-18A-520A-D.htm\"\n},\n{\n\t\"bookcase\": \"gek112865_lr\",\n\t\"version\": \"5.1\",\n\t\"book\": \"gek112851\",\n\t\"filename\": \"genx-intro.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"gek114119\",\n\t\"filename\": \"genx-2b-all-em-ic-72-00-00-13-006-25.htm\"\n},\n{\n\t\"bookcase\": \"gek114118_lr\",\n\t\"version\": \"3.5\",\n\t\"book\": \"sbs\",\n\t\"filename\": \"genx-2b-sb-73-0012-r00.htm\"\n},\n{\n\t\"bookcase\": \"gek108749\",\n\t\"version\": \"10.1\",\n\t\"book\": \"sbs\",\n\t\"filename\": \"ge90-sb-79-0024-r01.htm\"\n},\n{\n\t\"bookcase\": \"gek108746\",\n\t\"version\": \"10.1\",\n\t\"book\": \"gek92451\",\n\t\"filename\": \"cf6-80c2-4000-em-ic-71-20-05-800-D-91.htm\"\n},\n{\n\t\"bookcase\": \"gek108786\",\n\t\"version\": \"10.2\",\n\t\"book\": \"gek109993\",\n\t\"filename\": \"ge90-100-all-em-ic-72-00-02-05-004-41.htm\"\n},\n{\n\t\"bookcase\": \"gek108746-02\",\n\t\"version\": \"10.0\",\n\t\"book\": \"gek92451\",\n\t\"filename\": \"cf6-80c2-4002-em-ic-71-00-05-800-004-A-90.htm\"\n}   ]"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/download/pgms/files/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"files",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadMultipleFiles- 10 Files SB ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"type": "text",
+						"value": "{{sso}}"
+					},
+					{
+						"key": "portal_id",
+						"type": "text",
+						"value": "{{portalId}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0000-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0000-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0001-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0001-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0002-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0002-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0003-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0003-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0004-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0004-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0005-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0005-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-72-00-0000-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-72-00-0000-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-72-00-0001-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-72-00-0001-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-72-00-0002-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-72-00-0002-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-72-00-0003-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}, {\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-72-00-0003-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}]"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/download/pgms/files/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"files",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadMultipleFiles- Singlefile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"type": "text",
+						"value": "{{sso}}"
+					},
+					{
+						"key": "portal_id",
+						"type": "text",
+						"value": "{{portalId}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-72-00-0044-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n}]"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/download/pgms/files/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"files",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadMultipleFiles- IPC FIle and Non IPC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"type": "text",
+						"value": "{{sso}}"
+					},
+					{
+						"key": "portal_id",
+						"type": "text",
+						"value": "{{portalId}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"book\": \"gek112064\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"PASSPORT20-A-71-11-01-010-941A-D.htm\",\n\t\"bookcase\": \"gek112059\"\n},\n{\n\t\"book\": \"sbs\",\n\t\"version\": \"1.4\",\n\t\"filename\": \"DMC-PASSPORT20-A-71-00-0002-00A-930A-D.htm\",\n\t\"bookcase\": \"gek112060\"\n}]"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/download/pgms/files/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"files",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download multiple files same bookcase- Honda",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "GEHonda",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"bookcase\": \"gek112110\",\n\t\"version\": \"3.3\",\n\t\"book\": \"gek112113-h1\",\n\t\"filename\": \"ai.htm\"\n},\n{\n\t\"bookcase\": \"gek112110\",\n\t\"version\": \"3.3\",\n\t\"book\": \"gek112119-h1\",\n\t\"filename\": \"ai.htm\"\n} ]"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/download/pgms/files/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"files",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "When Resource not found ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "{{sso}}",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "{{portalId}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"book\": \"sei868\",\n\t\"version\": \"9.3\",\n\t\"filename\": \"sei868_file0014.htm\",\n\t\"bookcase\": \"gek114155\"\n}, {\n\t\"book\": \"sei868\",\n\t\"version\": \"9.3\",\n\t\"filename\": \"sei868_file0015.htm\",\n\t\"bookcase\": \"gek114155\"\n}]"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/techdocs/download/pgms/files/pdf",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"files",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

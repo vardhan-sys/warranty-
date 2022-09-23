@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "3cd1981a-3f66-488e-91fc-66142524d853",
+		"name": "Pageblock Document Reviewer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Publish Pageblock endpoint for SB",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "212601653"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"key\": \"genx-2b-sb-71-0001\",\n\t\"publicationTypeCode\": \"sb\",\n\t\"resourceUri\": \"/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/sbs/file/genx-2b-sb-71-0001-r00.htm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/toc/bookcases/book/pageblk/publish",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						"book",
+						"pageblk",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Parameter Error - Manuals",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "212601653"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"key\": \"pb05-11-02-08-001\",\n\t\"publicationTypeCode\": \"manual\",\n\t\"resourceUri\": \"/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/gek114119/file/pb05-11-02-08-001.htm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/toc/bookcases/book/pageblk/publish",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						"book",
+						"pageblk",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GENX - TOC Endpoint with approvedForPublish flag",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "212601653"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/toc/bookcases/gek114118_lr/gek114119/3.5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						"gek114118_lr",
+						"gek114119",
+						"3.5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PASSPORT - TOC Endpoint with approvedForPublish flag",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "212601653"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/toc/bookcases/gek112060/gek112063/1.3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						"gek112060",
+						"gek112063",
+						"1.3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish Pageblock endpoint for IC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "212601653"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"key\": \"DMC-PASSPORT20-A-72-00-00-00A-320A-C\",\n\t\"publicationTypeCode\": \"ic\",\n\t\"resourceUri\": \"/techpubs/techdocs/pgms/gek112060/versions/1.3/mans/gek112063/file/IC-DMC-PASSPORT20-A-72-00-00-00A-320A-C-R002.htm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/toc/bookcases/book/pageblk/publish",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						"book",
+						"pageblk",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forbidden access for non reviewer role",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "502535370"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"key\": \"DMC-PASSPORT20-A-72-00-00-00A-320A-C\",\n\t\"publicationTypeCode\": \"ic\",\n\t\"resourceUri\": \"/techpubs/techdocs/pgms/gek112060/versions/1.3/mans/gek112063/file/IC-DMC-PASSPORT20-A-72-00-00-00A-320A-C-R002.htm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/toc/bookcases/book/pageblk/publish",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						"book",
+						"pageblk",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GENX - TOC Endpoint - Edge case testing",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "212601653"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/toc/bookcases/gek114118_lr/gek114120/3.5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						"gek114118_lr",
+						"gek114120",
+						"3.5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish Pageblock endpoint for IC - when 2 records have same key",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "212601653"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"key\": \"pb72-54-20-09-001\",\n\t\"publicationTypeCode\": \"ic\",\n\t\"resourceUri\": \"/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/gek114120/file/genx-2b-all-cir-ic-72-54-20-09-001-25.htm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/services/techpubs/toc/bookcases/book/pageblk/publish",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						"book",
+						"pageblk",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

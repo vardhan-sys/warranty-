@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "{{cookiecutter.product_prefix}}-ecs-pipeline-template-build"
+s3_bucket = "{{cookiecutter.product_prefix}}-cicd-services" # The S3 Bucket created to support our Pipeline Artifacts by the NonProd Initial Resource Setup
+s3_prefix = "{{cookiecutter.product_prefix}}-ecs-template-repo-resources"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_AUTO_EXPAND"
+role_arn = "arn:aws:iam::{{cookiecutter.aws_account_id}}:role/{{cookiecutter.product_prefix}}-cloudformation"
+tags = "app={{cookiecutter.product_prefix}}" # Include Required Tags so they are propogated down to all created resources that support Tags

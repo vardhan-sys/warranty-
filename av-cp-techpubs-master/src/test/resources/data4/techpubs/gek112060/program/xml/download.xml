@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cwc>
+  <download type="Full" doctype="Full">
+    <manual title="Engine Manual" docnbr="gek112060">
+      <field label="Revision" width="200" span="3" type="combo" indexfield="issueno" highlight="TRUE">
+        <option>Current</option>
+        <option>Previous</option>
+        <option>All</option>
+      </field>
+    </manual>
+  </download>
+
+  <download type="Update" doctype="Incremental Change">
+    <manual title="All" docnbr="All">
+      <field label="ATA No." width="200" span="1" type="lookup" indexfield="ata" highlight="TRUE"/>
+      <field label="Release Date" width="200" span="3" type="date" indexfield="issuedate" highlight="TRUE"/>
+      <field label="Revision" width="200" span="3" type="combo" indexfield="issueno" highlight="TRUE">
+        <option>Current</option>
+        <option>Previous</option>
+        <option>All</option>
+      </field> 
+    </manual>
+    <manual title="Engine Manual" docnbr="gek112063">
+      <field label="ATA No." width="200" span="1" type="lookup" indexfield="ata" highlight="TRUE"/>
+      <field label="Pageblock Type" width="200" span="1" type="lookup" indexfield="pgblk_type" highlight="TRUE"/>
+      <field label="Pageblock No." width="200" span="1" type="lookup" indexfield="pgblk_num" highlight="TRUE"/>
+      <field label="Release Date" width="200" span="3" type="date" indexfield="issuedate" highlight="TRUE"/>
+      <field label="Revision" width="200" span="3" type="combo" indexfield="issueno" highlight="TRUE">
+        <option>Current</option>
+        <option>Previous</option>
+        <option>All</option>
+      </field>
+    </manual>
+  </download>
+</cwc>

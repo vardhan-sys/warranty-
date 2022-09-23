@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PassRole",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": [
+                "arn:aws:iam::{{cookiecutter.aws_account_id}}:role/{{cookiecutter.product_prefix}}-codebuild-service-role",
+                "arn:aws:iam::{{cookiecutter.aws_account_id}}:role/{{cookiecutter.product_prefix}}-codedeploy-service-role",
+                "arn:aws:iam::{{cookiecutter.aws_account_id}}:role/{{cookiecutter.product_prefix}}-cloudformation",
+                "arn:aws:iam::{{cookiecutter.aws_account_id}}:role/{{cookiecutter.product_prefix}}-codedeploy-service-role",
+                "arn:aws:iam::{{cookiecutter.aws_account_id}}:role/aws-service-role/ecs.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_ECSService"
+            ]
+        }
+    ]
+}

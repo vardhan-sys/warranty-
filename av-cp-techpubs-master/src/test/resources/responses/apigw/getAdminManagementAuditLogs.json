@@ -1,0 +1,154 @@
+{
+  "Count": 5,
+  "Items": [
+    {
+      "action": {
+        "S": "Updated User Permissions"
+      },
+      "roles": {
+        "S": "provisioner"
+      },
+      "category": {
+        "S": "admin-management"
+      },
+      "user": {
+        "S": "212482543"
+      },
+      "UUID": {
+        "S": "fe0fe84f-9d1a-42c6-98da-8dd833feea40"
+      },
+      "modifiedDate": {
+        "S": "2019-11-18 16:32:58 UTC"
+      },
+      "appId": {
+        "S": "doc-admin"
+      },
+      "engineModels": {
+        "S": "CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF6-80E"
+      },
+      "modifiedBy": {
+        "S": "503096464"
+      }
+    },
+    {
+      "action": {
+        "S": "Added User Permissions"
+      },
+      "roles": {
+        "S": "provisioner"
+      },
+      "category": {
+        "S": "admin-management"
+      },
+      "user": {
+        "S": "212482543"
+      },
+      "UUID": {
+        "S": "5f8345fd-a1c4-417a-9e87-8d4b3cad64f9"
+      },
+      "modifiedDate": {
+        "S": "2019-11-18 16:32:50 UTC"
+      },
+      "appId": {
+        "S": "doc-admin"
+      },
+      "engineModels": {
+        "S": "CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF34-1, CF6-80E"
+      },
+      "modifiedBy": {
+        "S": "503096464"
+      }
+    },
+    {
+      "action": {
+        "S": "Deleted User Role"
+      },
+      "roles": {
+        "S": "superuser"
+      },
+      "category": {
+        "S": "admin-management"
+      },
+      "user": {
+        "S": "212482543"
+      },
+      "UUID": {
+        "S": "14407046-da2d-4a33-89a0-8127274d6092"
+      },
+      "modifiedDate": {
+        "S": "2019-11-18 16:32:38 UTC"
+      },
+      "appId": {
+        "S": "doc-admin"
+      },
+      "modifiedBy": {
+        "S": "503096464"
+      }
+    },
+    {
+      "action": {
+        "S": "Added User Permissions"
+      },
+      "roles": {
+        "S": "superuser"
+      },
+      "category": {
+        "S": "admin-management"
+      },
+      "user": {
+        "S": "212482543"
+      },
+      "UUID": {
+        "S": "c412a460-450a-4295-b4f3-8e19e8912bb0"
+      },
+      "modifiedDate": {
+        "S": "2019-11-18 16:32:26 UTC"
+      },
+      "appId": {
+        "S": "doc-admin"
+      },
+      "documentTypes": {
+        "S": "all"
+      },
+      "engineModels": {
+        "S": "all"
+      },
+      "modifiedBy": {
+        "S": "503096464"
+      },
+      "airFrames": {
+        "S": "all"
+      }
+    },
+    {
+      "action": {
+        "S": "Added User Permissions"
+      },
+      "roles": {
+        "S": "restricted-repair-provisioner"
+      },
+      "category": {
+        "S": "admin-management"
+      },
+      "user": {
+        "S": "212482543"
+      },
+      "UUID": {
+        "S": "9cd080e9-553c-4e07-b0d1-0019290f125e"
+      },
+      "modifiedDate": {
+        "S": "2019-11-18 16:32:13 UTC"
+      },
+      "appId": {
+        "S": "doc-admin"
+      },
+      "engineModels": {
+        "S": "PASSPORT20-FLTEST"
+      },
+      "modifiedBy": {
+        "S": "503096464"
+      }
+    }
+  ],
+  "ScannedCount": 163
+}

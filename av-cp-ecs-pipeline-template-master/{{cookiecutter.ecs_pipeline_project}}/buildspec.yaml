@@ -1,0 +1,13 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      # Package and deploy artifact to S3 if PUSH event
+      - |-
+        if [ $CODEBUILD_WEBHOOK_EVENT = PUSH ]; then
+          set -e
+          # Store compiled templates in S3
+          aws s3 cp pipeline-instances/nonprod-pipeline-template.yaml s3://${BUCKET}/${REPO_NAME}/
+          aws s3 cp pipeline-instances/prod-pipeline-template.yaml s3://${BUCKET}/${REPO_NAME}/
+          aws s3 sync utilities s3://${BUCKET}/utilities/
+        fi

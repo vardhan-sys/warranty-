@@ -1,0 +1,7429 @@
+{
+	"info": {
+		"_postman_id": "513eeda9-a87f-481b-90a9-cec51c49307c",
+		"name": "Techpubs_archive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Admin Common Controller",
+					"item": [
+						{
+							"name": "Admin Ping",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/ping",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"ping"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Engine Models Controller",
+					"item": [
+						{
+							"name": "Engine Models Bookcase Keys",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.bookcaseKeys).to.be.an(\"array\");",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/engine-models/GENX-2B/bookcase-keys",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"engine-models",
+										"GENX-2B",
+										"bookcase-keys"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Companies Controller",
+					"item": [
+						{
+							"name": "Companies",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.content).to.be.an(\"array\");",
+											" });",
+											"",
+											"",
+											"pm.test(\"Response Value\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.content[0].company).to.eql(\" test\");",
+											"  pm.expect(responseJson.content[0].icaoCode).to.eql(\"\");",
+											"  });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/companies",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"companies"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "company%7Casc",
+											"disabled": true
+										},
+										{
+											"key": "searchTerm",
+											"value": "DAL",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Companies Download",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/companies/download",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"companies",
+										"download"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Companies {Company} MDM Engine Models",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.companyMdmEngineModels).to.be.an(\"object\");",
+											"  pm.expect(jsonData.companyMdmEngineModels.CF34).to.be.an(\"object\");",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/companies/delta%20air%20lines/mdm-engine-models",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"companies",
+										"delta%20air%20lines",
+										"mdm-engine-models"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Companies {ICAO Code} Engine Models",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"array\");",
+											"  pm.expect(jsonData[0]).to.be.an(\"object\");",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/companies/ACA/engine-models",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"companies",
+										"ACA",
+										"engine-models"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Publisher Controller",
+					"item": [
+						{
+							"name": "Publisher",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"  pm.expect(responseJson.bookcases).to.be.an(\"array\");",
+											" });",
+											"",
+											"",
+											"pm.test(\"Response Value\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.bookcases[0].bookcaseTitle).to.eql(\"CF6-6\");",
+											"  pm.expect(responseJson.bookcases[0].bookcaseKey).to.eql(\"gek108744\");",
+											"  pm.expect(responseJson.bookcases[0].engineFamily).to.eql(\"CF6\");",
+											"  });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/publisher?sortBy=bookcaseKey%7Casc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"publisher"
+									],
+									"query": [
+										{
+											"key": "sortBy",
+											"value": "bookcaseKey%7Casc"
+										},
+										{
+											"key": "searchTerm",
+											"value": "DAL",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Publisher Download",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/publisher/download",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"publisher",
+										"download"
+									],
+									"query": [
+										{
+											"key": "searchTerm",
+											"value": "DAL",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Publisher Bookcase {Bookcase Key} Engine Models",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.engineModels).to.be.an(\"array\");",
+											" });",
+											"",
+											"",
+											"pm.test(\"Response Value\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(jsonData.engineModels[0]).to.eql(\"GENX-2B\");",
+											"  });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/publisher/bookcase/gek114118_lr/engine-models",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"publisher",
+										"bookcase",
+										"gek114118_lr",
+										"engine-models"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Publisher Bookcase {Bookcase Key} Versions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.bookcaseVersions).to.be.an(\"array\");",
+											"  pm.expect(jsonData.bookcaseVersions[0]).to.be.an(\"object\")",
+											"  pm.expect(jsonData.bookcaseVersions[0].bookcaseVersion).to.be.a(\"string\")",
+											"  pm.expect(jsonData.bookcaseVersions[0].bookcaseVersionStatus).to.be.a(\"string\")",
+											"  pm.expect(jsonData.bookcaseVersions[0].releaseDate).to.be.a(\"string\")",
+											" });",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/publisher/bookcase/gek114118_lr/versions",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"publisher",
+										"bookcase",
+										"gek114118_lr",
+										"versions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Publisher Bookcase {Bookcase Key} Versions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () { ",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"bookcaseVersions\": [\n        {\n            \"version\": \"8.9\",\n            \"releaseDate\": \"2018-08-01\",\n            \"status\": \"archived\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/publisher/bookcase/gek114118_lr/versions",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"publisher",
+										"bookcase",
+										"gek114118_lr",
+										"versions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Authorization Controller",
+					"item": [
+						{
+							"name": "Authorization Permissions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.permissions).to.be.an(\"array\");",
+											"  pm.expect(jsonData.permissions[0]).to.be.an(\"object\");",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/authorization/permissions",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"authorization",
+										"permissions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Authorization Roles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles).to.be.an(\"array\");",
+											"  pm.expect(jsonData.roles[0]).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles[0].role).to.be.a(\"string\");",
+											"  pm.expect(jsonData.roles[0].policy).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles[0].policy.technologyLevels).to.be.an(\"array\");",
+											"  pm.expect(jsonData.roles[0].policy.technologyLevels[0]).to.be.a(\"string\");",
+											"  pm.expect(jsonData.roles[0].attributes).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles[0].attributes.engineModels).to.be.an(\"array\");",
+											"  pm.expect(jsonData.roles[0].attributes.airFrames).to.be.an(\"array\");",
+											"  pm.expect(jsonData.roles[0].attributes.docTypes).to.be.an(\"array\");",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/authorization/roles",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"authorization",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin Management Controller",
+					"item": [
+						{
+							"name": "Admin Management Users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.content).to.be.an(\"array\");",
+											"  pm.expect(jsonData.content[0]).to.be.an(\"object\");",
+											"  pm.expect(jsonData.content[0].sso).to.be.a(\"string\");",
+											"  pm.expect(jsonData.content[0].firstName).to.be.a(\"string\");",
+											"  pm.expect(jsonData.content[0].lastName).to.be.a(\"string\");",
+											"  pm.expect(jsonData.content[0].company).to.be.a(\"string\");",
+											"  pm.expect(jsonData.content[0].email).to.be.a(\"string\");",
+											"  pm.expect(jsonData.content[0].roles).to.be.an(\"array\");",
+											"  pm.expect(jsonData.content[0].roles[0]).to.be.a(\"string\");",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Management Users By Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.content).to.be.an(\"array\");",
+											"  pm.expect(jsonData.content[0]).to.be.an(\"object\");",
+											"  pm.expect(jsonData.content[0].sso).to.be.a(\"string\");",
+											"  pm.expect(jsonData.content[0].firstName).to.be.a(\"string\");",
+											"  pm.expect(jsonData.content[0].lastName).to.be.a(\"string\");",
+											"  pm.expect(jsonData.content[0].company).to.be.a(\"string\");",
+											"  pm.expect(jsonData.content[0].email).to.be.a(\"string\");",
+											"  pm.expect(jsonData.content[0].roles).to.be.an(\"array\");",
+											"  pm.expect(jsonData.content[0].roles[0]).to.be.a(\"string\");",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users?product=enginemanuals",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users"
+									],
+									"query": [
+										{
+											"key": "product",
+											"value": "enginemanuals"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Management Users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(204);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									},
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "8d2b26e9-06ee-42fa-b792-6b06c6a01063",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ssoIds\": [\n        \"502825854\"\n    ],\n    \"roles\": [\n        \"provisioner\"\n    ],\n    \"attributes\": {\n        \"engineModels\": [\n            \"GENX-1B\",\n            \"GENX-2B\"\n        ],\n        \"airFrames\": [],\n        \"docTypes\": []\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Management Users By Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () { ",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									},
+									{
+										"key": "X-XSRF-TOKEN",
+										"type": "text",
+										"value": "8d2b26e9-06ee-42fa-b792-6b06c6a01063",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ssoIds\": [\n        \"502825854\"\n    ],\n    \"roles\": [\n        \"avsystems-provisioner\"\n    ],\n    \"attributes\": {\n        \"engineModels\": [\n            \"GENX-1B\",\n            \"GENX-2B\"\n        ],\n        \"airFrames\": [],\n        \"docTypes\": []\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users?product=avsystems",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users"
+									],
+									"query": [
+										{
+											"key": "product",
+											"value": "avsystems"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Management Users Download",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users/download",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users",
+										"download"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Management Users Download By Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users/download?product=avsystems",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users",
+										"download"
+									],
+									"query": [
+										{
+											"key": "product",
+											"value": "avsystems"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Management Users {SSO ID}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData)",
+											" });",
+											"",
+											" pm.test(\"Response Value\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.ssoId).to.eql(\"212409106\");",
+											"  pm.expect(responseJson.firstName).to.eql(\"ALEX\");",
+											"  pm.expect(responseJson.lastName).to.eql(\"CROMER\");",
+											"  pm.expect(responseJson.company).to.eql(\"geae\");",
+											"  pm.expect(responseJson.email).to.eql(\"alexander.cromer@ge.com\");",
+											"  });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users/212409106",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users",
+										"212409106"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Management Users {SSO ID} Download",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users/502825854/download",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users",
+										"502825854",
+										"download"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Mangement Users {SSO ID} Roles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles).to.be.an(\"array\");",
+											"  pm.expect(jsonData.roles[0]).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles[0].policy).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles[0].policy.technologyLevels).to.be.an(\"array\");",
+											"  pm.expect(jsonData.roles[0].attributes).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles[0].attributes).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles[0].attributes.engineModels).to.be.an(\"array\");",
+											"  pm.expect(jsonData.roles[0].attributes.airFrames).to.be.an(\"array\");",
+											"  pm.expect(jsonData.roles[0].attributes.docTypes).to.be.an(\"array\");",
+											" });",
+											"",
+											"",
+											"pm.test(\"Role data\", function () {",
+											"    let jsonData = pm.response.json()",
+											"    console.log(jsonData.roles)",
+											"    pm.expect(jsonData.roles).to.be.an(\"array\");",
+											"    pm.expect(jsonData.roles[0].role).to.eql(\"avsystems-superuser\");",
+											"    console.log(typeof jsonData.roles[0].policy.technologyLevels[0]);",
+											"    pm.expect(jsonData.roles[0].policy.technologyLevels[0]).to.eql(\"M\");",
+											"    pm.expect(jsonData.roles[0].policy.technologyLevels[1]).to.eql(\"0\");",
+											"    pm.expect(jsonData.roles[0].policy.technologyLevels[2]).to.eql(\"1\");",
+											"    pm.expect(jsonData.roles[0].policy.technologyLevels[3]).to.eql(\"2\");",
+											"    pm.expect(jsonData.roles[0].policy.technologyLevels[4]).to.eql(\"3\");",
+											"    pm.expect(jsonData.roles[0].policy.technologyLevels[5]).to.eql(\"4\");",
+											"    pm.expect(jsonData.roles[0].policy.technologyLevels[6]).to.eql(\"5\");",
+											"  });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users/502825854/roles",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users",
+										"502825854",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Mangement Users {SSO ID} Roles {Role}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// pm.test(\"Status test\", function () {",
+											"//     pm.response.to.have.status(200);",
+											"// });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "sec-ch-ua",
+										"value": "\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json, text/plain, */*",
+										"type": "text"
+									},
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "51d83d8e-0c54-4326-9023-9bf1ce01a901",
+										"type": "text"
+									},
+									{
+										"key": "sec-ch-ua-mobile",
+										"value": "?0",
+										"type": "text"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36",
+										"type": "text"
+									},
+									{
+										"key": "Sec-Fetch-Site",
+										"value": "same-origin",
+										"type": "text"
+									},
+									{
+										"key": "Sec-Fetch-Mode",
+										"value": "cors",
+										"type": "text"
+									},
+									{
+										"key": "Sec-Fetch-Dest",
+										"value": "empty",
+										"type": "text"
+									},
+									{
+										"key": "sm_ssoid",
+										"value": "{{sm_ssoid}}",
+										"type": "text"
+									},
+									{
+										"key": "portal_id",
+										"value": "{{portal_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newRole\": \"provisioner\",\n    \"attributes\": {\n        \"engineModels\": [\n            \"LEAP-1A\",\n            \"LEAP-1B\",\n            \"LEAP-1B-FLTEST\",\n            \"LEAP-1C\",\n            \"LEAP-1C-FLTEST\",\n            \"CT58-100\",\n            \"CT58-110\",\n            \"CT58-140\"\n        ],\n        \"airFrames\": [],\n        \"docTypes\": []\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users/212451521/roles/provisioner",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users",
+										"212451521",
+										"roles",
+										"provisioner"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Mangement Users {SSO ID} Roles {Role} By Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// pm.test(\"Status test\", function () {",
+											"//     pm.response.to.have.status(200);",
+											"// });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "sec-ch-ua",
+										"value": "\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json, text/plain, */*",
+										"type": "text"
+									},
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "51d83d8e-0c54-4326-9023-9bf1ce01a901",
+										"type": "text"
+									},
+									{
+										"key": "sec-ch-ua-mobile",
+										"value": "?0",
+										"type": "text"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36",
+										"type": "text"
+									},
+									{
+										"key": "Sec-Fetch-Site",
+										"value": "same-origin",
+										"type": "text"
+									},
+									{
+										"key": "Sec-Fetch-Mode",
+										"value": "cors",
+										"type": "text"
+									},
+									{
+										"key": "Sec-Fetch-Dest",
+										"value": "empty",
+										"type": "text"
+									},
+									{
+										"key": "sm_ssoid",
+										"value": "{{sm_ssoid}}",
+										"type": "text"
+									},
+									{
+										"key": "portal_id",
+										"value": "{{portal_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newRole\": \"uploader\",\n    \"attributes\": {\n        \"engineModels\": [\n            \"LEAP-1A\",\n            \"LEAP-1B\",\n            \"LEAP-1B-FLTEST\",\n            \"LEAP-1C\",\n            \"LEAP-1C-FLTEST\",\n            \"CT58-100\",\n            \"CT58-110\",\n            \"CT58-140\"\n        ],\n        \"airFrames\": [],\n        \"docTypes\": []\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users/212451521/roles/uploader?product=avsystems",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users",
+										"212451521",
+										"roles",
+										"uploader"
+									],
+									"query": [
+										{
+											"key": "product",
+											"value": "avsystems"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Mangement Users {SSO ID} Roles {Role}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () { ",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									},
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "8d2b26e9-06ee-42fa-b792-6b06c6a01063",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users/212451521/roles/reviewer",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users",
+										"212451521",
+										"roles",
+										"reviewer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Mangement Users {SSO ID} Roles {Role} By Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(204);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									},
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "8d2b26e9-06ee-42fa-b792-6b06c6a01063",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/users/212716419/roles/avsystems-superuser?product=avsystems",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"users",
+										"212716419",
+										"roles",
+										"avsystems-superuser"
+									],
+									"query": [
+										{
+											"key": "product",
+											"value": "avsystems"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Mangement Portal Users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.content).to.be.an(\"array\");",
+											"  pm.expect(jsonData.content[0]).to.be.an(\"object\")",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/portal-users?sortBy=sso%7Casc&searchTerm=",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"portal-users"
+									],
+									"query": [
+										{
+											"key": "sortBy",
+											"value": "sso%7Casc"
+										},
+										{
+											"key": "searchTerm",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Management Roles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"var technologyLevels = [];",
+											"const jsonData = pm.response.json();",
+											"var resultCount = jsonData.roles.length;",
+											"// Loop through and set arrays with matching data",
+											"for (i = 0; i < resultCount; i++) {",
+											"  var roleName =jsonData.roles[i].name;",
+											"  if(roleName == \"superuser\"){",
+											"    technologyLevels= jsonData.roles[i].policy.technologyLevels;",
+											"  }",
+											"}",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles).to.be.an(\"array\");",
+											"  pm.expect(jsonData.roles[0].name).to.be.an(\"string\")",
+											"  pm.expect(jsonData.roles[0].label).to.be.an(\"string\")",
+											"  pm.expect(jsonData.roles[0].description).to.be.an(\"string\")",
+											"  pm.expect(jsonData.roles[0].policy).to.be.an(\"object\")",
+											"  pm.expect(jsonData.roles[0].policy).to.be.an(\"object\")",
+											"  pm.expect(jsonData.roles[0].policy.technologyLevels).to.be.an(\"array\")",
+											"  pm.expect(technologyLevels[0]).to.be.an(\"string\")",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/roles",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Management Product Roles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.roles).to.be.an(\"array\");",
+											"  pm.expect(jsonData.roles[0].role).to.be.an(\"string\")",
+											"  pm.expect(jsonData.roles[0].label).to.be.an(\"string\")",
+											"  pm.expect(jsonData.roles[0].description).to.be.an(\"string\")",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/product/roles?product=avsystems",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"product",
+										"roles"
+									],
+									"query": [
+										{
+											"key": "product",
+											"value": "avsystems"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Management MDM Engine Models",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.CF34).to.be.an(\"array\");",
+											"  pm.expect(jsonData.CF34[0]).to.be.a(\"string\");",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/admin-management/mdm-engine-models",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"admin-management",
+										"mdm-engine-models"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Audit Trail Controller",
+					"item": [
+						{
+							"name": "Audit Trail",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"  pm.expect(jsonData).to.be.an(\"object\");",
+											"  pm.expect(jsonData.count).to.be.an(\"number\");",
+											"  pm.expect(jsonData.logs).to.be.an(\"array\");",
+											"  pm.expect(jsonData.logs[0]).to.be.an(\"object\");",
+											"  pm.expect(jsonData.logs[0].company).to.be.an(\"string\");",
+											"  pm.expect(jsonData.logs[0].action).to.be.an(\"string\");",
+											"  pm.expect(jsonData.logs[0].engineModel).to.be.an(\"string\");",
+											"  pm.expect(jsonData.logs[0].document).to.be.an(\"string\");",
+											"  pm.expect(jsonData.logs[0].documentType).to.be.an(\"string\");",
+											"  pm.expect(jsonData.logs[0].bookcaseKey).to.be.an(\"string\");",
+											"  pm.expect(jsonData.logs[0].modifiedBy).to.be.an(\"string\");",
+											"  pm.expect(jsonData.logs[0].modifiedDate).to.be.an(\"string\");",
+											" });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"value": "{{sm_ssoid}}",
+										"type": "text"
+									},
+									{
+										"key": "portal_id",
+										"value": "{{portal_id}}",
+										"type": "text"
+									},
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "8d2b26e9-06ee-42fa-b792-6b06c6a01063",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"toDate\": \"2021-06-24T18:38:14.246Z\",\n    \"action\": \"\",\n    \"category\": \"companies\",\n    \"fromDate\": \"2020-04-01T18:38:00.000Z\",\n    \"ssoSearchTerm\": \"\",\n    \"categorySearchTerm\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/audit-trail",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"audit-trail"
+									]
+								},
+								"description": "Post request, but gets data"
+							},
+							"response": []
+						},
+						{
+							"name": "Audit Trail Download",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"value": "{{sm_ssoid}}",
+										"type": "text"
+									},
+									{
+										"key": "portal_id",
+										"value": "{{portal_id}}",
+										"type": "text"
+									},
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "8d2b26e9-06ee-42fa-b792-6b06c6a01063",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"toDate\": \"2021-06-24T18:38:14.246Z\",\n    \"action\": \"\",\n    \"category\": \"companies\",\n    \"fromDate\": \"2020-04-01T18:38:00.000Z\",\n    \"ssoSearchTerm\": \"\",\n    \"categorySearchTerm\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/audit-trail/download",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"audit-trail",
+										"download"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AVSystems Audit Trail",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"value": "{{sm_ssoid}}",
+										"type": "text"
+									},
+									{
+										"key": "portal_id",
+										"value": "{{portal_id}}",
+										"type": "text"
+									},
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "8d2b26e9-06ee-42fa-b792-6b06c6a01063",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"toDate\": \"2021-06-24T18:38:14.246Z\",\n    \"action\": \"\",\n    \"category\": \"avsystems-admin-management\",\n    \"fromDate\": \"2020-04-01T18:38:00.000Z\",\n    \"ssoSearchTerm\": \"\",\n    \"categorySearchTerm\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/audit-trail?product=avsystems",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"audit-trail"
+									],
+									"query": [
+										{
+											"key": "product",
+											"value": "avsystems"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Av System Controller",
+					"item": [
+						{
+							"name": "Uploader System Document Types",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () { ",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"    pm.expect(jsonData).to.be.an(\"array\");",
+											"    pm.expect(jsonData.length).to.be.greaterThan(0);",
+											"});",
+											"",
+											"pm.test(\"Test response array objects have correct object keys\", () => {",
+											"    for (const val of jsonData) {",
+											"        pm.expect(val.hasOwnProperty(\"id\")).to.be.true;",
+											"        pm.expect(val.hasOwnProperty(\"value\")).to.be.true;",
+											"    }",
+											"});",
+											"",
+											"pm.test(\"Test response array objects have non-null values\", () => {",
+											"    for (const val of jsonData) {",
+											"        pm.expect(val.id).to.not.be.null.and.empty;",
+											"        pm.expect(val.value).to.not.be.null.and.empty;",
+											"    }",
+											"});",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/avsystem/system-document-types",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"avsystem",
+										"system-document-types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Uploader System Document Sites",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const jsonData = pm.response.json();",
+											"pm.test(\"Test data type of the response\", () => {",
+											"    pm.expect(jsonData).to.be.an(\"array\");",
+											"    pm.expect(jsonData.length).to.be.greaterThan(0);",
+											"});",
+											"",
+											"pm.test(\"Test response array objects have correct object keys\", () => {",
+											"    for (const val of jsonData) {",
+											"        pm.expect(val.hasOwnProperty(\"id\")).to.be.true;",
+											"        pm.expect(val.hasOwnProperty(\"value\")).to.be.true;",
+											"    }",
+											"});",
+											"",
+											"pm.test(\"Test response array objects have non-null values\", () => {",
+											"    for (const val of jsonData) {",
+											"        pm.expect(val.id).to.not.be.null.and.empty;",
+											"        pm.expect(val.value).to.not.be.null.and.empty;",
+											"    }",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"type": "text",
+										"value": "{{sm_ssoid}}"
+									},
+									{
+										"key": "portal_id",
+										"type": "text",
+										"value": "{{portal_id}}"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/avsystem/system-document-sites",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"avsystem",
+										"system-document-sites"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entitlements",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"value": "{{sm_ssoid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/avsystem/entitlements?icaoCode=SFJ",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"avsystem",
+										"entitlements"
+									],
+									"query": [
+										{
+											"key": "icaoCode",
+											"value": "SFJ"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Notification Controller",
+					"item": [
+						{
+							"name": "Notification Manual",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "sm_ssoid",
+										"value": "{{sm_ssoid}}",
+										"type": "text"
+									},
+									{
+										"key": "portal_id",
+										"value": "{{portal_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/services/techpubs/admin/notification/manuals",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"services",
+										"techpubs",
+										"admin",
+										"notification",
+										"manuals"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Common Controller",
+			"item": [
+				{
+					"name": "Ping",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/ping",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs {ID}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/5fee39be6d6b7c7d90501840?type=fh",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"5fee39be6d6b7c7d90501840"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "fh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs {ID} Associated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].groupName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].model).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].section).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].releaseDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].fileType).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].printable).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].multibrowser).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/5fee39be6d6b7c7d90501840/associated?type=fh",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"5fee39be6d6b7c7d90501840",
+								"associated"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "fh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs {ID} Bin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/5fee39be6d6b7c7d90501840/bin?type=fh",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"5fee39be6d6b7c7d90501840",
+								"bin"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "fh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs {ID} PDF",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/5fee39be6d6b7c7d90501840/pdf?type=fh",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"5fee39be6d6b7c7d90501840",
+								"pdf"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "fh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs CSS {Res}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/css/geae-ipc.css",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"css",
+								"geae-ipc.css"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Docs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].groupName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].program).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programtitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].year).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].monthQuarterDisplay).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].multibrowser).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sEcho",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "iColumns",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "sColumns",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "iDisplayStart",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "iDisplayLength",
+									"value": "24",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_0",
+									"value": "programtitle",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_1",
+									"value": "year",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_2",
+									"value": "monthQuarterDisplay",
+									"type": "text"
+								},
+								{
+									"key": "sSearch",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_0",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_0",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_1",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_1",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_2",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_2",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "iSortCol_0",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "sSortDir_0",
+									"value": "desc",
+									"type": "text"
+								},
+								{
+									"key": "iSortCol_1",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "sSortDir_1",
+									"value": "desc",
+									"type": "text"
+								},
+								{
+									"key": "iSortingCols",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "fh",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_3",
+									"value": "family",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_3",
+									"value": "GENX",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_3",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_4",
+									"value": "model",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_4",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_4",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_5",
+									"value": "aircraft",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_5",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_5",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_6",
+									"value": "tail",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_6",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_6",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/docs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"docs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Logo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/logo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"logo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Program} Banner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek112060/banner",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek112060",
+								"banner"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookcase Version Controller",
+			"item": [
+				{
+					"name": "Techdocs Pgms {Bookcase} Versions {Version} Mans {Manual} File {Filename}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/sbs/file/genx-2b-sb-75-0039-r00.htm",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek114118_lr",
+								"versions",
+								"3.5",
+								"mans",
+								"sbs",
+								"file",
+								"genx-2b-sb-75-0039-r00.htm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Bookcase} Versions {Version} Mans {Manual} File {Filename} PDF",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/sbs/file/genx-2b-sb-75-0039-r00.htm/pdf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek114118_lr",
+								"versions",
+								"3.5",
+								"mans",
+								"sbs",
+								"file",
+								"genx-2b-sb-75-0039-r00.htm",
+								"pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Bookcase} Versions {Version} Mans {Manual} Res **",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek112865_lr/versions/5.1/mans/gek112851/res/graphics/g1257661-01.cgm.png",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek112865_lr",
+								"versions",
+								"5.1",
+								"mans",
+								"gek112851",
+								"res",
+								"graphics",
+								"g1257661-01.cgm.png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Bookcase} Versions {Version} Mans {Manual} SB {SbNbr}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/sbs/sb/72-0124",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek114118_lr",
+								"versions",
+								"3.5",
+								"mans",
+								"sbs",
+								"sb",
+								"72-0124"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Bookcase} Versions {Version} Mans {Manual} Trg {Target}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek114118_lr/versions/3.5/mans/gek114122/trg/2255m82g06?bw=low",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek114118_lr",
+								"versions",
+								"3.5",
+								"mans",
+								"gek114122",
+								"trg",
+								"2255m82g06"
+							],
+							"query": [
+								{
+									"key": "bw",
+									"value": "low"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Bookcase} Versions {version} mans {manual} Part Details {filename}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek112080/versions/10.3/mans/sbs/part-details/cf34-10e-sb-72-0004-r01.htm",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek112080",
+								"versions",
+								"10.3",
+								"mans",
+								"sbs",
+								"part-details",
+								"cf34-10e-sb-72-0004-r01.htm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookcase Controller",
+			"item": [
+				{
+					"name": "Docs Pgms {Program} Mans {Manual} File {Filename}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/docs/pgms/gek114118_lr/mans/gek114119/file/pb05-00-00-00-001.htm",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"docs",
+								"pgms",
+								"gek114118_lr",
+								"mans",
+								"gek114119",
+								"file",
+								"pb05-00-00-00-001.htm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Docs Pgms {Program} Mans {Manual} Res **",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/docs/pgms/gek114118_lr/mans/sbs/res/graphics/g1256736-01.cgm.png",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"docs",
+								"pgms",
+								"gek114118_lr",
+								"mans",
+								"sbs",
+								"res",
+								"graphics",
+								"g1256736-01.cgm.png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Manual",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].manualdocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].revisiondate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].revisionnumber).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].multibrowser).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].onlineVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programdocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].printable).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].programtitle).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sEcho",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "iColumns",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "sColumns",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "iDisplayStart",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "iDisplayLength",
+									"value": "24",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_0",
+									"value": "programtitle",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_1",
+									"value": "title",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_2",
+									"value": "revisiondate",
+									"type": "text"
+								},
+								{
+									"key": "sSearch",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_0",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_0",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_1",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_1",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_2",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_2",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "iSortCol_0",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "sSortDir_0",
+									"value": "desc",
+									"type": "text"
+								},
+								{
+									"key": "iSortingCols",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "manual",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_3",
+									"value": "family",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_3",
+									"value": "GENX",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_3",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_4",
+									"value": "model",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_4",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_4",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_5",
+									"value": "aircraft",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_5",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_5",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "mDataProp_6",
+									"value": "tail",
+									"type": "text"
+								},
+								{
+									"key": "sSearch_6",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bRegex_6",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/services/techpubs/manual",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"manual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pgms",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].programDocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].subSystem).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].dvdVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programOnlineVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].licensedProgram).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/pgms?subsystem=TD",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"pgms"
+							],
+							"query": [
+								{
+									"key": "subsystem",
+									"value": "TD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pgms Aircrafts {Aircraft}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].programDocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].subSystem).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].dvdVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programOnlineVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].licensedProgram).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/pgms/aircrafts/767-300ER?subsystem=TD",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"pgms",
+								"aircrafts",
+								"767-300ER"
+							],
+							"query": [
+								{
+									"key": "subsystem",
+									"value": "TD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pgms Aircrafts {Aircraft} Tails {Tail}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].programDocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].subSystem).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].dvdVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programOnlineVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].licensedProgram).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/pgms/aircrafts/767-300ER/tails/OO-JNL?subsystem=TD",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"pgms",
+								"aircrafts",
+								"767-300ER",
+								"tails",
+								"OO-JNL"
+							],
+							"query": [
+								{
+									"key": "subsystem",
+									"value": "TD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pgms ESNs {Esn List}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].programDocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].subSystem).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].dvdVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programOnlineVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].licensedProgram).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/pgms/esns/872995%7C950996%7C994996?subsystem=TD",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"pgms",
+								"esns",
+								"872995%7C950996%7C994996"
+							],
+							"query": [
+								{
+									"key": "subsystem",
+									"value": "TD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pgms Fams {Family}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].programDocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].subSystem).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].dvdVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programOnlineVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].licensedProgram).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/pgms/fams/GE90?subsystem=TD",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"pgms",
+								"fams",
+								"GE90"
+							],
+							"query": [
+								{
+									"key": "subsystem",
+									"value": "TD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pgms Fams {Family} Mods {Model}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].programDocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].subSystem).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].dvdVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programOnlineVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].licensedProgram).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/pgms/fams/GE90/mods/GE90-100?subsystem=TD",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"pgms",
+								"fams",
+								"GE90",
+								"mods",
+								"GE90-100"
+							],
+							"query": [
+								{
+									"key": "subsystem",
+									"value": "TD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pgms Mods {Model}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].programDocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].subSystem).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].dvdVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programOnlineVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].licensedProgram).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/pgms/mods/GE90-100?subsystem=TD",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"pgms",
+								"mods",
+								"GE90-100"
+							],
+							"query": [
+								{
+									"key": "subsystem",
+									"value": "TD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pgms Tails {Tail}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].programDocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].subSystem).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].dvdVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programOnlineVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].licensedProgram).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/pgms/tails/OO-JNL?subsystem=TD",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"pgms",
+								"tails",
+								"OO-JNL"
+							],
+							"query": [
+								{
+									"key": "subsystem",
+									"value": "TD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Program} Mans {Manual} File {Filename}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek114118_lr/mans/sbs/file/genx-2b-sb-72-0006-r01.htm",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek114118_lr",
+								"mans",
+								"sbs",
+								"file",
+								"genx-2b-sb-72-0006-r01.htm"
+							],
+							"query": [
+								{
+									"key": "bw",
+									"value": "low",
+									"description": "Possible values: high, low | Not required",
+									"disabled": true
+								},
+								{
+									"key": "mbdr",
+									"value": "y",
+									"description": "Possible values: y, n | Not required",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Program} Mans {Manual} File {Filename} PDF",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek114118_lr/mans/sbs/file/genx-2b-sb-72-0006-r01.htm/pdf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek114118_lr",
+								"mans",
+								"sbs",
+								"file",
+								"genx-2b-sb-72-0006-r01.htm",
+								"pdf"
+							],
+							"query": [
+								{
+									"key": "bw",
+									"value": "low",
+									"description": "Possible values: high, low | Not required",
+									"disabled": true
+								},
+								{
+									"key": "mbdr",
+									"value": "y",
+									"description": "Possible values: y, n | Not required",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Program} Mans {Manual} Summary {Filename}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek114118_lr/mans/sbs/summary/genx-2b-sb-72-0006-r01.htm",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek114118_lr",
+								"mans",
+								"sbs",
+								"summary",
+								"genx-2b-sb-72-0006-r01.htm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Program} Mans {Manual} Summary {Filename} PDF",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek114118_lr/mans/sbs/summary/genx-2b-sb-72-0006-r01.htm/pdf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek114118_lr",
+								"mans",
+								"sbs",
+								"summary",
+								"genx-2b-sb-72-0006-r01.htm",
+								"pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Program} Mans {Manual} Trg {Target}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek114118_lr/mans/gek114122/trg/72-64-00-05-120",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek114118_lr",
+								"mans",
+								"gek114122",
+								"trg",
+								"72-64-00-05-120"
+							],
+							"query": [
+								{
+									"key": "bw",
+									"value": "low",
+									"description": "Possible values: high, low | Not required",
+									"disabled": true
+								},
+								{
+									"key": "mbdr",
+									"value": "y",
+									"description": "Possible values: y, n | Not required",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Tps Pgms {Program} SCT {Category} Associated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/tps/pgm/gek112060/sct/1/associated",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"tps",
+								"pgm",
+								"gek112060",
+								"sct",
+								"1",
+								"associated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Tps Pgms {Program} SCT {Category} Associated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/tps/pgm/gek112060/sct/1/init",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"tps",
+								"pgm",
+								"gek112060",
+								"sct",
+								"1",
+								"init"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bookcases Online",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"array\");",
+									"  pm.expect(jsonData[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData[0].bookcaseKey).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].bookcaseVersion).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].bookcaseVersionStatusCode).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].creationDate).to.be.a(\"number\");",
+									"  pm.expect(jsonData[0].lastUpdatedDate).to.be.a(\"number\");",
+									" });",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/bookcases/online",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"bookcases",
+								"online"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookcases Controller",
+			"item": [
+				{
+					"name": "Bookcases {Bookcase} Email_Flag {flag}",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/admin/notification/bookcases/gek108745/email-flag?flag=true",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"notification",
+								"bookcases",
+								"gek108745",
+								"email-flag"
+							],
+							"query": [
+								{
+									"key": "flag",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bookcases {Bookcase} Email_Notification {action}",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "212462850",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "cwc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/admin/notification/bookcases/gek108745/email-notification-date?action=reset",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"admin",
+								"notification",
+								"bookcases",
+								"gek108745",
+								"email-notification-date"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "reset"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bookcases {Bookcase} Books {Book} Files {File} Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookcaseKey).to.be.a(\"string\");",
+									"  pm.expect(jsonData.type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.version).to.be.a(\"string\");",
+									"  pm.expect(jsonData.fileType).to.be.a(\"string\");",
+									"  pm.expect(jsonData.resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookKey).to.be.a(\"string\");",
+									"  pm.expect(jsonData.fileName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.fileExtension).to.be.a(\"string\");",
+									"  pm.expect(jsonData.multiMatch).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookcaseTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.revisionDate).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/bookcases/gek114118_lr/books/sbs/files/genx-2b-sb-73-0089-r01.htm/details",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"bookcases",
+								"gek114118_lr",
+								"books",
+								"sbs",
+								"files",
+								"genx-2b-sb-73-0089-r01.htm",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bookcases {Bookcase} Versions {Version} Books {Book} Files {File} Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookcaseKey).to.be.a(\"string\");",
+									"  pm.expect(jsonData.type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.version).to.be.a(\"string\");",
+									"  pm.expect(jsonData.fileType).to.be.a(\"string\");",
+									"  pm.expect(jsonData.resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookKey).to.be.a(\"string\");",
+									"  pm.expect(jsonData.fileName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.fileExtension).to.be.a(\"string\");",
+									"  pm.expect(jsonData.multiMatch).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookcaseTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.revisionDate).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/bookcases/gek114118_lr/versions/3.5/books/sbs/files/genx-2b-sb-73-0089-r01.htm/details",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"bookcases",
+								"gek114118_lr",
+								"versions",
+								"3.5",
+								"books",
+								"sbs",
+								"files",
+								"genx-2b-sb-73-0089-r01.htm",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bookcases {Bookcase} Versions {Version} Books {Book} Trg {Trg} Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookcaseKey).to.be.a(\"string\");",
+									"  pm.expect(jsonData.type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.version).to.be.a(\"string\");",
+									"  pm.expect(jsonData.fileType).to.be.a(\"string\");",
+									"  pm.expect(jsonData.resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookKey).to.be.a(\"string\");",
+									"  pm.expect(jsonData.fileName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.fileExtension).to.be.a(\"string\");",
+									"  pm.expect(jsonData.multiMatch).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.bookcaseTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.revisionDate).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/bookcases/gek114118_lr/versions/3.5/books/gek114122/trg/72-64-00-05-120/details",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"bookcases",
+								"gek114118_lr",
+								"versions",
+								"3.5",
+								"books",
+								"gek114122",
+								"trg",
+								"72-64-00-05-120",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bookcases {Bookcase} Engine Models",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.engineModels).to.be.an(\"array\");",
+									"  pm.expect(jsonData.engineModels[0]).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/bookcases/gek112060/engine-models",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"bookcases",
+								"gek112060",
+								"engine-models"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookcase TOC Version Controller",
+			"item": [
+				{
+					"name": "Toc Bookcase {Bookcase} Versions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"array\");",
+									"  pm.expect(jsonData[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData[0].version).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].versionStatus).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].versionId).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/toc/bookcases/gek108744/versions",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"toc",
+								"bookcases",
+								"gek108744",
+								"versions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toc Bookcases {Bookcase} Books",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].fileExtension).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].revisionDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].tocTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].key).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0].hasChildren).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].revised).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/toc/bookcases/gek108744/books",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"toc",
+								"bookcases",
+								"gek108744",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toc Bookcases {Bookcase} Books {Version}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].fileExtension).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].revisionDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].tocTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].key).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0].hasChildren).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].revised).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/toc/bookcases/gek108744/books/9.2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"toc",
+								"bookcases",
+								"gek108744",
+								"books",
+								"9.2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toc Bookcases {Bookcase} {Book} {Version}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].fileExtension).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].revisionDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].tocTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].key).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0].hasChildren).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].revised).to.be.a(\"boolean\");",
+									" });",
+									"",
+									" pm.test(\"Test format of childnode\", () => {",
+									"  pm.expect(jsonData.objects[0].children[0].fileExtension).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children[0].revisionDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children[0].tocTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children[0].key).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children[0].children).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0].children[0].hasChildren).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].children[0].revised).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/toc/bookcases/gek108744/gek9266/9.2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"toc",
+								"bookcases",
+								"gek108744",
+								"gek9266",
+								"9.2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toc Bookcases Book Pageblk Publish",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"key\": \"pb71-20-05-800-d\",\n\t\"publicationTypeCode\": \"ic\",\n\t\"resourceUri\": \"/techpubs/techdocs/pgms/gek108746/versions/10.1/mans/gek92451/file/cf6-80c2-4000-em-ic-71-20-05-800-D-91.htm\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/services/techpubs/toc/bookcases/book/pageblk/publish",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"toc",
+								"bookcases",
+								"book",
+								"pageblk",
+								"publish"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookcase TOC Controller",
+			"item": [
+				{
+					"name": "Toc Bookcases {Bookcase}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].fileExtension).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].revisionDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].tocTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].key).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0].hasChildren).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].revised).to.be.a(\"boolean\");",
+									" });",
+									"",
+									" pm.test(\"Test format of childnode\", () => {",
+									"  pm.expect(jsonData.objects[0].children[0].fileExtension).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children[0].revisionDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children[0].tocTitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children[0].key).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].children[0].children).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0].children[0].hasChildren).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].children[0].revised).to.be.a(\"boolean\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/toc/bookcases/gek108744",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"toc",
+								"bookcases",
+								"gek108744"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Confing Demo Controller",
+			"item": [
+				{
+					"name": "Config Greeting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/services/techpubs/config/greeting",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"config",
+								"greeting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Config Ping",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/services/techpubs/config/ping",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"config",
+								"ping"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Document Type Controller",
+			"item": [
+				{
+					"name": "Docs Cmms {ID}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/docs/cmms/602a9bd86d6b7c691e7c9c3e",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"docs",
+								"cmms",
+								"602a9bd86d6b7c691e7c9c3e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Docs Fhs {ID}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/docs/fhs/6043e7616d6b7c691e7cae94",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"docs",
+								"fhs",
+								"6043e7616d6b7c691e7cae94"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Docs Fhs {ID} Pdf",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/docs/fhs/6043e7616d6b7c691e7cae94/pdf?type=fh",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"docs",
+								"fhs",
+								"6043e7616d6b7c691e7cae94",
+								"pdf"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "fh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Cmms {ID} Pdf",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/cmms/602a9bd86d6b7c691e7c9c3e/parts/pdf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"cmms",
+								"602a9bd86d6b7c691e7c9c3e",
+								"parts",
+								"pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Cmms {ID} Parts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/cmms/5a2af1d58746cb1f1e0286bb/parts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"cmms",
+								"5a2af1d58746cb1f1e0286bb",
+								"parts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Docs Tps {ID}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/docs/tps/5e96e1f06d6b7c65a38972c1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"docs",
+								"tps",
+								"5e96e1f06d6b7c65a38972c1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Cmms Tr {ID}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/cmms/tr/601d405d6d6b7c691e7c9c1c",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"cmms",
+								"tr",
+								"601d405d6d6b7c691e7c9c1c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Sm Sct {Category} Associated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].groupName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].releaseDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].multibrowser).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/sm/sct/Field%20Debris%20Guide/associated?models=CF6-50,CF6-6,CF6-80A,CF6-80C2,CF6-80E",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"sm",
+								"sct",
+								"Field%20Debris%20Guide",
+								"associated"
+							],
+							"query": [
+								{
+									"key": "models",
+									"value": "CF6-50,CF6-6,CF6-80A,CF6-80C2,CF6-80E"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Sm Sct {Category} Init",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/sm/sct/Field%20Debris%20Guide/init?models=CF6-50,CF6-6,CF6-80A,CF6-80C2,CF6-80E",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"sm",
+								"sct",
+								"Field%20Debris%20Guide",
+								"init"
+							],
+							"query": [
+								{
+									"key": "models",
+									"value": "CF6-50,CF6-6,CF6-80A,CF6-80C2,CF6-80E"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Fhs {ID} sct {sctid}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/fhs/6043e7616d6b7c691e7cae9b/sct/6043e7616d6b7c691e7cae94",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"fhs",
+								"6043e7616d6b7c691e7cae9b",
+								"sct",
+								"6043e7616d6b7c691e7cae94"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Fhs {ID} Art {Artid}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/fhs/603c1a4d6d6b7c691e7cacb7/art/603c1a4d6d6b7c691e7cacb0",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"fhs",
+								"603c1a4d6d6b7c691e7cacb7",
+								"art",
+								"603c1a4d6d6b7c691e7cacb0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Fhs {ID} Art {Artid} Pdf",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/fhs/603c1a4d6d6b7c691e7cacb7/art/603c1a4d6d6b7c691e7cacb0/pdf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"fhs",
+								"603c1a4d6d6b7c691e7cacb7",
+								"art",
+								"603c1a4d6d6b7c691e7cacb0",
+								"pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Fhs {ID} sct {sctid} Pdf",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/fhs/6043e7616d6b7c691e7cae9b/sct/6043e7616d6b7c691e7cae94/pdf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"fhs",
+								"6043e7616d6b7c691e7cae9b",
+								"sct",
+								"6043e7616d6b7c691e7cae94",
+								"pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs ll Sct {Category} Associated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].groupName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].fileType).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].uploadYearNumber).to.be.a(\"number\");",
+									"  pm.expect(jsonData.objects[0].releaseDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].printable).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].multibrowser).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/ll/sct/4/associated",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"ll",
+								"sct",
+								"4",
+								"associated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs ll Sct {Category} Init",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/ll/sct/4/init",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"ll",
+								"sct",
+								"4",
+								"init"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Document Download Controller",
+			"item": [
+				{
+					"name": "Techdocs Download Files",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/files?files=5a2af1d58746cb1f1e0286bb&type=cmm",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"files"
+							],
+							"query": [
+								{
+									"key": "files",
+									"value": "5a2af1d58746cb1f1e0286bb"
+								},
+								{
+									"key": "type",
+									"value": "cmm"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms Mods {Model} Csv",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/mods/CF34-8E/csv?type=cmm",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"mods",
+								"CF34-8E",
+								"csv"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "cmm"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms Mods {Model}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].type).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].groupName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].releaseDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].model).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].publication).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programdocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].program).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programtitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].multibrowser).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/mods/CF6-50?type=cmm&iDisplayLength=20&iDisplayStart=0&sEcho=sEcho",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"mods",
+								"CF6-50"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "cmm"
+								},
+								{
+									"key": "iDisplayLength",
+									"value": "20"
+								},
+								{
+									"key": "iDisplayStart",
+									"value": "0"
+								},
+								{
+									"key": "sEcho",
+									"value": "sEcho"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms Fams {Family} {Doctype} Vi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/fams/CF6/ServiceBulletin/vi",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"fams",
+								"CF6",
+								"ServiceBulletin",
+								"vi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms Mods {Model} {Category} Tp Csv",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/mods/CF34-8E/2/tp/csv",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"mods",
+								"CF34-8E",
+								"2",
+								"tp",
+								"csv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms Mods {Model} {Category} Tp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].groupName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].fileType).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].uploadMonthName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].uploadYearNumber).to.be.a(\"number\");",
+									"  pm.expect(jsonData.objects[0].releaseDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].conferenceLocation).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].printable).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].multibrowser).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/mods/CF34-8E/2/tp?iDisplayStart=0&iDisplayLength=20&sEcho=sEcho",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"mods",
+								"CF34-8E",
+								"2",
+								"tp"
+							],
+							"query": [
+								{
+									"key": "iDisplayStart",
+									"value": "0"
+								},
+								{
+									"key": "iDisplayLength",
+									"value": "20"
+								},
+								{
+									"key": "sEcho",
+									"value": "sEcho"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms Mods {Model} {DocType} Sm",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].releaseDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].multibrowser).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/mods/CF34-8E/Field%20Debris%20Guide/sm?iDisplayStart=0&iDisplayLength=20&sEcho=sEcho",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"mods",
+								"CF34-8E",
+								"Field%20Debris%20Guide",
+								"sm"
+							],
+							"query": [
+								{
+									"key": "iDisplayStart",
+									"value": "0"
+								},
+								{
+									"key": "iDisplayLength",
+									"value": "20"
+								},
+								{
+									"key": "sEcho",
+									"value": "sEcho"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms Mods {Model} {DocType} Sm Csv",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/mods/CF34-8E/Field%20Debris%20Guide/sm/csv",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"mods",
+								"CF34-8E",
+								"Field%20Debris%20Guide",
+								"sm",
+								"csv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download {Category} Ll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].resourceUri).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].groupName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].fileType).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].uploadMonthName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].uploadYearNumber).to.be.a(\"number\");",
+									"  pm.expect(jsonData.objects[0].releaseDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].conferenceLocation).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].printable).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].multibrowser).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/2/ll?iDisplayStart=0&iDisplayLength=20&sEcho=sEcho",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"2",
+								"ll"
+							],
+							"query": [
+								{
+									"key": "iDisplayStart",
+									"value": "0"
+								},
+								{
+									"key": "iDisplayLength",
+									"value": "20"
+								},
+								{
+									"key": "sEcho",
+									"value": "sEcho"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms {Program} {DownloadType} {Type}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects).to.be.an(\"array\");",
+									"  pm.expect(jsonData.objects[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.objects[0].id).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].groupName).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].fileSize).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].toctitle).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].revisionDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].fileType).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].downloadtype).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].catalogkey).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].downloadfilename).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].releaseDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].multibrowser).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].printable).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.objects[0].programdocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].program).to.be.a(\"string\");",
+									"  pm.expect(jsonData.objects[0].programtitle).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/gek108745/source/manual?program=gek108745&manual=gek28495-2&iDisplayLength=20&iDisplayStart=0&iColumns=6&sEcho=2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"gek108745",
+								"source",
+								"manual"
+							],
+							"query": [
+								{
+									"key": "program",
+									"value": "gek108745"
+								},
+								{
+									"key": "manual",
+									"value": "gek28495-2"
+								},
+								{
+									"key": "iDisplayLength",
+									"value": "20"
+								},
+								{
+									"key": "iDisplayStart",
+									"value": "0"
+								},
+								{
+									"key": "iColumns",
+									"value": "6"
+								},
+								{
+									"key": "sEcho",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms {Program} {DownloadType} {Type} File",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/v2/techdocs/download/pgms/gek108745/source/manual/files?files=gek50481%3ACF6-50_ESM_90_SGML_001.zip&type=manual",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"v2",
+								"techdocs",
+								"download",
+								"pgms",
+								"gek108745",
+								"source",
+								"manual",
+								"files"
+							],
+							"query": [
+								{
+									"key": "files",
+									"value": "gek50481%3ACF6-50_ESM_90_SGML_001.zip"
+								},
+								{
+									"key": "type",
+									"value": "manual"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms {Program} {DownloadType} {Type} Csv",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/gek108745/source/manual/csv?revision=Current&manual=gek50481&program=gek108745",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"gek108745",
+								"source",
+								"manual",
+								"csv"
+							],
+							"query": [
+								{
+									"key": "revision",
+									"value": "Current"
+								},
+								{
+									"key": "manual",
+									"value": "gek50481"
+								},
+								{
+									"key": "program",
+									"value": "gek108745"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Manual Download Pgms {Program} {DownloadType} {Type}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"array\");",
+									"  pm.expect(jsonData[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData[0].manualdocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].multibrowser).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].programdocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].printable).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData[0].programtitle).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/manual/download/pgms/gek108745/source/manual",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"manual",
+								"download",
+								"pgms",
+								"gek108745",
+								"source",
+								"manual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Cloudfront {Program}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"array\");",
+									"  pm.expect(jsonData[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData[0].manualdocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].multibrowser).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].programdocnbr).to.be.a(\"string\");",
+									"  pm.expect(jsonData[0].printable).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData[0].programtitle).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/manual/download/pgms/gek108745/source/manual",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"manual",
+								"download",
+								"pgms",
+								"gek108745",
+								"source",
+								"manual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download {Category} Ll Csv",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/2/ll/csv",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"2",
+								"ll",
+								"csv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgms {Program} Offlineviewer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test data type of the response\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.success).to.be.a(\"boolean\");",
+									"  pm.expect(jsonData.dvdList).to.be.an(\"array\");",
+									"  pm.expect(jsonData.dvdList[0]).to.be.an(\"object\");",
+									"  pm.expect(jsonData.dvdList[0].title).to.be.a(\"string\");",
+									"  pm.expect(jsonData.dvdList[0].releaseDate).to.be.a(\"string\");",
+									"  pm.expect(jsonData.dvdList[0].geknumber).to.be.a(\"string\");",
+									"  pm.expect(jsonData.dvdList[0].filesize).to.be.a(\"string\");",
+									"  pm.expect(jsonData.dvdList[0].type).to.be.a(\"string\");",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/gek108745/offlineviewer?iDisplayLength=20&iDisplayStart=0&sEcho=2&iColumns=6&manual=gek50481&revision=All&currentorg=geae",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"gek108745",
+								"offlineviewer"
+							],
+							"query": [
+								{
+									"key": "iDisplayLength",
+									"value": "20"
+								},
+								{
+									"key": "iDisplayStart",
+									"value": "0"
+								},
+								{
+									"key": "sEcho",
+									"value": "2"
+								},
+								{
+									"key": "iColumns",
+									"value": "6"
+								},
+								{
+									"key": "manual",
+									"value": "gek50481"
+								},
+								{
+									"key": "revision",
+									"value": "All"
+								},
+								{
+									"key": "currentorg",
+									"value": "geae"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Download Pgm Excel",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"facetQueries\": [\n        {\n            \"name\": \"doc_type\",\n            \"values\": [\n                \"Tool And Equipment Manual\",\n                \"Manual\"\n            ]\n        },\n        {\n            \"name\": \"engineModels\",\n            \"values\": [\n                \"CF6-50\"\n            ]\n        },\n        {\n            \"name\": \"engineFamilies\",\n            \"values\": [\n                \"CF6\"\n            ]\n        }\n    ],\n    \"limit\": 20,\n    \"module\": \"documents\",\n    \"start\": 0,\n    \"searchText\": \"*\",\n    \"sortField\": {\n        \"field\": \"title\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/download/pgms/excel",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"download",
+								"pgms",
+								"excel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Techdocs Pgms {Program} Mans {Manual} Summary {Filename}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/techdocs/pgms/gek114118_lr/mans/sbs/summary/genx-2b-sb-72-0006-r01.htm",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"techdocs",
+								"pgms",
+								"gek114118_lr",
+								"mans",
+								"sbs",
+								"summary",
+								"genx-2b-sb-72-0006-r01.htm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Archival Controller",
+			"item": [
+				{
+					"name": "Access",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test that a user has access to archival documents\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.hasAccess).to.be.true;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/archival/access",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"archival",
+								"access"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Documents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"pm.test(\"Test that a user with access retrieves document metadata\", () => {",
+									"  pm.expect(jsonData).to.be.an(\"object\");",
+									"  pm.expect(jsonData.documents).to.be.an(\"array\");",
+									"  pm.expect(jsonData.documents.length).to.be.above(0);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"value": "{{sm_ssoid}}",
+								"type": "text"
+							},
+							{
+								"key": "portal_id",
+								"value": "{{portal_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/archival/documents",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"archival",
+								"documents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Archival model type pdf",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sm_ssoid",
+								"type": "text",
+								"value": "{{sm_ssoid}}"
+							},
+							{
+								"key": "portal_id",
+								"type": "text",
+								"value": "{{portal_id}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/services/techpubs/archival/model/CJ610-1/type/Service%20Bulletins/pdf/CJ610-SB INDEX.pdf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"services",
+								"techpubs",
+								"archival",
+								"model",
+								"CJ610-1",
+								"type",
+								"Service%20Bulletins",
+								"pdf",
+								"CJ610-SB INDEX.pdf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

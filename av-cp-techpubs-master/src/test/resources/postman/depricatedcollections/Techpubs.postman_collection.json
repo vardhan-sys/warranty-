@@ -1,0 +1,4207 @@
+{
+	"info": {
+		"_postman_id": "e514e03a-f0b9-430e-89a4-2389ffb0cfe1",
+		"name": "Techpubs Docs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/services/techpubs/ping",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					},
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sEcho",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "iColumns",
+							"value": "8",
+							"type": "text"
+						},
+						{
+							"key": "sColumns",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "24",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "programtitle",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "revisiondate",
+							"type": "text"
+						},
+						{
+							"key": "sSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_0",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc",
+							"type": "text"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "ic",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "family",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_4",
+							"value": "model",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_5",
+							"value": "aircraft",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_6",
+							"value": "tail",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_7",
+							"value": "esn",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_3",
+							"value": "GENX",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_4",
+							"value": "GENX-1B",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_5",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_6",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_7",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_4",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_5",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_6",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_7",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/docs",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manuals",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "212719881"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					},
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sEcho",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "iColumns",
+							"value": "8",
+							"type": "text"
+						},
+						{
+							"key": "sColumns",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "24",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "programtitle",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "revisiondate",
+							"type": "text"
+						},
+						{
+							"key": "sSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_0",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc",
+							"type": "text"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "manual",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "family",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_4",
+							"value": "model",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_5",
+							"value": "aircraft",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_6",
+							"value": "tail",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_7",
+							"value": "esn",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_3",
+							"value": "GE90",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_4",
+							"value": "GE90",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_5",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_6",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_7",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_4",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_5",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_6",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_7",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/services/techpubs/manual",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"manual"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/{id}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502717648"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/57ab6d869a5b8d1100718b7a?type=fh",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"57ab6d869a5b8d1100718b7a"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "fh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/fhs/{id}/sct/{sctid}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/fhs/581b45389a5b8d2d1336c31b/sct/581b45389a5b8d2d1336c32a",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"fhs",
+						"581b45389a5b8d2d1336c31b",
+						"sct",
+						"581b45389a5b8d2d1336c32a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/cmms/{id}/pdf",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/57c58e8b9a5b8d110051baf9/pdf?type=cmm",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"57c58e8b9a5b8d110051baf9",
+						"pdf"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "cmm"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/cmms/{id}/parts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/cmms/57c58e8b9a5b8d110051baf9/parts",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"cmms",
+						"57c58e8b9a5b8d110051baf9",
+						"parts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/cmms/tr/{id}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502717648"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/cmms/tr/579b951c50a6476d7569c083",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"cmms",
+						"tr",
+						"579b951c50a6476d7569c083"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/{id}/associated",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502377760"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/57ab74249a5b8d1100718bde/associated?type=fh",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"57ab74249a5b8d1100718bde",
+						"associated"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "fh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/sm/sct/{category}/associated",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/sm/sct/GEAC%20Airworthiness%20Directives/associated?models=H80",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"sm",
+						"sct",
+						"GEAC%20Airworthiness%20Directives",
+						"associated"
+					],
+					"query": [
+						{
+							"key": "models",
+							"value": "H80"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/tps/pgm/{program}/sct/{category}/associated",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502377760"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/tps/pgm/CF34-10E/sct/3/associated?models=CF6-80A,CF6-80C2,CF6-80E,GE90-100",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"tps",
+						"pgm",
+						"CF34-10E",
+						"sct",
+						"3",
+						"associated"
+					],
+					"query": [
+						{
+							"key": "models",
+							"value": "CF6-80A,CF6-80C2,CF6-80E,GE90-100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/cmms/{id}/parts/pdf",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502717648"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/cmms/57bde75b9a5b8d11007194cf/parts/pdf?undefined=",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"cmms",
+						"57bde75b9a5b8d11007194cf",
+						"parts",
+						"pdf"
+					],
+					"query": [
+						{
+							"key": "undefined",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/{id}/bin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "myCFM"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/574bfe699a5b8d110088ff26/bin?type=vi",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"574bfe699a5b8d110088ff26",
+						"bin"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/ll/sct/{category}/init",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502299853"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/ll/sct/4/init",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"ll",
+						"sct",
+						"4",
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/sm/sct/{category}/init",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502299853"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/sm/sct/Illustrated%20Tools%20&%20Equipment%20Manuals/init",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"sm",
+						"sct",
+						"Illustrated%20Tools%20&%20Equipment%20Manuals",
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/pgms/{program}/banner",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502717648"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/pgms/gek108746-02/banner?type=cmm&sEcho=2&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek108746-02",
+						"banner"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "cmm"
+						},
+						{
+							"key": "sEcho",
+							"value": "2"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/cmm",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502717648"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/CF34-8E?type=cmm&sEcho=2&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"CF34-8E"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "cmm"
+						},
+						{
+							"key": "sEcho",
+							"value": "2"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/fh",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/GE90-100?type=fh&sEcho=2&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1&reldate=",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"GE90-100"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "fh"
+						},
+						{
+							"key": "sEcho",
+							"value": "2"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						},
+						{
+							"key": "reldate",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/{doctype}/sm",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/GE90/FSE%20TPP%20Scorecard/sm?sEcho=9&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1&downloadDocumentTypes=FSE+TPP+Scorecard",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"GE90",
+						"FSE%20TPP%20Scorecard",
+						"sm"
+					],
+					"query": [
+						{
+							"key": "sEcho",
+							"value": "9"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						},
+						{
+							"key": "downloadDocumentTypes",
+							"value": "FSE+TPP+Scorecard"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/fams/{family}/{doctype}/vi",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502717648"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/CF34-8E?type=cmm&sEcho=2&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"CF34-8E"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "cmm"
+						},
+						{
+							"key": "sEcho",
+							"value": "2"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/fams/{family}/{doctype}/vi/csv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "myCFM"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/fams/CFM56/Contact%20Information/vi/csv?url=https://qa.mycfmportal.com/portal/cfm/index&manual=all",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"fams",
+						"CFM56",
+						"Contact%20Information",
+						"vi",
+						"csv"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://qa.mycfmportal.com/portal/cfm/index"
+						},
+						{
+							"key": "manual",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/{doctype}/sm/csv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/CF34-10E/External%20Configuration%20Hardware%20Handbook/sm/csv?url=https://qa.my.geaviation.com/portal/ge/index&manual=all",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"CF34-10E",
+						"External%20Configuration%20Hardware%20Handbook",
+						"sm",
+						"csv"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://qa.my.geaviation.com/portal/ge/index"
+						},
+						{
+							"key": "manual",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/wspg/csv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/GE90-100/csv?type=wspg&url=https://qa.my.geaviation.com/portal/ge/index&manual=all",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"GE90-100",
+						"csv"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "wspg"
+						},
+						{
+							"key": "url",
+							"value": "https://qa.my.geaviation.com/portal/ge/index"
+						},
+						{
+							"key": "manual",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/wspg",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/GE90-100?type=wspg&sEcho=3&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"GE90-100"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "wspg"
+						},
+						{
+							"key": "sEcho",
+							"value": "3"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/fams/{family}/vi/doctypes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "myCFM"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/fams/CFM56/vi/doctypes?sEcho=2&iColumns=3&sColumns=&iDisplayStart=0&iDisplayLength=2000&mDataProp_0=programtitle&mDataProp_1=year&mDataProp_2=month_quarter_display&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&iSortCol_0=1&sSortDir_0=desc&iSortCol_1=2&sSortDir_1=desc&iSortingCols=2",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"fams",
+						"CFM56",
+						"vi",
+						"doctypes"
+					],
+					"query": [
+						{
+							"key": "sEcho",
+							"value": "2"
+						},
+						{
+							"key": "iColumns",
+							"value": "3"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "2000"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "programtitle"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "year"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "month_quarter_display"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "1"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortCol_1",
+							"value": "2"
+						},
+						{
+							"key": "sSortDir_1",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/cmm/csv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/CF34-10E/csv?type=cmm&url=https://qa.my.geaviation.com/portal/ge/index&manual=all",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"CF34-10E",
+						"csv"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "cmm"
+						},
+						{
+							"key": "url",
+							"value": "https://qa.my.geaviation.com/portal/ge/index"
+						},
+						{
+							"key": "manual",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/aow/csv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502377761"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/GE90/csv?type=aow&sEcho=3&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"GE90",
+						"csv"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "aow"
+						},
+						{
+							"key": "sEcho",
+							"value": "3"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502717648"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/gek108749/source/sb/files?files=sbs%3ASB_GE90_72-1148-R00_SGML.zip&type=sb",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"gek108749",
+						"source",
+						"sb",
+						"files"
+					],
+					"query": [
+						{
+							"key": "files",
+							"value": "sbs%3ASB_GE90_72-1148-R00_SGML.zip"
+						},
+						{
+							"key": "type",
+							"value": "sb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/aow",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502717648"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/CF34-3A1?type=aow&sEcho=6&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"CF34-3A1"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "aow"
+						},
+						{
+							"key": "sEcho",
+							"value": "6"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/wspg",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502717648"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/GE90-100?type=wspg&sEcho=6&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"GE90-100"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "wspg"
+						},
+						{
+							"key": "sEcho",
+							"value": "6"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/{category : 1|2|3|4}/tp",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502377760"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/GENX-1B/3/tp?sEcho=8&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1&downloadDocumentTypes=GENX-1B%7C3",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"GENX-1B",
+						"3",
+						"tp"
+					],
+					"query": [
+						{
+							"key": "sEcho",
+							"value": "8"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						},
+						{
+							"key": "downloadDocumentTypes",
+							"value": "GENX-1B%7C3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/{category : 1|2|3|4}/ll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502377760"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/4/ll?sEcho=8&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=0&mDataProp_1=title&mDataProp_2=category&mDataProp_3=release_date&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&sSearch_1=&bRegex_1=false&sSearch_2=&bRegex_2=false&sSearch_3=&bRegex_3=false&iSortCol_0=3&sSortDir_0=desc&iSortingCols=1&downloadDocumentTypes=GENX-1B%7C3",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"4",
+						"ll"
+					],
+					"query": [
+						{
+							"key": "sEcho",
+							"value": "8"
+						},
+						{
+							"key": "iColumns",
+							"value": "4"
+						},
+						{
+							"key": "sColumns",
+							"value": ""
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "20"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "0"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "category"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "release_date"
+						},
+						{
+							"key": "sSearch",
+							"value": ""
+						},
+						{
+							"key": "bRegex",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_0",
+							"value": ""
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_1",
+							"value": ""
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_2",
+							"value": ""
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false"
+						},
+						{
+							"key": "sSearch_3",
+							"value": ""
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "3"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1"
+						},
+						{
+							"key": "downloadDocumentTypes",
+							"value": "GENX-1B%7C3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/mods/{model}/{category : 1|2|3|4}/tp/csv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502377760"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/mods/GENX-2B/2/tp/csv?url=https://qa.my.geaviation.com/portal/ge/index&manual=all",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"mods",
+						"GENX-2B",
+						"2",
+						"tp",
+						"csv"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://qa.my.geaviation.com/portal/ge/index"
+						},
+						{
+							"key": "manual",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pgms",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502306485"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/pgms?subsystem=td",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"pgms"
+					],
+					"query": [
+						{
+							"key": "subsystem",
+							"value": "td"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pgms/aircrafts/{aircraft}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502306485"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/pgms/aircrafts/767-300ER?subsystem=td",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"pgms",
+						"aircrafts",
+						"767-300ER"
+					],
+					"query": [
+						{
+							"key": "subsystem",
+							"value": "td"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pgms/aircrafts/{aircraft}/tails/{tail}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502306485"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/pgms/aircrafts/767-300ER/tails/OO-JNL?subsystem=td",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"pgms",
+						"aircrafts",
+						"767-300ER",
+						"tails",
+						"OO-JNL"
+					],
+					"query": [
+						{
+							"key": "subsystem",
+							"value": "td"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pgms/esns/{esnlist}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502306485"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/pgms/esns/872995%7C950996%7C994996?subsystem=td",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"pgms",
+						"esns",
+						"872995%7C950996%7C994996"
+					],
+					"query": [
+						{
+							"key": "subsystem",
+							"value": "td"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pgms/fams/{family}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502306485"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/pgms/fams/GE90?subsystem=td",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"pgms",
+						"fams",
+						"GE90"
+					],
+					"query": [
+						{
+							"key": "subsystem",
+							"value": "td"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pgms/fams/{family}/mods/{model}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502306485"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/pgms/fams/GE90/mods/GE90-100?subsystem=td",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"pgms",
+						"fams",
+						"GE90",
+						"mods",
+						"GE90-100"
+					],
+					"query": [
+						{
+							"key": "subsystem",
+							"value": "td"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pgms/mods/{model}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502306485"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/pgms/mods/GE90-100?subsystem=td",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"pgms",
+						"mods",
+						"GE90-100"
+					],
+					"query": [
+						{
+							"key": "subsystem",
+							"value": "td"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pgms/tails/{tail}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502306485"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/pgms/mods/GE90-100?subsystem=td",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"pgms",
+						"mods",
+						"GE90-100"
+					],
+					"query": [
+						{
+							"key": "subsystem",
+							"value": "td"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/css/{res}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/css/geae-ipc.css",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"css",
+						"geae-ipc.css"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getadminentitlements",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/getadminentitlements",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"getadminentitlements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/ll/sct/{category}/associated",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/ll/sct/2/associated",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"ll",
+						"sct",
+						"2",
+						"associated"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/tps/pgm/{program}/sct/{category}/init",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/tps/pgm/CF34-10E/sct/4/init",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"tps",
+						"pgm",
+						"CF34-10E",
+						"sct",
+						"4",
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/fhs/{id}/pdf",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/57dc06f99a5b8d088c6816b4/pdf?type=fh",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"57dc06f99a5b8d088c6816b4",
+						"pdf"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "fh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/pgms/gek112865/mans/gek112851/res/graphics/g1261447-03.cgm.png",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502717648"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/pgms/gek112865/mans/gek112851/res/graphics/g1261447-03.cgm.png",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek112865",
+						"mans",
+						"gek112851",
+						"res",
+						"graphics",
+						"g1261447-03.cgm.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toc/pgms/{program}/mans/{manual}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/toc/pgms/:program/mans/:manual",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"pgms",
+						":program",
+						"mans",
+						":manual"
+					],
+					"variable": [
+						{
+							"key": "program",
+							"value": "gek108786"
+						},
+						{
+							"key": "manual",
+							"value": "gek109993"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toc/pgms/{program}/mans/{manual}/file/{file}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/toc/pgms/:program/mans/:book/file/:file",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"pgms",
+						":program",
+						"mans",
+						":book",
+						"file",
+						":file"
+					],
+					"variable": [
+						{
+							"key": "program",
+							"value": "gek114154"
+						},
+						{
+							"key": "book",
+							"value": "gek112045"
+						},
+						{
+							"key": "file",
+							"value": "highlights.htm"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toc/pgms/{program}/mans/{manual}/toc/{parentnodeid}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/toc/pgms/:program/mans/:manual/toc/:parentNodeId",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"pgms",
+						":program",
+						"mans",
+						":manual",
+						"toc",
+						":parentNodeId"
+					],
+					"variable": [
+						{
+							"key": "program",
+							"value": "gek108753"
+						},
+						{
+							"key": "manual",
+							"value": "ics"
+						},
+						{
+							"key": "parentNodeId",
+							"value": "1056"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/pgms/{program}/mans/{manual}/file/{filename}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/toc/pgms/:program/:version/mans/:book/file/:file",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"pgms",
+						":program",
+						":version",
+						"mans",
+						":book",
+						"file",
+						":file"
+					],
+					"variable": [
+						{
+							"key": "program",
+							"value": "gek112865_lr"
+						},
+						{
+							"key": "version",
+							"value": "4.9"
+						},
+						{
+							"key": "book",
+							"value": "gek112851"
+						},
+						{
+							"key": "file",
+							"value": "highlights.htm"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/pgms/{program}/mans/{manual}/trg/{target}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/pgms/gek112865/mans/gek112862-1/trg/pb72-22-25-08-001?bw=low",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek112865",
+						"mans",
+						"gek112862-1",
+						"trg",
+						"pb72-22-25-08-001"
+					],
+					"query": [
+						{
+							"key": "bw",
+							"value": "low"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/pgms/{program}/mans/{manual}/res/{res:.+}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/pgms/gek108786/mans/gek109993/res/graphics/g1206774-00.tif.png",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek108786",
+						"mans",
+						"gek109993",
+						"res",
+						"graphics",
+						"g1206774-00.tif.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/{program}/{downloadtype : dvd|source}/{type : manual|ic|tr|sb|lr}/files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/gek112080/source/sb/files?files=gek112091%3AIC_CF34-10A_A_EM_71-00-29-04-001-13_SGML.zip",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"gek112080",
+						"source",
+						"sb",
+						"files"
+					],
+					"query": [
+						{
+							"key": "files",
+							"value": "gek112091%3AIC_CF34-10A_A_EM_71-00-29-04-001-13_SGML.zip"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v2/techdocs/download/pgms/{program}/{downloadType : dvd|source}/{type : manual|ic|tr|sb|lr}/files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sm_ssoid",
+						"value": "502825854",
+						"type": "text"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/v2/techdocs/download/pgms/gek112865_lr/source/sb/files?files=sbs%3ASB_GENX-1B_71-0001-R02_SGML.zip%7Csbs%3ASB_GENX-1B_71-0004-R00_SGML.zip%7Csbs%3ASB_GENX-1B_71-0007-R00_SGML.zip%7Csbs%3ASB_GENX-1B_72-0000-R01_SGML.zip%7Csbs%3ASB_GENX-1B_72-0001-R08_SGML.zip%7Csbs%3ASB_GENX-1B_72-0028-R00_SGML.zip%7Csbs%3ASB_GENX-1B_72-0035-R01_SGML.zip%7Csbs%3ASB_GENX-1B_72-0038-R00_SGML.zip%7Csbs%3ASB_GENX-1B_72-0045-R00_SGML.zip%7Csbs%3ASB_GENX-1B_72-0048-R01_SGML.zip&type=sb",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"v2",
+						"techdocs",
+						"download",
+						"pgms",
+						"gek112865_lr",
+						"source",
+						"sb",
+						"files"
+					],
+					"query": [
+						{
+							"key": "files",
+							"value": "sbs%3ASB_GENX-1B_71-0001-R02_SGML.zip%7Csbs%3ASB_GENX-1B_71-0004-R00_SGML.zip%7Csbs%3ASB_GENX-1B_71-0007-R00_SGML.zip%7Csbs%3ASB_GENX-1B_72-0000-R01_SGML.zip%7Csbs%3ASB_GENX-1B_72-0001-R08_SGML.zip%7Csbs%3ASB_GENX-1B_72-0028-R00_SGML.zip%7Csbs%3ASB_GENX-1B_72-0035-R01_SGML.zip%7Csbs%3ASB_GENX-1B_72-0038-R00_SGML.zip%7Csbs%3ASB_GENX-1B_72-0045-R00_SGML.zip%7Csbs%3ASB_GENX-1B_72-0048-R01_SGML.zip"
+						},
+						{
+							"key": "type",
+							"value": "sb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/download/pgms/{program}/{downloadtype : dvd|source}/{type : manual|ic|tr|sb|lr}/csv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/download/pgms/gek112865/dvd/manual/csv?url=https://qa.my.geaviation.com/portal/ge/index&revision=Current&sbtype=All&manual=all?url=https://qa.my.geaviation.com/portal/ge/index&revision=Current&sbtype=All&manual=all",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"download",
+						"pgms",
+						"gek112865",
+						"dvd",
+						"manual",
+						"csv"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://qa.my.geaviation.com/portal/ge/index"
+						},
+						{
+							"key": "revision",
+							"value": "Current"
+						},
+						{
+							"key": "sbtype",
+							"value": "All"
+						},
+						{
+							"key": "manual",
+							"value": "all?url=https://qa.my.geaviation.com/portal/ge/index"
+						},
+						{
+							"key": "revision",
+							"value": "Current"
+						},
+						{
+							"key": "sbtype",
+							"value": "All"
+						},
+						{
+							"key": "manual",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/pgms/{program}/mans/{manual}/summary/{filename}/pdf",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/pgms/gek112212/mans/gek112652/file/summary.htm/pdf?undefined=",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek112212",
+						"mans",
+						"gek112652",
+						"file",
+						"summary.htm",
+						"pdf"
+					],
+					"query": [
+						{
+							"key": "undefined",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/pgms/{program}/mans/{manual}/summary/{filename}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/pgms/gek112212/mans/gek112652/file/summary.htm",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek112212",
+						"mans",
+						"gek112652",
+						"file",
+						"summary.htm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manual/download/pgms/{program}/{downloadtype : dvd|source}/{type : manual|ic|tr|sb|lr}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/manual/download/pgms/gek108792/source/ic",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"manual",
+						"download",
+						"pgms",
+						"gek108792",
+						"source",
+						"ic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/pgms/{program}/mans/{manual}/file/{filename}/pdf",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/pgms/gek112865/mans/sbs/file/genx-1b-sb-77-0009-r00.htm/pdf?undefined=",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek112865",
+						"mans",
+						"sbs",
+						"file",
+						"genx-1b-sb-77-0009-r00.htm",
+						"pdf"
+					],
+					"query": [
+						{
+							"key": "undefined",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs/pgms/{program}/mans/{manual}/toc/{parentnodeid}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "502041576"
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/techdocs/pgms/gek108786/mans/gek109993/toc/1011",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"techdocs",
+						"pgms",
+						"gek108786",
+						"mans",
+						"gek109993",
+						"toc",
+						"1011"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toc/bookcases/{bookcase}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"type": "text",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"type": "text",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/toc/bookcases/:bookcasekey",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						":bookcasekey"
+					],
+					"variable": [
+						{
+							"key": "bookcasekey",
+							"value": "gek108747-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toc/bookcase/{bookcase}/books",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"type": "text",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"type": "text",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/toc/bookcases/:bookcasekey/books",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						":bookcasekey",
+						"books"
+					],
+					"variable": [
+						{
+							"key": "bookcasekey",
+							"value": "gek109944"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toc/bookcase/{bookcase}/books/{version}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"type": "text",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"type": "text",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/toc/bookcases/:bookcasekey/books/:version",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						":bookcasekey",
+						"books",
+						":version"
+					],
+					"variable": [
+						{
+							"key": "bookcasekey",
+							"value": "gek112865_lr"
+						},
+						{
+							"key": "version",
+							"value": "4.9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toc/bookcases/{bookcase}/versions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"type": "text",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"type": "text",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/toc/bookcases/:bookcasekey/versions",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						":bookcasekey",
+						"versions"
+					],
+					"variable": [
+						{
+							"key": "bookcasekey",
+							"value": "gek112865_lr"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toc/bookcases/{bookcase}/{book}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"type": "text",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"type": "text",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/toc/bookcases/:bookcasekey/:bookkey",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						":bookcasekey",
+						":bookkey"
+					],
+					"variable": [
+						{
+							"key": "bookcasekey",
+							"value": "gek109944"
+						},
+						{
+							"key": "bookkey",
+							"value": "ics"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toc/bookcases/{bookcase}/{book}/{version}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"type": "text",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"type": "text",
+						"value": "CWC"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/services/techpubs/toc/bookcases/:bookcasekey/:bookkey/:version",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"toc",
+						"bookcases",
+						":bookcasekey",
+						":bookkey",
+						":version"
+					],
+					"variable": [
+						{
+							"key": "bookcasekey",
+							"value": "gek112865_lr"
+						},
+						{
+							"key": "bookkey",
+							"value": "gek112851"
+						},
+						{
+							"key": "version",
+							"value": "4.9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "documents",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SM_SSOID",
+						"value": "503127855"
+					},
+					{
+						"key": "portal_id",
+						"value": "gehonda",
+						"disabled": true
+					},
+					{
+						"key": "portal_id",
+						"value": "CWC"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sEcho",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "iColumns",
+							"value": "8",
+							"type": "text"
+						},
+						{
+							"key": "sColumns",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "iDisplayStart",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "iDisplayLength",
+							"value": "24",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_0",
+							"value": "programtitle",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_1",
+							"value": "title",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_2",
+							"value": "revisiondate",
+							"type": "text"
+						},
+						{
+							"key": "sSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_0",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_0",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_1",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_2",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "iSortCol_0",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "sSortDir_0",
+							"value": "desc",
+							"type": "text"
+						},
+						{
+							"key": "iSortingCols",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "ic",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_3",
+							"value": "family",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_4",
+							"value": "model",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_5",
+							"value": "aircraft",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_6",
+							"value": "tail",
+							"type": "text"
+						},
+						{
+							"key": "mDataProp_7",
+							"value": "esn",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_3",
+							"value": "GENX",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_4",
+							"value": "GENX-1B",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_5",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_6",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sSearch_7",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_3",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_4",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_5",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_6",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bRegex_7",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/services/techpubs/documents",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"services",
+						"techpubs",
+						"documents"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

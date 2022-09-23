@@ -1,0 +1,93 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CodePipeline for AWS ECS Fargate workloads!
+
+Parameters:
+  GitHubURL:
+    Description: HTTPS URL for GitHub Enterprise Repository (i.e. https://github.build.ge.com/Portnostics/sam-pipeline-sample)
+    Type: String
+    AllowedPattern: https:\/\/github.build.ge.com\/[a-zA-Z0-9-]*\/[a-zA-Z0-9-]*(?<!.git)
+    ConstraintDescription: Malformed input-Parameter GitHubURL must be a valid github url (i.e. https://github.build.ge.com/Portnostics/sam-pipeline-sample). Remember to omit '.git' from the end of your repository name.
+  CodePipelineServiceRoleName:
+    Description: IAM Role Name used by the Codepipeline Service to orchestrate deployments
+    Type: String
+  CICDS3ServiceBucket:
+    Type: String
+    Description: This is the teams's s3 bucket where the build artifacts are stored. (One bucket per team; not project.)
+  TeamProdKmsCmk:
+    Description: KMS Key ARN used to encrypt and decrypt
+    Type: String 
+    Default: arn:aws:kms:us-east-1:850200683887:key/{{cookiecutter.prod_kms_key_id}}
+
+Resources:
+  ### Pipeline ###
+  ProdCodeDeployApplication:
+    Type: AWS::CodeDeploy::Application
+    Properties: 
+      ApplicationName: !Select [4, !Split ["/", !Ref GitHubURL]]
+      ComputePlatform: ECS
+
+  CodePipeline:
+    Type: AWS::CodePipeline::Pipeline
+    Properties:
+      Name: !Select [4, !Split ["/", !Ref GitHubURL]]
+      RestartExecutionOnUpdate: false
+      RoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/${CodePipelineServiceRoleName}
+      Stages:
+        - Name: Source
+          Actions: 
+          - Name: Source
+            ActionTypeId: 
+              Category: Source
+              Owner: AWS
+              Version: '1'
+              Provider: S3
+            Configuration: 
+              S3Bucket: !Ref CICDS3ServiceBucket
+              S3ObjectKey: !Join ["", [!Select [4, !Split ["/", !Ref GitHubURL]], "/prod/source.zip"]]
+            OutputArtifacts: 
+              - Name: BuildArtifact
+            RunOrder: 1
+        - 
+          Name: Prod-Deploy
+          Actions:
+            - 
+              Name: Prod-Artifact-Deployment
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Version: '1'
+                Provider: CodeDeployToECS
+              Configuration:
+                ApplicationName: !Ref ProdCodeDeployApplication
+                DeploymentGroupName: prod-deployment
+                TaskDefinitionTemplateArtifact: BuildArtifact
+                AppSpecTemplateArtifact: BuildArtifact
+                TaskDefinitionTemplatePath: taskDefinitions/prod-ecs-task-def.json
+                AppSpecTemplatePath: cicd/appspec/appspec-prod.yaml
+                Image1ArtifactName: BuildArtifact
+                Image1ContainerName: IMAGE
+              InputArtifacts: 
+                - Name: BuildArtifact
+            - 
+              Name: Prod-Sign-Off
+              ActionTypeId:
+                Category: Approval
+                Owner: AWS
+                Version: '1'
+                Provider: Manual
+              Configuration:
+                CustomData: "An updated artifact is ready for Production deployment. Do you want to promote the artifact to Prod?"
+              RunOrder: 2
+      ArtifactStore: 
+        Location: !Ref CICDS3ServiceBucket
+        Type: S3
+        EncryptionKey:
+          Id: !Ref TeamProdKmsCmk
+          Type: KMS
+
+Outputs:
+  ProdCodeDeployApplicationName:
+    Description: CodeDeploy Application name used within .
+    Value: !Ref ProdCodeDeployApplication
+    Export:
+      Name: Prod{{cookiecutter.product_resource_identifier}}CodeDeployApplicationName

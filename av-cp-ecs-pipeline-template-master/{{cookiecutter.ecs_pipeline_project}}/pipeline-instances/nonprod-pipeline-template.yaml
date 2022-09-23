@@ -1,0 +1,277 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CI/CD infrastructure for ECS Fargate Services.
+
+Parameters:
+  GitHubURL:
+    Description: HTTPS URL for GitHub Enterprise Repository (i.e. https://github.build.ge.com/Portnostics/sam-pipeline-sample)
+    Type: String
+    AllowedPattern: https:\/\/github.build.ge.com\/[a-zA-Z0-9-]*\/[a-zA-Z0-9-]*(?<!.git)
+    ConstraintDescription: Malformed input-Parameter GitHubURL must be a valid github url (i.e. https://github.build.ge.com/Portnostics/sam-pipeline-sample). Remember to omit '.git' from the end of your repository name.
+  GithubEnterpriseCodeStarConnectionArn:
+    Description: ARN of the CodeStar Connection setup between CodeStar Developer Console and Github Enterprise to establish a secure connection between AWS CodePipeline and Github Enterprise
+    Type: String
+    Default: arn:aws:codestar-connections:us-east-1:{{cookiecutter.aws_account_id}}:connection/e63702c6-51a8-4fc1-aebd-079fd9e6d1fe
+  GithubMainBranchName:
+    Description: Name of the main branch in your Github Repository to trigger deployments on a merge into this branch.  Default is master
+    Type: String
+    Default: master
+  BuildImage:
+    Description: CodeBuild Docker Image (ubuntu5.0, ubuntu4.0, ubuntu3.0, al2-x86-3.0, al2-aarch64-2.0) - ubuntu5.0 is default
+    Type: String
+    AllowedValues: [ubuntu5.0, ubuntu4.0, ubuntu3.0, al2-x86-3.0, al2-aarch64-2.0]
+    ConstraintDescription: Parameter 'BuildImage' must be one of the following values - [ubuntu5.0, ubuntu4.0, ubuntu3.0, al2-x86-3.0, al2-aarch64-2.0]
+    Default: ubuntu5.0
+  BuildComputeSize:
+    Description: CodeBuild Compute Instance Size (Small, Medium, Large) - Small is default
+    Type: String
+    AllowedValues: [Small, Medium, Large]
+    ConstraintDescription: Parameter 'BuildComputeSize' must be one of the following values - [Small, Medium, Large]
+    Default: Small
+  CodePipelineServiceRoleName:
+    Description: IAM Role Name used by the Codepipeline Service to orchestrate deployments
+    Type: String
+  CodeBuildServiceRoleName:
+    Description: IAM Role Name used by the CodeBuild service to build artifacts.
+    Type: String
+  CICDS3ServiceBucket:
+    Type: String
+    Description: This is the teams's s3 bucket where the build artifacts are stored. (One bucket per team; not project.)
+  TriggerBuildOnPR:
+    Description: Boolean Value - True (default) if you want your CodeBuild Continuous Integration project triggered when a PR is opened or updated on the Github Repo, False if you do not.
+    Type: String
+    AllowedValues:
+      - true
+      - false
+    Default: true
+  TriggerBuildOnMerge:
+    Description: Boolean Value - True if you want your CodeBuild Continuous Integration project triggered when a PR is merged to the main branch on the Github Repo, False (default) if you do not. Note - The Deployment Pipeline created by enabling CreateDeployPipeline Parameter automatically triggers your Continuous Integration job as it's first step on a merge to the main branch of your repo.
+    Type: String
+    AllowedValues:
+      - true
+      - false
+    Default: false
+  TeamNonProdKmsCmk:
+    Description: KMS Key ARN used to encrypt and decrypt
+    Type: String 
+    Default: arn:aws:kms:us-east-1:{{cookiecutter.aws_account_id}}:key/{{cookiecutter.nonprod_kms_key_id}}
+
+Mappings:
+  EnvironmentMap:
+    dev:
+      vpc: vpc-8ea2d6eb
+      subnets:
+        - subnet-05bb4ce63da2cf665
+        - subnet-0469dc6252c75fdc1
+      securityGroups:
+        - sg-0d626c75def833986
+    qa:
+      vpc: vpc-8ea2d6eb
+      subnets:
+        - subnet-05bb4ce63da2cf665
+        - subnet-0469dc6252c75fdc1
+      securityGroups:
+        - sg-0a476f2127848a8ad
+  ImageMap: 
+    al2-x86-3.0: 
+      Image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
+    al2-aarch64-2.0: 
+      Image: aws/codebuild/amazonlinux2-aarch64-standard:2.0
+    ubuntu3.0:
+      Image: aws/codebuild/standard:3.0
+    ubuntu4.0:
+      Image: aws/codebuild/standard:4.0
+    ubuntu5.0:
+      Image: aws/codebuild/standard:5.0
+  ComputeMap:
+    Small:
+      ComputeType: BUILD_GENERAL1_SMALL
+    Medium:
+      ComputeType: BUILD_GENERAL1_MEDIUM
+    Large:
+      ComputeType: BUILD_GENERAL1_LARGE
+
+Resources:
+  ### Build Details ###
+  CodeBuildProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Select [4, !Split ["/", !Ref GitHubURL]]
+      Description: Codebuild project for ECS Fargate CI/CD pipeline.
+      ServiceRole: !Sub arn:aws:iam::${AWS::AccountId}:role/${CodeBuildServiceRoleName}
+      EncryptionKey: !Ref TeamNonProdKmsCmk
+      Source:
+        Type: GITHUB_ENTERPRISE
+        Location: !Ref GitHubURL
+        GitCloneDepth: 1
+        ReportBuildStatus: true
+        BuildSpec: cicd/buildspec/buildspec.yaml
+      Artifacts:
+        Type: NO_ARTIFACTS
+      VpcConfig:
+        SecurityGroupIds: !FindInMap [EnvironmentMap, qa, securityGroups]
+        Subnets: !FindInMap [EnvironmentMap, qa, subnets]
+        VpcId: !FindInMap [EnvironmentMap, qa, vpc]
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: !FindInMap [ComputeMap, !Ref BuildComputeSize, ComputeType]
+        Image: !FindInMap [ImageMap, !Ref BuildImage, Image]
+        Certificate: !Join
+          - ""
+          - - "arn:aws:s3:::"
+            - Fn::ImportValue: "{{cookiecutter.product_resource_identifier}}CICDPipelineArtifactBucketName"
+            - "/utilities/certs/github-enterprise-public-cert.pem"
+        PrivilegedMode: true
+        EnvironmentVariables:
+          - Name: REPO_NAME
+            Value: !Select [4, !Split ["/", !Ref GitHubURL]]
+          - Name: BUCKET
+            Value: 
+              Fn::ImportValue: "{{cookiecutter.product_resource_identifier}}CICDPipelineArtifactBucketName"
+      TimeoutInMinutes: 10
+  WebHooks:
+    DependsOn: CodeBuildProject
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      logLevel: debug
+      ServiceToken: !Sub arn:aws:lambda:us-east-1:${AWS::AccountId}:function:sam-pipeline-webhook-setup
+      GitHubURL: !Ref GitHubURL
+      TriggerOnPR: !Ref TriggerBuildOnPR
+      TriggerOnMaster: !Ref TriggerBuildOnMerge
+  CodeDeployApplication:
+    Type: AWS::CodeDeploy::Application
+    Properties:
+      ApplicationName: !Select [4, !Split ["/", !Ref GitHubURL]]
+      ComputePlatform: ECS
+  ### Pipeline ###
+  CodePipeline:
+    Type: AWS::CodePipeline::Pipeline
+    Properties:
+      Name: !Select [4, !Split ["/", !Ref GitHubURL]]
+      RestartExecutionOnUpdate: false
+      RoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/${CodePipelineServiceRoleName}
+      Stages:
+        -
+          Name: Source
+          Actions:
+            - Name: Source
+              Namespace: SourceVariables
+              ActionTypeId:
+                Category: Source
+                Owner: AWS
+                Version: '1'
+                Provider: CodeStarSourceConnection
+              Configuration:
+                ConnectionArn: !Ref GithubEnterpriseCodeStarConnectionArn
+                FullRepositoryId: !Join ["/", [!Select [3, !Split ["/", !Ref GitHubURL]], !Select [4, !Split ["/", !Ref GitHubURL]]]]
+                BranchName: !Ref GithubMainBranchName
+                OutputArtifactFormat: CODE_ZIP
+                DetectChanges: true
+              OutputArtifacts:
+                - Name: SourceArtifact
+              RunOrder: 1
+        - Name: Artifact-Build
+          Actions:
+              - Name: Build-Source
+                Namespace: BuildVariables
+                ActionTypeId:
+                  Category: Build
+                  Owner: AWS
+                  Provider: CodeBuild
+                  Version: '1'
+                Configuration:
+                  ProjectName: !Ref CodeBuildProject
+                  PrimarySource: SourceArtifact
+                  # TODO: Known Issue with CodePipeline that if fails passing env variables if Commit Message is multi line, like on a Merge. Talk to AWS about getting this resolved
+                  EnvironmentVariables: '[{"name":"GIT_COMMIT_DATE","value":"#{SourceVariables.AuthorDate}","type":"PLAINTEXT"},{"name":"GIT_BRANCH_NAME","value":"#{SourceVariables.BranchName}","type":"PLAINTEXT"},{"name":"GIT_COMMIT_ID","value":"#{SourceVariables.CommitId}","type":"PLAINTEXT"},{"name":"GIT_FULL_REPO_NAME","value":"#{SourceVariables.FullRepositoryName}","type":"PLAINTEXT"},{"name":"CODESTAR_CONNECTION_ARN","value":"#{SourceVariables.ConnectionArn}","type":"PLAINTEXT"}]'
+                InputArtifacts:
+                  - Name: SourceArtifact
+                OutputArtifacts:
+                  - Name: BuildArtifact
+                RunOrder: 1
+        -
+          Name: Dev-Deploy
+          Actions:
+            -
+              Name: Dev-Deploy
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Version: '1'
+                Provider: CodeDeployToECS
+              Configuration:
+                ApplicationName: !Ref CodeDeployApplication
+                DeploymentGroupName: dev-deployment
+                TaskDefinitionTemplateArtifact: BuildArtifact
+                AppSpecTemplateArtifact: BuildArtifact
+                TaskDefinitionTemplatePath: taskDefinitions/dev-ecs-task-def.json
+                AppSpecTemplatePath: cicd/appspec/appspec-dev.yaml
+                Image1ArtifactName: BuildArtifact
+                Image1ContainerName: IMAGE
+              InputArtifacts:
+                - Name: BuildArtifact
+            -
+              Name: Dev-Sign-Off
+              ActionTypeId:
+                Category: Approval
+                Owner: AWS
+                Version: '1'
+                Provider: Manual
+              RunOrder: 2
+        -
+          Name: QA-Deploy
+          Actions:
+            -
+              Name: QA-Deploy
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Version: '1'
+                Provider: CodeDeployToECS
+              Configuration:
+                ApplicationName: !Ref CodeDeployApplication
+                DeploymentGroupName: qa-deployment
+                TaskDefinitionTemplateArtifact: BuildArtifact
+                AppSpecTemplateArtifact: BuildArtifact
+                TaskDefinitionTemplatePath: taskDefinitions/qa-ecs-task-def.json
+                AppSpecTemplatePath: cicd/appspec/appspec-qa.yaml
+                Image1ArtifactName: BuildArtifact
+                Image1ContainerName: IMAGE
+              InputArtifacts:
+                - Name: BuildArtifact
+            -
+              Name: QA-Sign-Off
+              ActionTypeId:
+                Category: Approval
+                Owner: AWS
+                Version: '1'
+                Provider: Manual
+              RunOrder: 2
+        -
+          Name: Prod-Deployment-Prework
+          Actions:
+            - Name: Move-Artifact-Prod-Directory
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: S3
+                Version: '1'
+              Configuration:
+                BucketName: !Ref CICDS3ServiceBucket
+                ObjectKey: !Join ["", ["", !Select [4, !Split ["/", !Ref GitHubURL]], "/prod/source.zip"]]
+                Extract: false
+              InputArtifacts:
+                - Name: BuildArtifact
+              RunOrder: 1
+      ArtifactStore:
+        Location: !Ref CICDS3ServiceBucket
+        Type: S3
+        EncryptionKey:
+          Id: !Ref TeamNonProdKmsCmk
+          Type: KMS
+
+Outputs:
+  CodeDeployApplicationName:
+    Description: CodeDeploy Application name used within {{cookiecutter.product_prefix}}
+    Value: !Ref CodeDeployApplication
+    Export:
+      Name: {{cookiecutter.product_resource_identifier}}CodeDeployApplicationName

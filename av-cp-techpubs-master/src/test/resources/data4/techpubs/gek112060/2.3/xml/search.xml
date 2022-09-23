@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <search title="SDS" cols="4" docnbr="gek112062-01">
+    <field label="ATA No." width="200" span="1" type="lookup" indexfield="atanbr" highlight="TRUE" />
+    <field label="Issue No." width="200" span="1" type="lookup" indexfield="issueno" highlight="TRUE" />
+    <field label="Issue Date." width="200" span="3" type="date" indexfield="issuedate" highlight="TRUE" />
+    <field label="Title" width="200" span="3" type="lookup" indexfield="title" highlight="TRUE" />
+    <field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE" />
+  </search>
+  <search title="LMM" cols="4" docnbr="gek112062">
+    <field label="ATA No." width="200" span="1" type="lookup" indexfield="atanbr" highlight="TRUE" />
+    <field label="Issue No." width="200" span="1" type="lookup" indexfield="issueno" highlight="TRUE" />
+    <field label="Issue Date." width="200" span="3" type="date" indexfield="issuedate" highlight="TRUE" />
+    <field label="Title" width="200" span="3" type="lookup" indexfield="title" highlight="TRUE" />
+    <field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE" />
+  </search>
+  <search title="ESM" cols="4" docnbr="gek112063">
+    <field label="ATA No." width="200" span="1" type="lookup" indexfield="atanbr" highlight="TRUE" />
+    <field label="Issue No." width="200" span="1" type="lookup" indexfield="issueno" highlight="TRUE" />
+    <field label="Issue Date." width="200" span="3" type="date" indexfield="issuedate" highlight="TRUE" />
+    <field label="Title" width="200" span="3" type="lookup" indexfield="title" highlight="TRUE" />
+    <field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE" />
+  </search>
+  <search title="ITEM" cols="4" docnbr="gek112065">
+    <field label="ATA No." width="200" span="1" type="lookup" indexfield="atanbr" highlight="TRUE" />
+    <field label="Issue No." width="200" span="1" type="lookup" indexfield="issueno" highlight="TRUE" />
+    <field label="Issue Date." width="200" span="3" type="date" indexfield="issuedate" highlight="TRUE" />
+    <field label="Title" width="200" span="3" type="lookup" indexfield="title" highlight="TRUE" />
+    <field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE" />
+  </search>
+  <search title="EIPC" cols="4" docnbr="gek112064">
+    <field label="ATA No." width="200" span="1" type="lookup" indexfield="atanbr" highlight="TRUE" />
+    <field label="Issue No." width="200" span="1" type="lookup" indexfield="issueno" highlight="TRUE" />
+    <field label="Issue Date." width="200" span="3" type="date" indexfield="issuedate" highlight="TRUE" />
+    <field label="Title" width="200" span="3" type="lookup" indexfield="title" highlight="TRUE" />
+    <field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE" />
+  </search>
+  <search title="SB" cols="4" docnbr="sbs">
+    <field label="ATA No." width="200" span="1" type="lookup" indexfield="atanbr" highlight="TRUE" />
+    <field label="Issue No." width="200" span="1" type="lookup" indexfield="issueno" highlight="TRUE" />
+    <field label="Issue Date." width="200" span="3" type="date" indexfield="issuedate" highlight="TRUE" />
+    <field label="Title" width="200" span="3" type="lookup" indexfield="title" highlight="TRUE" />
+    <field label="Free Search" width="200" span="3" type="text" indexfield="contents" highlight="TRUE" />
+  </search>
+</root>
+

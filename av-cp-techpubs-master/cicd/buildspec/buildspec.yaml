@@ -1,0 +1,94 @@
+version: 0.2
+env:
+
+  variables:
+    ARTIFACT_NAME: "techpubs-mgmt-customers"
+    BUILD_UTILITIES_BUCKET: "av-cp-techpubs-codebuild-utilities"
+    DEPLOYMENT_BUCKET_FOLDER: "av-cp-techpubs-mgmt-customers/"
+    DEVITO: "false"
+    TWISTLOCK_URL: "https://us-east1.cloud.twistlock.com/us-1-111573388"
+    CHECKMARX_URL: "https://checkmarx.digital.ge.com/"
+    CX_ARTIFACTORY_URL: "public-docker.artifactory.av.ge.com"
+    CX_IMAGE: "checkmarxcli"
+    CX_REPO_NAME: "CxServer\\SP\\GE\\GE_Aviation\\techpubs-mygeaviation_1000377681\\av-cp-techpubs"
+  parameter-store:
+    # Don't change these because they are used in settings.xml
+    DOCKER_ARTIFACTORY_URL: "/av-cp-techpubs/cicd/prod/av-docker-artifactory-url"
+    ARTIFACTORY_USER: "/av-cp-techpubs/cicd/prod/artifactory-user"
+    ARTIFACTORY_PASS: "/av-cp-techpubs/cicd/prod/artifactory-api-key"
+    TWISTLOCK_API_KEY: "/av-cp-techpubs/cicd/prod/twistlock-api-key"
+    TWISTLOCK_ID: "/av-cp-techpubs/cicd/prod/twistlock-api-id"
+    CHECKMARX_USER: "/av-cp-techpubs/cicd/prod/checkmarx-user"
+    CHECKMARX_PASSWORD: "/av-cp-techpubs/cicd/prod/checkmarx-password"
+    CHECKMARX_GIT_TOKEN: "/av-cp-techpubs/cicd/prod/checkmarx-git-token"
+
+    # SonarQube secrets -- required for validation script
+    SONAR_LOGIN_TOKEN: "/av-cp-techpubs/cicd/prod/sonar-access-token"
+    SONAR_HOST_URL: "/av-cp-techpubs/cicd/prod/sonarqube-url"
+    SONAR_GITHUB_OAUTH: "/av-cp-techpubs/cicd/prod/github/personal-access-token"
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+      nodejs: 12
+    commands:
+      - echo "Build Start Time = ${CODEBUILD_START_TIME}"
+      - echo "WebHook Event = ${CODEBUILD_WEBHOOK_EVENT}"
+      - echo "Initiator = ${CODEBUILD_INITIATOR}"
+      - echo "Branch = ${CODEBUILD_SOURCE_VERSION}"
+      - echo "Commit ID = ${CODEBUILD_RESOLVED_SOURCE_VERSION}"
+      - echo "Build Number = ${CODEBUILD_BUILD_NUMBER}"
+      # Download relevant files from S3 (settings.xml, Dockerrun.aws.json, .ebextensions, and sonar.sh)
+      - aws s3 cp s3://${BUILD_UTILITIES_BUCKET}/settings.xml /root/.m2/settings.xml
+      - aws s3 cp s3://${BUILD_UTILITIES_BUCKET}/sonar.sh .
+      - aws s3 cp s3://${BUILD_UTILITIES_BUCKET}/versionBump.js .
+      - chmod +x ./sonar.sh
+  pre_build:
+    commands:
+      - SOURCE_VERSION=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=$(mvn org.apache.maven.plugins:maven-help-plugin:3.2.0:evaluate -Dexpression=project.version -q -DforceStdout)-${SOURCE_VERSION}
+      - docker login -u ${ARTIFACTORY_USER} -p ${ARTIFACTORY_PASS} ${DOCKER_ARTIFACTORY_URL}
+      - |-
+        echo 'Version bump required'
+        set -e
+        npm install
+        node versionBump.js av-cp-techpubs-dev
+      - |-
+
+  build:
+    commands:
+      - mvn clean install
+      - docker build -t ${DOCKER_ARTIFACTORY_URL}/${REPO_NAME}:${IMAGE_TAG} .
+
+      #pull docker image for checkmarx cli
+      - docker pull ${DOCKER_ARTIFACTORY_URL}/av-the-shield/${CX_IMAGE}:stable
+      - docker tag ${DOCKER_ARTIFACTORY_URL}/av-the-shield/${CX_IMAGE}:stable ${CX_IMAGE}
+
+      #Scan the techpubs source code
+#      - docker run ${CX_IMAGE} Asyncscan -v -CxServer ${CHECKMARX_URL} -projectName ${CX_REPO_NAME} -CxUser ${CHECKMARX_USER} -CxPassword ${CHECKMARX_PASSWORD} -Incremental -Locationtype GIT -LocationURL https://${CHECKMARX_GIT_TOKEN}@github.build.ge.com/Portnostics/av-cp-techpubs -LocationBranch /refs/heads/master -Preset "Aviation Enterprise Apps" -Configuration "Multi-language Scan" -Log /CxConsole/reports/cx_console.log
+
+      #pull twistlock cli tool
+      - curl --output ./twistcli https://artifactory.av.ge.com/artifactory/the-shield-generic-artifacts/public/twistlockcli/stable/twistcli
+      - chmod +x twistcli
+
+      #Scan against just built av-cp-techpubs image
+      - ./twistcli images scan --address ${TWISTLOCK_URL} -u ${TWISTLOCK_ID} -p ${TWISTLOCK_API_KEY} --details ${DOCKER_ARTIFACTORY_URL}/${REPO_NAME}:${IMAGE_TAG}
+
+
+      - |-
+        if [ ${GIT_BRANCH_NAME} = master ] || [ "${DEVITO}" = true ]; then
+          printf '{"ImageURI":"%s"}' ${DOCKER_ARTIFACTORY_URL}/${REPO_NAME}:${IMAGE_TAG} > imageDetail.json
+
+          echo Pushing the Docker image to Artifactory
+          docker push ${DOCKER_ARTIFACTORY_URL}/${REPO_NAME}:${IMAGE_TAG}
+          aws s3 cp src/test/resources/postman/ComprehensiveTestSuite/Techpubs.postman_collection.json s3://av-cp-techpubs-ecs-cicd-nonprod/api-tests/
+        fi
+      - |-
+
+artifacts:
+  files:
+    - 'taskDefinitions/*'
+    - 'cicd/appspec/*'
+    - 'imageDetail.json'
+  name: BuildArtifact

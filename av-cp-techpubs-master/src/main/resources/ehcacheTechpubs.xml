@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="false"
+  monitoring="autodetect" dynamicConfig="true" name="TechpubsCacheManager">
+
+  <cache name="TechpubsProgramData" maxElementsInMemory="128"
+    maxEntriesLocalHeap="128" eternal="false" overflowToDisk="false"
+    timeToIdleSeconds="600" timeToLiveSeconds="1200"
+    memoryStoreEvictionPolicy="LFU" transactionalMode="off"
+    diskPersistent="false" statistics="false" logging="true">
+  </cache>
+
+  <cache name="TechpubsArchiveSBData" maxElementsInMemory="128"
+    maxEntriesLocalHeap="128" eternal="false" overflowToDisk="false"
+    timeToIdleSeconds="600" timeToLiveSeconds="1200"
+    memoryStoreEvictionPolicy="LFU" transactionalMode="off"
+    diskPersistent="false" statistics="false" logging="true">
+  </cache>
+
+  <cache name="TechpubsCESMData" maxElementsInMemory="128"
+    maxEntriesLocalHeap="128" eternal="false" overflowToDisk="false"
+    timeToIdleSeconds="600" timeToLiveSeconds="1200"
+    memoryStoreEvictionPolicy="LFU" transactionalMode="off"
+    diskPersistent="false" statistics="false" logging="true">
+  </cache>
+
+</ehcache>

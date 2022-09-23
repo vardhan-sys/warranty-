@@ -1,0 +1,249 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CodePipeline for AWS ECS Fargate workloads!
+
+Parameters:
+  GitHubURL:
+    Description: HTTPS URL for GitHub Enterprise Repository (i.e. https://github.build.ge.com/Portnostics/sam-pipeline-sample)
+    Type: String
+    AllowedPattern: https:\/\/github.build.ge.com\/[a-zA-Z0-9-]*\/[a-zA-Z0-9-]*(?<!.git)
+    ConstraintDescription: Malformed input-Parameter GitHubURL must be a valid github url (i.e. https://github.build.ge.com/Portnostics/sam-pipeline-sample). Remember to omit '.git' from the end of your repository name.
+  AlbRoute:
+    Description: Application load balancer path pattern for ECS service
+    Type: String
+    AllowedPattern: ^\/(?!.*(\/)\1)[a-zA-Z0-9-\/*]*
+    ConstraintDescription: Malformed input-Parameter AlbRoute. Application load balancers must start with "/". Optionally end in "/". No repeating "/". a-z, A-Z, 0-9 or "-" in between.
+  AlbPriority:
+    Description: Application load balancer path pattern priority
+    Type: Number
+  ProdConditional:
+    Description: True if you want a prod environment; False if you do not want a prod environment.
+    Type: String
+    Default: true
+  HealthCheckPath:
+    Description: This is the path in which the pipeline will use to confirm your codebase has spun up and has a healthy target group.
+    Type: String
+    AllowedPattern: ^\/(?!.*(\/)\1)[a-zA-Z0-9-\/]*
+    ConstraintDescription: Malformed input-Parameter Healthcheck. Please start your path with "/".
+  ResourceName:
+    Type: String
+    Description: Generic Resource Name to be used
+    Default: av-cp-techpubs
+    
+Mappings: 
+  EnvironmentMap:
+    prod: 
+      vpc: vpc-77acd812
+      subnets:
+        - subnet-0c0353dad2dbd7f16
+        - subnet-041f022838525a47b
+      securityGroups:
+        - sg-086ab707d49905f95
+        
+Conditions:
+  CreateProdResources: !Equals [ !Ref ProdConditional, true ]
+
+Resources:
+  ### Prod Environment ###
+  ProdCodeDeployApplication:
+    Type: AWS::CodeDeploy::Application
+    Properties: 
+      ApplicationName: !Select [4, !Split ["/", !Ref GitHubURL]]
+      ComputePlatform: ECS
+      
+  ProdTargetGroup80:
+    Condition: CreateProdResources
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: av-cp-techpubs-prod1
+      HealthCheckIntervalSeconds: 30
+      HealthCheckPath: !Ref HealthCheckPath
+      HealthCheckPort: traffic-port
+      HealthCheckProtocol: HTTP
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 5
+      UnhealthyThresholdCount: 5
+      Port: 80
+      TargetType: ip
+      Protocol: HTTP
+      VpcId: !FindInMap [EnvironmentMap, prod, vpc]
+  ProdTargetGroup8080:
+    Condition: CreateProdResources
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: av-cp-techpubs-prod2
+      HealthCheckIntervalSeconds: 30
+      HealthCheckPath: !Ref HealthCheckPath
+      HealthCheckPort: traffic-port
+      HealthCheckProtocol: HTTP
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 5
+      UnhealthyThresholdCount: 5
+      Port: 8080
+      TargetType: ip
+      Protocol: HTTP
+      VpcId: !FindInMap [EnvironmentMap, prod, vpc]
+  ProdListenerRule80:
+    Condition: CreateProdResources
+    Type: AWS::ElasticLoadBalancingV2::ListenerRule
+    Properties:
+      Actions: 
+        - Type: forward
+          TargetGroupArn: !Ref ProdTargetGroup80
+      Conditions:
+        - Field: path-pattern
+          Values:
+            - !Ref AlbRoute
+      ListenerArn: arn:aws:elasticloadbalancing:us-east-1:850200683887:listener/app/lb-portal-svcs-prod/73004cf18b632452/33f9aada7c5cb3d0
+      Priority: !Ref AlbPriority
+  ProdListenerRule8080:
+    Condition: CreateProdResources
+    Type: AWS::ElasticLoadBalancingV2::ListenerRule
+    Properties: 
+      Actions: 
+        - Type: forward
+          TargetGroupArn: !Ref ProdTargetGroup8080
+      Conditions:
+        - Field: path-pattern
+          Values:
+            - !Ref AlbRoute
+      ListenerArn: arn:aws:elasticloadbalancing:us-east-1:850200683887:listener/app/lb-portal-svcs-prod/73004cf18b632452/f221e8808647b539
+      Priority: !Ref AlbPriority
+  ProdEcsService:
+    DependsOn: ProdListenerRule80
+    Condition: CreateProdResources
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster: Portnostics-prod
+      ServiceName: !Join [ "", [ !Select [4, !Split ["/", !Ref GitHubURL]], "-prod" ]]
+      TaskDefinition: !Sub arn:aws:ecs:us-east-1:${AWS::AccountId}:task-definition/Default-Portnostics-task-definition:3
+      LaunchType: FARGATE
+      DeploymentController: 
+        Type: CODE_DEPLOY
+      LoadBalancers: 
+        - TargetGroupArn: !Ref ProdTargetGroup80
+          ContainerPort: 3000
+          ContainerName: Default-Pipeline-Container
+      NetworkConfiguration: 
+        AwsvpcConfiguration:
+          Subnets: !FindInMap [EnvironmentMap, prod, subnets]
+          SecurityGroups: !FindInMap [EnvironmentMap, prod, securityGroups]
+          AssignPublicIp: DISABLED
+      PlatformVersion: LATEST
+      SchedulingStrategy: REPLICA
+      HealthCheckGracePeriodSeconds: 120
+  ProdEcsAutoScalingTarget:
+    DependsOn: ProdEcsService
+    Type: AWS::ApplicationAutoScaling::ScalableTarget
+    Properties:
+      MinCapacity: 1
+      MaxCapacity: 3
+      ResourceId: !Join [ "", [ "service/Portnostics-prod/", !Ref ResourceName, "-prod" ]]
+      ScalableDimension: ecs:service:DesiredCount
+      ServiceNamespace: ecs
+      RoleARN: !Sub arn:aws:iam::${AWS::AccountId}:role/av-cp-techpubs-cloudformation
+  ProdEcsServiceCPUScalingPolicy:
+    DependsOn: ProdEcsService
+    Type: AWS::ApplicationAutoScaling::ScalingPolicy
+    Properties:
+      PolicyName: !Join [ "", [ !Ref ResourceName, "-prod-cpu" ]]
+      ScalingTargetId: !Ref ProdEcsAutoScalingTarget
+      PolicyType: TargetTrackingScaling
+      TargetTrackingScalingPolicyConfiguration:
+        TargetValue: 80
+        ScaleInCooldown: 60
+        ScaleOutCooldown: 60
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ECSServiceAverageCPUUtilization
+  ProdEcsServiceMemScalingPolicy:
+    DependsOn: ProdEcsService
+    Type: AWS::ApplicationAutoScaling::ScalingPolicy
+    Properties:
+      PolicyName: !Join [ "", [ !Ref ResourceName, "-prod-mem" ]]
+      ScalingTargetId: !Ref ProdEcsAutoScalingTarget
+      PolicyType: TargetTrackingScaling
+      TargetTrackingScalingPolicyConfiguration:
+        TargetValue: 70
+        ScaleInCooldown: 60
+        ScaleOutCooldown: 60
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ECSServiceAverageMemoryUtilization
+
+
+
+  ProdCodeDeployDeploymentGroup:
+    Condition: CreateProdResources
+    DependsOn: [ProdCodeDeployApplication, ProdEcsService]
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      logLevel: debug
+      ServiceToken: !Sub arn:aws:lambda:us-east-1:${AWS::AccountId}:function:ecs-pipeline-deploymentgroup-setup-prod
+      applicationName: !Select [4, !Split ["/", !Ref GitHubURL]]
+      deploymentGroupName: prod-deployment
+      primaryPort: 80
+      testPort: 8080
+      serviceRoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/ecsCodeDeployServiceRole-Portnostics
+      cluster: Portnostics-prod
+      serviceName: !Join [ "", [ !Select [4, !Split ["/", !Ref GitHubURL]], "-prod" ]]
+      targetGroupName1: !GetAtt [ProdTargetGroup80, TargetGroupName]
+      targetGroupName2: !GetAtt [ProdTargetGroup8080, TargetGroupName]
+      loadBalancerName: lb-portal-svcs-prod
+
+  ### Pipeline ###
+  CodePipeline:
+    Type: AWS::CodePipeline::Pipeline
+    Properties:
+      Name: !Select [4, !Split ["/", !Ref GitHubURL]]
+      RestartExecutionOnUpdate: false
+      RoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/av-cp-techpubs-codepipeline-service-ecs-role
+      Stages:
+        - Name: Source
+          Actions: 
+          - Name: Source
+            ActionTypeId: 
+              Category: Source
+              Owner: AWS
+              Version: '1'
+              Provider: S3
+            Configuration: 
+              S3Bucket: av-cp-techpubs-ecs-cicd-nonprod
+              S3ObjectKey: !Join ["", [!Select [4, !Split ["/", !Ref GitHubURL]], "/prod/source.zip"]]
+            OutputArtifacts: 
+              - Name: BuildArtifact
+            RunOrder: 1
+        - 
+          Name: Prod-Deploy
+          Actions:
+            - 
+              Name: Prod-Artifact-Deployment
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Version: '1'
+                Provider: CodeDeployToECS
+              Configuration:
+                ApplicationName: !Ref ProdCodeDeployApplication
+                DeploymentGroupName: prod-deployment
+                TaskDefinitionTemplateArtifact: BuildArtifact
+                AppSpecTemplateArtifact: BuildArtifact
+                TaskDefinitionTemplatePath: taskDefinitions/prod-ecs-task-def.json
+                AppSpecTemplatePath: cicd/appspec/appspec-prod.yaml
+                Image1ArtifactName: BuildArtifact
+                Image1ContainerName: IMAGE
+              InputArtifacts: 
+                - Name: BuildArtifact
+            - 
+              Name: Prod-Sign-Off
+              ActionTypeId:
+                Category: Approval
+                Owner: AWS
+                Version: '1'
+                Provider: Manual
+              Configuration:
+                CustomData: "An updated artifact is ready for Production deployment. Do you want to promote the artifact to Prod?"
+              RunOrder: 2
+      ArtifactStore: 
+        Location: av-cp-techpubs-ecs-cicd-prod
+        Type: S3
+        EncryptionKey:
+          Id: arn:aws:kms:us-east-1:850200683887:key/7304d724-011c-483e-8612-2b36bdf485eb
+          Type: KMS

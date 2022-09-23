@@ -1,0 +1,2 @@
+ALTER TABLE salesforce_company_airframe_entitlement
+  DROP CONSTRAINT IF EXISTS salesforce_company_airframe_entitlement_unique;

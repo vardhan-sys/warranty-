@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ehcache.xsd"
+    updateCheck="false"
+    monitoring="autodetect" dynamicConfig="true" name="TechpubCache">
+    <cache name="TechpubsBookcaseCache"
+           maxEntriesLocalHeap="128" eternal="false" overflowToDisk="false"
+            timeToIdleSeconds="300" timeToLiveSeconds="300"
+           memoryStoreEvictionPolicy="LFU" transactionalMode="off"
+           diskPersistent="false" statistics="false" logging="true">
+    </cache>
+    <cache name="TechpubsWidgetSbCache"
+           maxEntriesLocalHeap="128" eternal="false" overflowToDisk="false"
+           timeToIdleSeconds="300" timeToLiveSeconds="300"
+           memoryStoreEvictionPolicy="LFU" transactionalMode="off"
+           diskPersistent="false" statistics="false" logging="true">
+    </cache>
+    <cache name="TechpubsSbCache"
+           maxEntriesLocalHeap="128" eternal="false" overflowToDisk="false"
+           timeToIdleSeconds="300" timeToLiveSeconds="300"
+           memoryStoreEvictionPolicy="LFU" transactionalMode="off"
+           diskPersistent="false" statistics="false" logging="true">
+    </cache>
+    <cache name="TechpubsTocSbCache"
+           maxEntriesLocalHeap="128" eternal="false" overflowToDisk="false"
+           timeToIdleSeconds="300" timeToLiveSeconds="300"
+           memoryStoreEvictionPolicy="LFU" transactionalMode="off"
+           diskPersistent="false" statistics="false" logging="true">
+    </cache>
+    <cache name="TechpubsWidgetCache"
+           maxEntriesLocalHeap="128" eternal="false" overflowToDisk="false"
+           timeToIdleSeconds="300" timeToLiveSeconds="300"
+           memoryStoreEvictionPolicy="LFU" transactionalMode="off"
+           diskPersistent="false" statistics="false" logging="true">
+    </cache>
+    <cache name="TechpubsCortonaCache"
+      maxEntriesLocalHeap="128" eternal="false" overflowToDisk="false"
+      timeToIdleSeconds="300" timeToLiveSeconds="300"
+      memoryStoreEvictionPolicy="LFU" transactionalMode="off"
+      diskPersistent="false" statistics="false" logging="true">
+    </cache>
+</ehcache>

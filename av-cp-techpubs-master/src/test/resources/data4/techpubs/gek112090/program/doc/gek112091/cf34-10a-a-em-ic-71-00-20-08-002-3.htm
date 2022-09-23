@@ -1,0 +1,508 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CF34-10A - EM 71-00-20, INSPECTION 002 - INSPECTION OF THE AFT ENGINE MOUNT</title>
+<script>
+      function swapImage(id, isoImage)
+      {
+          strHTML = "<object id=objid_"+ id.toLowerCase() +" height='653' width='668' type='application/x-isoview'></object>";
+          arr = (document.all.tags("div"));
+					for (i=0;i<arr.length;i++){
+					 	divObj=arr[i];
+					 	if(divObj.id==id){
+					 		img_div = arr[i];
+					 	}
+          }
+          img_div.innerHTML = strHTML;
+          iso_obj = document.getElementById("objid_"+ id);
+          iso_obj.OpenFile("graphics/" + isoImage,"");
+          iso_obj.Iso7ConfigTools(1, 1+16777216+2+4+32+64+256+512+1024+2048+4096, 8+128+131072, 1, false, false);
+      }
+    </script>
+<link rel="stylesheet" href="/css/geae-em.css" type="text/css">
+</head>
+<body class="incrementalchange">
+<div id="printheader" style="display:none">
+<table style="width: 100%;border:2px;border-bottom-style:dashed;border-bottom-color:black;">
+<tr style="font-size:12px;">
+<td style="width:20px;" align="left"><img width="20px" height="20px" src="logo.png" alt="logo"></td><td style="width:5in;font-weight:bold;" align="left">CF34-10A(GEK112091) Incremental Change </td><td style="width:3in;" align="right">Release Date 06/28/2012</td>
+</tr>
+<tr>
+<td colspan="4" style="font-size:14px;font-weight:bold;text-indent:0.25in;">EM 71-00-20, INSPECTION 002</td>
+</tr>
+<tr>
+<td colspan="4" style="font-size:14px;font-weight:bold;text-indent:0.25in;">INSPECTION OF THE AFT ENGINE MOUNT</td>
+</tr>
+</table>
+</div>
+<div id="pageheader" style="width: 100%;" class="hideFromPrint">
+<table style="width: 100%;">
+<tr style="font-size:16px;">
+<td align="left"><img alt="logo" src="../logo.png" height="20px" width="20px"></td><td style="font-weight:bold;" align="left">CF34-10A INCREMENTAL CHANGE </td><td align="right">Release Notification Date: 06/28/2012</td>
+</tr>
+<tr>
+<td></td><td colspan="2" style="font-size:16px;font-weight:bold;">EM 71-00-20, INSPECTION 002</td>
+</tr>
+<tr>
+<td></td><td colspan="2" style="font-size:16px;font-weight:bold;">INSPECTION OF THE AFT ENGINE MOUNT</td>
+</tr>
+<tr>
+<td style="height:14px;"></td>
+</tr>
+<tr>
+<td style="height:14px;"></td>
+</tr>
+</table>
+</div>
+<div id="disclaimer" style="width: 100%;">
+<table style="width: 100%;">
+<tr>
+<td style="font-size:22px;font-weight:bold;" align="center">DISCLAIMER</td>
+</tr>
+<tr>
+<td style="padding-top: 36px; font-size:16px;" align="left">The Incremental Changes contained in the GE Aviation Customer Web Center are considered Instructions for Continued Airworthiness. These Incremental Changes, along with the current Manual revision and issued Temporary Revisions, constitute the latest Instructions for Continued Airworthiness.</td>
+</tr>
+<tr>
+<td style="padding-top: 48px; font-size:16px;font-weight:bold;" align="center">GE PROPRIETARY INFORMATION</td>
+</tr>
+<tr>
+<td style="padding-top: 36px; font-size:16px;" align="left">The information contained in this document is GE proprietary information and is disclosed in confidence. It is the property of GE and shall not be used, disclosed to others or reproduced without the express written consent of GE, including, but without limitation, it is not to be used in the creation, manufacture, development, or derivation of any repairs, modifications, spare parts, designs, or configuration changes or to obtain FAA or any other government or regulatory approval to do so. If consent is given for reproduction in whole or in part, this notice and the notice set forth on each page of this document shall appear in any such reproduction in whole or in part.</td>
+</tr>
+<tr>
+<td style="padding-top: 18px; font-size:16px;" align="left">This technical data is considered EAR controlled pursuant to 15 CFR Parts 730-774 respectively. Transfer of this data by any means to a Non-US Person, whether in the United States or abroad, without the proper U.S. Government authorization (e.g., License, exemption, NLR, etc.), is strictly prohibited.</td>
+</tr>
+<tr>
+<td style="padding-top: 36px; padding-bottom: 36px; font-size:16px;" align="center">Copyright (2012) General Electric Company, U.S.A.</td>
+</tr>
+</table>
+</div>
+<div id="highlights" style="width: 100%;">
+<table style="width: 100%;">
+<tr>
+<td style="font-size:16px;text-decoration:underline;" align="center">HIGHLIGHTS</td>
+</tr>
+</table>
+<table style="width: 100%;font-size:16px;">
+<tr>
+<td style="padding-top:10px;text-decoration:underline;width:20%" align="left">HIGHLIGHT REFERENCE</td><td style="padding-top:10px;text-decoration:underline;" align="left">DESCRIPTION OF CHANGE</td>
+</tr>
+<tr>
+<td style="padding-top:8px;">sk71-00-20-220-003</td><td style="padding-top:8px;"><a href="#sk71-00-20-220-003">Technical Change: Moved the inspection requirement for rotation and wear on the ball or race of the aft engine mount bearings from the visual inspection to the dimensional inspection section.</a></td>
+</tr>
+<tr>
+<td style="height:36px;"></td>
+</tr>
+</table>
+</div>
+<table style="width: 100%;">
+<tr>
+<td class="effect" colspan="3" style="font-size:14px;">* * * FOR ALL -10A MODELS</td>
+</tr>
+<tr>
+<td style="height:14px;"></td>
+</tr>
+</table>
+<td width="2%"></td><a viewertext="TASK 71-00-20-200-802" name="tk71-00-20-200-802"></a>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="2%"></td><td class="task" valign="top" align="left" width="98%">TASK 71-00-20-200-802</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="left" width="4%">1.</td><td style="text-decoration:underline" valign="top" align="left" width="94%">General<u>.</u></td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">A.</td><td valign="top" align="left" width="90%">This procedure gives instructions to do an inspection of the aft engine mount. Refer to <a href="#f71-00-20-08-002-801">Figure 801</a>.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">B.</td><td valign="top" align="left" width="90%">Before you do this procedure, read the Inspection Methods section. Refer to <a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-30-00-200-001">TASK 70-30-00-200-001 (INSPECTION METHODS)</a>.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="left" width="4%">2.</td><td style="text-decoration:underline" valign="top" align="left" width="94%">Tools, Equipment, and Materials<u>.</u></td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td class="notelabel" valign="top" align="left" width="4%">NOTE:</td><td class="notebody" valign="top" align="left" width="90%">You can use equivalent alternatives for tools, equipment, and consumable materials.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">A.</td><td valign="top" align="left" width="90%">Tools and Equipment.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(1)</td><td valign="top" align="left" width="86%">Special Tools.  None.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(2)</td><td valign="top" align="left" width="86%">Standard Tools and Equipment.  None.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td valign="top" align="left" width="4%">(3)</td><td valign="top" align="left" width="86%">Locally Manufactured Tools.  None.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">B.</td><td valign="top" align="left" width="90%">Consumable Materials.  None.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">C.</td><td valign="top" align="left" width="90%">Referenced Procedures.</td>
+</tr>
+</table>
+<div class="tablediv">
+<a viewertext="" name="t71-00-20-08-002-801"></a>
+<table cellspacing="3" cellpadding="3" border="0" style="border-collapse: collapse;" width="100%">
+<colgroup>
+<col width="2%">
+<col width="4%">
+<col width="4%">
+<col align="left" width="19%">
+<col align="left" width="71%">
+</colgroup>
+<thead valign="bottom">
+<tr>
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><th style="" align="left" valign="top" charoff="50"><u>ATA No.</u><br>
+</th><th style="" align="left" valign="top" charoff="50"><u>Description</u><br>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td style="" align="left" valign="top" charoff="50"><a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-30-00-200-001">70-30-00</a>
+<br>
+</td><td style="" align="left" valign="top" charoff="50">Inspection Methods<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td width="4%"></td><td width="4%"></td><td style="" align="left" valign="top" charoff="50">Deleted<br>
+</td><td style="" align="left" valign="top" charoff="50">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">D.</td><td valign="top" align="left" width="90%">Expendable Parts.  None.</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="left" width="4%">3.</td><td style="text-decoration:underline" valign="top" align="left" width="94%">Visual Inspection<u>.</u></td>
+</tr>
+</table>
+<a viewertext="Subtask 71-00-20-220-003" name="sk71-00-20-220-003"></a>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="2%"></td><td class="subtask" valign="top" align="left" width="98%">Subtask 71-00-20-220-003</td>
+</tr>
+</table>
+<td width="2%" style="border-left: 4px black solid; border-collapse: collapse;">&nbsp;</td>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td width="4%"></td><td valign="top" align="left" width="4%">A.</td><td valign="top" align="left" width="90%">Do a visual inspection of the aft engine mount.
+Refer to <a href="#f71-00-20-08-002-801">Figure 801</a> and
+as follows:</td>
+</tr>
+</table>
+<div class="tablediv">
+<a viewertext="" name="t71-00-20-08-002-804"></a>
+<table cellspacing="3" cellpadding="3" width="100%" border="0" style="border-collapse: collapse;">
+<colgroup>
+<col width="2%">
+<col align="left" width="8%">
+<col align="left" width="22%">
+<col align="left" width="23%">
+<col align="left" width="22%">
+<col align="left" width="23%">
+</colgroup>
+<thead valign="bottom">
+<tr>
+<td width="2%"></td><th style="border-top: 0.5pt solid black; border-bottom: 0.5pt solid black; " colspan="2" align="left" valign="bottom" charoff="50">Inspection<br>
+</th><th style="border-top: 0.5pt solid black; border-bottom: 0.5pt solid black; " align="left" valign="bottom" charoff="50">Maximum<br>Serviceable<br>Limit<br>
+</th><th style="border-top: 0.5pt solid black; border-bottom: 0.5pt solid black; " align="left" valign="bottom" charoff="50">Maximum<br>Repairable<br>Limit<br>
+</th><th style="border-top: 0.5pt solid black; border-bottom: 0.5pt solid black; " align="left" valign="bottom" charoff="50">Repair<br>Method<br>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td width="2%"></td><td style="border-top: 0.5pt solid black; " colspan="5" align="left" valign="top" charoff="50">A. All areas for:<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Cracks<br>
+</td><td style="" align="left" valign="top" charoff="50">Not serviceable<br>
+</td><td style="" align="left" valign="top" charoff="50">Not repairable<br>
+</td><td style="" align="left" valign="top" charoff="50">Replace the aft engine mount<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" colspan="5" align="left" valign="top" charoff="50">B. Mount lug and shear pin hole bores, chamfers, surfaces within
+0.100 in. (2.54 mm) of lug and shear pin holes for:<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Nicks and scratches<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, 0.001 in. (0.03 mm) in depth, without high metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Same as the maximum serviceable limit, with high metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Remove the high metal. Refer to <a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-42-00-350-002">TASK 70-42-00-350-002
+(BLENDING AND REMOVAL OF HIGH METAL PROCEDURES) </a>
+<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Failsafe hole wear<br>
+</td><td style="" align="left" valign="top" charoff="50">Not serviceable<br>
+</td><td style="" align="left" valign="top" charoff="50">Not repairable<br>
+</td><td style="" align="left" valign="top" charoff="50">Replace the aft engine mount<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" colspan="5" align="left" valign="top" charoff="50">C. Bearing for:<br>
+</td>
+</tr>
+<tr>
+<td width="2%" style="border-left: 4px black solid; border-collapse: collapse;">&nbsp;</td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Deleted<br>
+</td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">&nbsp;</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Wear on ball ID<br>
+</td><td style="" align="left" valign="top" charoff="50">Not serviceable<br>
+</td><td style="" align="left" valign="top" charoff="50">Not repairable<br>
+</td><td style="" align="left" valign="top" charoff="50">Replace the ball or the aft engine mount<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Corrosion<br>
+</td><td style="" align="left" valign="top" charoff="50">Not serviceable<br>
+</td><td style="" align="left" valign="top" charoff="50">Not repairable<br>
+</td><td style="" align="left" valign="top" charoff="50">Replace the aft engine mount<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Nicks and scratches<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, 0.001 in. (0.03 mm) in depth, without high metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Same as the maximum serviceable limit, with high metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Remove the high metal. Refer to <a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-42-00-350-002">TASK 70-42-00-350-002
+(BLENDING AND REMOVAL OF HIGH METAL PROCEDURES) </a>
+<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" colspan="5" align="left" valign="top" charoff="50">D. Shear pins for:<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Nicks and scratches<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, 0.001 in. (0.03 mm) in depth, without high metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Same as the maximum serviceable limit, with high metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Remove the high metal. Refer to <a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-42-00-350-002">TASK 70-42-00-350-002
+(BLENDING AND REMOVAL OF HIGH METAL PROCEDURES) </a>
+<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" colspan="5" align="left" valign="top" charoff="50">E. Bushings and sleeves for:<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Nicks<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, not more than 0.010 in. (0.25 mm) in depth, without
+high metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Same as the maximum serviceable limit, with high metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Remove the high metal. Refer to <a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-42-00-350-002">TASK 70-42-00-350-002
+(BLENDING AND REMOVAL OF HIGH METAL PROCEDURES) </a>
+<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Scratches<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, if less than 0.005 in. (0.13 mm) in depth, without
+high metal, and scratches do not intersect<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, not more than 0.010 in. (0.25 mm) in depth, if blended
+area is local. A 360 degree blend cannot be more than 25 percent of
+the axial length of the bushing<br>
+</td><td style="" align="left" valign="top" charoff="50">Blend. Refer to <a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-42-00-350-002"> TASK 70-42-00-350-002 (BLENDING AND REMOVAL
+OF HIGH METAL PROCEDURES)</a>
+<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Wear on ID<br>
+</td><td style="" align="left" valign="top" charoff="50">Not serviceable<br>
+</td><td style="" align="left" valign="top" charoff="50">Not repairable<br>
+</td><td style="" align="left" valign="top" charoff="50">Replace the aft engine mount<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" colspan="5" align="left" valign="top" charoff="50">F. All other areas for:<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Nicks<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, 0.007 in. (0.18 mm) in depth, 0.014 in. (0.36 mm)
+in length, and not less than 0.500 in. (12.7 mm) apart, without high
+metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, if not more than 0.015 in. (0.38 mm) in depth and
+0.050 in. (1.27 mm) in width, with high metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Blend the defect and remove the high metal. Refer to <a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-42-00-350-002">TASK 70-42-00-350-002
+(BLENDING AND REMOVAL OF HIGH METAL PROCEDURES)</a>
+<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Scratches<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, if less than 0.005 in. (0.13 mm) in depth, without
+high metal, and the scratches do not intersect<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, if not more than 0.010 in. (0.25 mm) in depth, with
+high metal<br>
+</td><td style="" align="left" valign="top" charoff="50">Blend the defect and remove the high metal. Refer to <a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-42-00-350-002">TASK 70-42-00-350-002
+(BLENDING AND REMOVAL OF HIGH METAL PROCEDURES)</a>
+<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Corrosion<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, if not more than 0.005 in. (0.13 mm) in depth<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, if not more than 0.010 in. (0.25 mm) in depth and
+0.050 in. (1.27 mm) in width<br>
+</td><td style="" align="left" valign="top" charoff="50">Blend. Refer to <a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-42-00-350-002">  TASK 70-42-00-350-002 (BLENDING AND
+REMOVAL OF HIGH METAL PROCEDURES)</a>
+<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Wear<br>
+</td><td style="" align="left" valign="top" charoff="50">Not serviceable<br>
+</td><td style="" align="left" valign="top" charoff="50">Any amount, if not more than 0.010 in. (0.25 mm) in depth, and
+0.050 in. (1.27 mm) in width<br>
+</td><td style="" align="left" valign="top" charoff="50">Blend. Refer to <a href="NOPAGE?CMD=./bin/nhera engprog:SPM docnbr:gek9250 refint:tk70-42-00-350-002">   TASK 70-42-00-350-002 (BLENDING AND
+REMOVAL OF HIGH METAL PROCEDURES)</a>
+<br>
+</td>
+</tr>
+<tr>
+<td width="2%"></td><td style="border-bottom: 0.5pt solid black; " align="left" valign="top" charoff="50">&nbsp;</td><td style="border-bottom: 0.5pt solid black; " align="left" valign="top" charoff="50">Wear in boltholes<br>
+</td><td style="border-bottom: 0.5pt solid black; " align="left" valign="top" charoff="50">Not serviceable<br>
+</td><td style="border-bottom: 0.5pt solid black; " align="left" valign="top" charoff="50">Not repairable<br>
+</td><td style="border-bottom: 0.5pt solid black; " align="left" valign="top" charoff="50">Replace the aft engine mount<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%" style="border-left: 4px black solid; border-collapse: collapse;">&nbsp;</td><td valign="top" align="left" width="4%">4.</td><td style="text-decoration:underline" valign="top" align="left" width="94%">Dimensional Inspection<u>.</u></td>
+</tr>
+</table>
+<a viewertext="Subtask 71-00-20-220-025" name="sk71-00-20-220-025"></a>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%" style="border-left: 4px black solid; border-collapse: collapse;">&nbsp;</td><td width="2%"></td><td class="subtask" valign="top" align="left" width="98%">Subtask 71-00-20-220-025</td>
+</tr>
+</table>
+<td width="2%" style="border-left: 4px black solid; border-collapse: collapse;">&nbsp;</td>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%" style="border-left: 4px black solid; border-collapse: collapse;">&nbsp;</td><td width="4%"></td><td valign="top" align="left" width="4%">A.</td><td valign="top" align="left" width="90%">Do a dimensional inspection of the aft engine
+mount. Refer to <a href="#f71-00-20-08-002-801">Figure 801</a> and
+as follows:</td>
+</tr>
+</table>
+<div class="tablediv">
+<a viewertext="" name="t71-00-20-08-002-805"></a>
+<table cellspacing="3" cellpadding="3" width="100%" border="0" style="border-collapse: collapse;">
+<colgroup>
+<col width="2%">
+<col align="left" width="8%">
+<col align="left" width="22%">
+<col align="left" width="23%">
+<col align="left" width="22%">
+<col align="left" width="23%">
+</colgroup>
+<thead valign="bottom">
+<tr>
+<td width="2%" style="border-left: 4px black solid; border-collapse: collapse;">&nbsp;</td><th style="border-top: 0.5pt solid black; border-bottom: 0.5pt solid black; " colspan="2" align="left" valign="bottom" charoff="50">Inspection<br>
+</th><th style="border-top: 0.5pt solid black; border-bottom: 0.5pt solid black; " align="left" valign="bottom" charoff="50">Maximum<br>Serviceable<br>Limit<br>
+</th><th style="border-top: 0.5pt solid black; border-bottom: 0.5pt solid black; " align="left" valign="bottom" charoff="50">Maximum<br>Repairable<br>Limit<br>
+</th><th style="border-top: 0.5pt solid black; border-bottom: 0.5pt solid black; " align="left" valign="bottom" charoff="50">Repair<br>Method<br>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td width="2%" style="border-left: 4px black solid; border-collapse: collapse;">&nbsp;</td><td style="border-top: 0.5pt solid black; " colspan="5" align="left" valign="top" charoff="50">A. Bearings for:<br>
+</td>
+</tr>
+<tr>
+<td width="2%" style="border-left: 4px black solid; border-collapse: collapse;">&nbsp;</td><td style="" align="left" valign="top" charoff="50">&nbsp;</td><td style="" align="left" valign="top" charoff="50">Rotation<br>
+</td><td style="" align="left" valign="top" charoff="50">The load torque that is necessary to turn the ball is 60 lb
+in. (6.8 N.m) maximum<br>
+</td><td style="" align="left" valign="top" charoff="50">Not repairable<br>
+</td><td style="" align="left" valign="top" charoff="50">Replace the aft engine mount<br>
+</td>
+</tr>
+<tr>
+<td width="2%" style="border-left: 4px black solid; border-collapse: collapse;">&nbsp;</td><td style="border-bottom: 0.5pt solid black; " align="left" valign="top" charoff="50">&nbsp;</td><td style="border-bottom: 0.5pt solid black; " align="left" valign="top" charoff="50">Wear on the ball or race<br>
+</td><td style="border-bottom: 0.5pt solid black; " align="left" valign="top" charoff="50">Radial play is 0.002 in. (0.05 mm) maximum and axial end play
+is 0.004 in. (0.10 mm) maximum<br>
+</td><td style="border-bottom: 0.5pt solid black; " align="left" valign="top" charoff="50">Not repairable<br>
+</td><td style="border-bottom: 0.5pt solid black; " align="left" valign="top" charoff="50">Replace the aft engine mount<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<a viewertext="Figure 801" name="f71-00-20-08-002-801"></a>
+<div class="sheetdiv">
+<a viewertext="Figure 801 (Sheet 1)" name="f71-00-20-08-002-801-02"></a>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td class="effect" valign="top" align="left" width="98%">* * * FOR ALL -10A MODELS</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td valign="top" align="center" width="98%">
+<div id="a1200111_00">
+<img src="graphics/a1200111-00.tif.png" onclick="swapImage('a1200111_00','a1200111-00.tif')"></div>
+</td>
+</tr>
+</table>
+<table WIDTH="100%" STYLE="margin-top:5;margin-bottom:5" border="0">
+<tr valign="TOP">
+<td width="2%"></td><td class="sheettitle" valign="top" align="center" width="98%">Figure 801 Aft Engine Mount - Visual Inspection</td>
+</tr>
+</table>
+</div>
+<div id="pagefooter" class="hideFromPrint" style="width: 100%;">
+<table style="width: 100%;">
+<tr>
+<td align="center" style="padding-top: 72px; font-size:12px;font-weight:bold;">GE PROPRIETARY INFORMATION - Subject to the restrictions on the media.</td>
+</tr>
+</table>
+</div>
+<div id="printfooter" style="display:none">
+<table style="width: 100%;border:2px;border-top-style:solid;border-top-color:black;">
+<tr>
+<td style="width:1.5in;font-size:14px;border:2px;border-right-style:solid;border-right-color:black;">Date Printed:<br> {cd}</td><td style="width:8in;font-size:12px;">GE PROPRIETARY INFORMATION - Not to be used, disclosed to others or reproduced without the express written consent of GE. Technical data is considered ITAR and/or EAR controlled; transfer of this data to a Non-US Person, without USG authorization, is strictly prohibited.</td><td style="width:1.5in;font-size:14px;text-align:right;border:2px;border-left-style:solid;border-left-color:black;">{Page}</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

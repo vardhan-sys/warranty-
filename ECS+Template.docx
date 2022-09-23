@@ -1,0 +1,540 @@
+Date: Wed, 21 Sep 2022 12:35:34 -0400 (EDT)
+Message-ID: <1942687285.112359.1663778134405@swcoealpcfce01>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_112358_1148907530.1663778134404"
+
+------=_Part_112358_1148907530.1663778134404
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>ECS Template</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: #fff !important;
+        color: #000 !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: #000;
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>ECS Template</h1>
+    <div class=3D"Section1">
+        <ul>
+<li>Why ECS
+<ul>
+<li><a href=3D"/devspace/display/NRLAW/Orchestration+Layer+Decision">Orches=
+tration Layer Decision</a></li>
+<li>PaaSport decomm&nbsp;</li>
+<li>Existing pain areas of EC2/beanstalk &amp; comparison</li>
+<li>Fully managed</li>
+<li>Blue Green deployment &amp; how it helps future state of continuous dep=
+loyment</li>
+<li>In theory - service isolation</li>
+</ul></li>
+<li><a href=3D"https://github.build.ge.com/Portnostics/av-cp-ecs-pipeline-t=
+emplate" class=3D"external-link" rel=3D"nofollow">ECS template</a>
+<ul>
+<li>CookieCutter templated
+<ul>
+<li>Naming convention</li>
+<li>Project structure</li>
+</ul></li>
+<li>Baseline for all services within space</li>
+<li>Infra standards</li>
+<li>I AM template
+<ul>
+<li>IAM pain - Defining standard to fast-track IAM publishing required for =
+ECS migration</li>
+<li>CICD &amp; Console Roles and Policies</li>
+<li>Separate project - Saritha</li>
+</ul></li>
+<li>Application template
+<ul>
+<li>Java - Springboot - Mike N
+<ul>
+<li>Cookie cutter</li>
+<li>IAM</li>
+<li>ECS
+<ul>
+<li>Build Spec
+<ul>
+<li>Product prefix</li>
+</ul></li>
+<li>Secrete Manager&nbsp;</li>
+</ul></li>
+</ul></li>
+<li>Node - Existing parent template - Alex</li>
+</ul></li>
+</ul></li>
+<li><a href=3D"https://devcloud.swcoe.ge.com/devspace/display/NRLAW/Admin+A=
+rchitecture+diagram+CMMC" rel=3D"nofollow">Portal admin</a>
+<ul>
+<li>Instead of AMI upgradation in Beanstalk, moving to Amazon ECS</li>
+<li>Different integration use cases covered by Portal Admin for the POC</li=
+>
+<li>CI/CD and application stacks created. Working on few edge cases for pro=
+duction readiness</li>
+</ul></li>
+<li>What else is remaining</li>
+</ul>
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li><a href=3D"https://devcloud.swcoe.ge.com/devspace/display/NRLAW/Admin+A=
+rchitecture+Diagram" rel=3D"nofollow">LB/Networking</a></li>
+<li>Subnet - Public vs Severless with Reach - Stay with Public
+<ul>
+<li>Cons : Severless with Reach
+<ul>
+<li>Firewall</li>
+<li>IP limit</li>
+</ul></li>
+</ul></li>
+<li>Smoke testing - Alex</li>
+<li><a href=3D"https://devcloud.swcoe.ge.com/devspace/display/NRLAW/Applica=
+tion+configuration+management" rel=3D"nofollow">Application Configuration</=
+a></li>
+<li>Scaling
+<ul>
+<li>EC2
+<ul>
+<li>BEANSTALK_MIN_SIZE, BEANSTALK_MAX_SIZE, JAVA_OPTS, BEANSTALK_INSTANCE_T=
+YPE
+<ul>
+<li>dev - 1, 1, -Xmx4096m -Xms2048m, t2.large</li>
+<li>qa - 1, 2, -Xmx4096m -Xms2048m, t2.large</li>
+<li>prod - 2, 4, -Xmx4096m -Xms2048m, t2.large</li>
+</ul></li>
+<li>QA - Performance testing</li>
+<li>PROD
+<ul>
+<li>Performance testing</li>
+<li>Additional capacity for Core</li>
+<li>New Relic? Monitoring?</li>
+<li>JAVA_OPTS should not be more than 50% available memory because of Docke=
+r</li>
+</ul></li>
+</ul></li>
+<li>ECS Fargate
+<ul>
+<li>Configurations
+<ul>
+<li>ECS Pipline
+<ul>
+<li>Type: AWS::ApplicationAutoScaling::ScalableTarget<br>Properties:<br>&nb=
+sp; MinCapacity: 2(make it 2 for fail safety) - Core services needs to be s=
+caled - 1 node failure can take up to 5 minutes to recover - re-evaluate ba=
+sed on cost and number of failures<br>&nbsp; MaxCapacity: 3</li>
+</ul></li>
+<li>Task Def
+<ul>
+<li>"cpu": "4096",(highest we can go, is that ok with all the application <=
+img class=3D"emoticon emoticon-question" src=3D"c9454d9b96d71f1460df34c2fe4=
+519e9" data-emoticon-name=3D"question" alt=3D"(question)"> - )<br>"memory":=
+ "8192"(Any limitations <img class=3D"emoticon emoticon-question" src=3D"c9=
+454d9b96d71f1460df34c2fe4519e9" data-emoticon-name=3D"question" alt=3D"(que=
+stion)">)</li>
+<li>{<br>&nbsp; &nbsp; "name": "JAVA_OPTS",<br>&nbsp; &nbsp; "value": "-Xmx=
+4096m -Xms2048m"<br>}</li>
+</ul></li>
+</ul></li>
+<li><strong>MaxCapacity</strong> can be based on -
+<ul>
+<li>Passport configuration</li>
+<li>Load &amp; Performance -
+<ul>
+<li>testing JMeter/Load runner/Taurus testing? Jose?&nbsp;</li>
+<li><a href=3D"https://github.com/rakyll/hey" class=3D"external-link" rel=
+=3D"nofollow">https://github.com/rakyll/hey</a></li>
+</ul></li>
+<li>New Relic</li>
+<li>Incoming traffic and Replay?</li>
+</ul></li>
+<li>Basic local testing
+<ul>
+<li>Memory leak, Thread issues&nbsp;</li>
+</ul></li>
+<li><strong>-Xmx4096m</strong> - need to confirm if it needs "memory"</li>
+</ul></li>
+</ul></li>
+<li>Cost
+<ul>
+<li>ECS - $35/month</li>
+<li>Cost of 1 additional Task - $40/month</li>
+</ul></li>
+<li>&nbsp;Cluster
+<ul>
+<li>Design based on performance</li>
+<li>Reduce blast radius</li>
+<li>I AM refinement - Saritha</li>
+<li>Review AWS previous cluster recommendation - Jason</li>
+<li>Meet with Kyle/Karen</li>
+<li>AWS tickets/brm?</li>
+<li>Existing solution until more is figured out</li>
+</ul></li>
+<li>Tag
+<ul>
+<li>Ownership, Cost&nbsp;</li>
+<li>Required - UAI</li>
+<li>Setting up initial during creating
+<ul>
+<li>&nbsp;ECS
+<ul>
+<li>Services
+<ul>
+<li>Cloud formation template</li>
+</ul></li>
+<li>Task Definition
+<ul>
+<li>PropagateTags: TASK_DEFINITION</li>
+</ul></li>
+</ul></li>
+<li>CICD
+<ul>
+<li>Codebuild</li>
+<li>Codedeploy</li>
+<li>S3 bucket</li>
+<li>Cloudformation
+<ul>
+<li>Manually tag</li>
+</ul></li>
+<li>Codepipeline
+<ul>
+<li>Does not support tagging</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href=3D"https://devcloud.swcoe.ge.com/devspace/pages/viewpage.action=
+?pageId=3D1636787857" rel=3D"nofollow">Recommended tags</a>
+<ul>
+<li>&nbsp;"SourceRepo": "<a href=3D"https://github.build.ge.com/Portnostics=
+/av-cp-techpubs" class=3D"external-link" rel=3D"nofollow">https://github.bu=
+ild.ge.com/Portnostics/av-cp-techpubs</a>",</li>
+<li>"App": "av-cp-techpubs",</li>
+<li><strong>"UAI": "UAI1003619"</strong>,(Check case sensitive - Saritha)</=
+li>
+<li>"Env": "Dev"&nbsp;</li>
+<li>"Stack" : ""?</li>
+</ul></li>
+</ul></li>
+<li>Monitoring
+<ul>
+<li>FMEA
+<ul>
+<li>Alert
+<ul>
+<li>L2 support/Should be
+<ul>
+<li>Healthy Tasks count 0?</li>
+<li>Max Tasks for extended time/CPU utilization?</li>
+</ul></li>
+<li>Team Alert/Nice to have<br>
+<ul>
+<li>CP utilization &gt; 80 =E2=86=92 scale out</li>
+<li>Alarm - Scale out /Scale in event - Would be good to have this alarm to=
+ understand resource utilization?</li>
+</ul></li>
+</ul></li>
+<li>Metrics
+<ul>
+<li>Cluster</li>
+<li>Services</li>
+<li>Tasks</li>
+<li>Containers level</li>
+</ul></li>
+</ul></li>
+<li>New Relic</li>
+</ul></li>
+<li>Security Scan
+<ul>
+<li>Tiwstlock&nbsp;</li>
+</ul></li>
+<li>Deployment strategy
+<ul>
+<li>Master/Trunk
+<ul>
+<li>Teams - Techpubs</li>
+<li>Github Enterprise CodeStar connection as Source in non-prod pipeline &a=
+mp; S3 as source in prod pipeline</li>
+<li>Master gets deployed to DEV =E2=86=92 QA =E2=86=92 PROD Pre work(S3 mov=
+e)</li>
+<li>Feature flag to release functionality to PROD</li>
+<li>Don't merge code if not ready for all the way to deployment</li>
+</ul></li>
+<li>Branch deployment
+<ul>
+<li>Teams - Portal Admin</li>
+<li>S3 as Source for non-prod &amp; prod pipelines</li>
+<li>Feature branch build can be deployed in DEV for testing</li>
+<li>Merge code to Master when ready for PROD movement</li>
+<li>Master build to move to non-prod S3 bucket prod folder &amp; triggers P=
+ROD pipeline for deployment</li>
+<li><strong>Make sure only Master can be moved to PRD(Process/CICD?)</stron=
+g></li>
+</ul></li>
+<li>PR deployment
+<ul>
+<li>Teams - Saturn</li>
+<li>Testing locally =E2=86=92 Build PR and move to S3 =E2=86=92&nbsp; Deplo=
+y PR to DEV =E2=86=92 Test =E2=86=92 Merge to Master =E2=86=92 Build Master=
+ and move to S3 =E2=86=92 Deploy to QA/PROD?</li>
+<li>Do we need 2 Pipeline?</li>
+<li>Have 2 different Source - S3 for DEV and Git Master for QA and PROD</li=
+>
+<li>Sample Build Spec - <a href=3D"https://github.build.ge.com/Portnostics/=
+av-core-domain-saturn/blob/master/saturn-demo-server/cicd/buildspec.yaml" c=
+lass=3D"external-link" rel=3D"nofollow">https://github.build.ge.com/Portnos=
+tics/av-core-domain-saturn/blob/master/saturn-demo-server/cicd/buildspec.ya=
+ml</a></li>
+<li><a href=3D"https://github.build.ge.com/Portnostics/av-core-domain-satur=
+n/blob/master/saturn-demo-server/README.md" class=3D"external-link" rel=3D"=
+nofollow">https://github.build.ge.com/Portnostics/av-core-domain-saturn/blo=
+b/master/saturn-demo-server/README.md</a></li>
+</ul></li>
+</ul></li>
+<li>BG deployment with Port 80,8080, 443 <a href=3D"https://devcloud.swcoe.=
+ge.com/devspace/display/NRLAW/Admin+Architecture+Diagram" rel=3D"nofollow">=
+complexity</a>
+<ul>
+<li>Need to solve it ASAP
+<ul>
+<li>Rolling deployment - Only code update, does not work for ENV/Configurat=
+ion - need to trigger by updating CF/ECS template
+<ul>
+<li>Workaround - ENV/Configuration change, manually update the taskdef in E=
+CS</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Scaling to other products
+<ul>
+<li>Portal admin, Warranty, Saturn,&nbsp; Apache NodeJs</li>
+<li>Automate with CDK</li>
+</ul></li>
+<li><a href=3D"https://devcloud.swcoe.ge.com/devspace/display/NRLAW/ECS+Bes=
+t+Practices" rel=3D"nofollow">Best practices</a></li>
+</ul>
+    </div>
+</body>
+</html>
+------=_Part_112358_1148907530.1663778134404
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: 7bit
+Content-Location: file:///C:/c9454d9b96d71f1460df34c2fe4519e9
+
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#0052CC" cx="8" cy="8" r="8"/><path d="M8 11.38a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM6.749 5.736A.875.875 0 1 1 5 5.647C5.09 3.918 6.35 3 8.01 3c2.241 0 3.875 2.22 2.538 4.54-.239.412-.55.723-1.006 1.07-.048.036-.43.316-.514.384-.134.107-.143.12-.143.034v.851a.875.875 0 0 1-1.75 0v-.85c0-.588.288-.99.797-1.4.12-.096.528-.396.55-.413.287-.217.452-.381.55-.55C9.636 5.612 9 4.75 8.008 4.75c-.811 0-1.225.301-1.26.987z" fill="#FFF"/></g></svg>
+------=_Part_112358_1148907530.1663778134404--

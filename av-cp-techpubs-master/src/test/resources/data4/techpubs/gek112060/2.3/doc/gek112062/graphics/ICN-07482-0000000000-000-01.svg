@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Justcroft SVG-Driver 0.103, built Dec  7 2017-->
+<svg width="6.74in" height="6.99in" viewBox="0 0 4044 4194"
+ xmlns="http://www.w3.org/2000/svg" version="1.1"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:itedo="http://www.itedo.com/svgfilter/1.0"
+ xmlns:extra="http://www.itedo.com/svgfilter/1.0/extra"
+ xmlns:_DEFAULT_DTD_="http://www.itedo.com/svgfilter/1.0/DTD/_DEFAULT_DTD_"
+ stroke="black" stroke-linecap="round" stroke-linejoin="bevel"
+ fill="none" fill-rule="evenodd"
+>
+<g id="Background" itedo:apstype="layer">
+</g>
+<g id="Standard layer" itedo:apstype="layer">
+</g>
+<g id="REFERENCE ITEMS" itedo:apstype="layer">
+</g>
+<g id="SUBJECT ITEMS" itedo:apstype="layer">
+</g>
+<g id="TOOLS" itedo:apstype="layer">
+</g>
+<g id="LOCATOR SUBJECT" itedo:apstype="layer">
+</g>
+<g id="Geometry 1" itedo:apstype="layer">
+</g>
+<g id="Geometry 2" itedo:apstype="layer">
+</g>
+<g id="Geometry 3" itedo:apstype="layer">
+</g>
+<g id="Geometry 4" itedo:apstype="layer">
+</g>
+<g id="Geometry 5" itedo:apstype="layer">
+</g>
+<g id="Geometry 6" itedo:apstype="layer">
+</g>
+<g id="Geometry 7" itedo:apstype="layer">
+</g>
+<g id="Geometry 8" itedo:apstype="layer">
+</g>
+<g id="Geometry 9" itedo:apstype="layer">
+</g>
+<g id="Layer 24" itedo:apstype="layer">
+</g>
+<g id="FLOW LINES" itedo:apstype="layer">
+</g>
+<g id="Geometry 10" itedo:apstype="layer">
+</g>
+<g id="LEADERS" itedo:apstype="layer">
+</g>
+<g id="CALLOUTS &amp; TEXT" itedo:apstype="layer">
+</g>
+<g id="SYMBOLS (Black)" itedo:apstype="layer">
+</g>
+<g id="SYMBOLS (Color)" itedo:apstype="layer">
+</g>
+<g id="LOCATOR HIGHLIGHT" itedo:apstype="layer">
+</g>
+<g id="I.D._NUMBER_ONLY" itedo:apstype="layer">
+<text x="3048" y="4141" style="font-family:Helvetica;font-size:67px;stroke:none;fill:#000000;" transform="translate(3048 4141) scale(0.935 1) translate(-3048 -4141)">ICN-07482-0000000000-000-01</text>
+<text x="437" y="2011" style="font-family:Helvetica;font-size:150px;stroke:none;fill:#000000;" transform="translate(437 2011) scale(1 1) translate(-437 -2011)">MODEL/ART NOT AVAILABLE AT THIS TIME.</text>
+</g>
+</svg>

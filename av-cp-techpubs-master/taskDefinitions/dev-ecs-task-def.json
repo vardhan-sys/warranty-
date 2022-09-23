@@ -1,0 +1,86 @@
+{
+  "family": "av-cp-techpubs-dev",
+  "taskRoleArn": "arn:aws:iam::048421397550:role/av-cp-techpubs-ecs-task-role",
+  "executionRoleArn": "arn:aws:iam::048421397550:role/av-cp-techpubs-ecs-task-execution-role",
+  "networkMode": "awsvpc",
+  "cpu": "4096",
+  "memory": "8192",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "containerDefinitions": [
+    {
+      "name": "av-cp-techpubs-container",
+      "image": "<IMAGE>",
+      "cpu": 4096,
+      "memory": 8192,
+      "repositoryCredentials": {
+        "credentialsParameter": "arn:aws:secretsmanager:us-east-1:048421397550:secret:av-docker-artifactory-yBv16N"
+      },
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "secrets": [
+        {
+          "name": "NEW_RELIC_LICENSE_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:048421397550:parameter/infra/newrelic/license"
+        },
+        {
+          "name": "SPRING_DATA_MONGODB_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:048421397550:secret:av-cp-techpubs/dev/db-properties-wTUniG:SPRING.DATA.MONGODB.PASSWORD::"
+        },
+        {
+          "name": "SPRING_ORA_TPS_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:048421397550:secret:av-cp-techpubs/dev/db-properties-wTUniG:SPRING.ORA_TPS.PASSWORD::"
+        },
+        {
+          "name": "TECHLIB_DATASOURCE_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:048421397550:secret:av-cp-techpubs/dev/db-properties-wTUniG:TECHLIB.DATASOURCE.PASSWORD::"
+        },
+        {
+          "name": "CWCADMIN_DATASOURCE_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:048421397550:secret:av-cp-techpubs/dev/db-properties-wTUniG:CWCADMIN.DATASOURCE.PASSWORD::"
+        },
+        {
+          "name": "ENCRYPTIONALGO",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:048421397550:secret:av-cp-techpubs/dev/service-encryption-sK3wrh:ENCRYPTIONALGO::"
+        },
+        {
+          "name": "ENCRYPTIONPWD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:048421397550:secret:av-cp-techpubs/dev/service-encryption-sK3wrh:ENCRYPTIONPWD::"
+        }
+      ],
+      "environment": [
+        {
+          "name": "SPRING_PROFILES_ACTIVE",
+          "value": "dev"
+        },
+        {
+          "name": "NEW_RELIC_APP_NAME",
+          "value": "av-cp-techpubs-dev"
+        },
+        {
+          "name": "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE",
+          "value": "*"
+        },
+        {
+          "name": "JAVA_OPTS",
+          "value": "-Xmx4096m -Xms2048m"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/av-cp-techpubs-dev",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "av-cp-techpubs-dev",
+          "awslogs-create-group": "true"
+        }
+      },
+      "essential": true
+    }
+  ]
+}
